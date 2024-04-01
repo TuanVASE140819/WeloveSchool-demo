@@ -8,7 +8,7 @@
   width: 100%;
 }
 .hero .container {
-  padding-top: 15%;
+  padding-top: 6%;
 }
 .hero h1 {
   color: #fff;
@@ -18,9 +18,16 @@
   color: #fff;
   opacity: 0.8;
 }
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: gray;
+  margin: 1px 0;
+}
 form {
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 20px;
   margin-top: 50px;
   padding: 0 20px;
 }
