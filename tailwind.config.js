@@ -2,9 +2,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     fontFamily: {
-      "be-vietnam-pro": ["Be Vietnam Pro", "sans-serif"],
-      primary: "Be Vietnam Pro, sans-serif",
-      secondary: "Be Vietnam Pro, sans-serif",
+      "helvetica-neue": ["Helvetica Neue", "sans-serif"],
+      primary: "Helvetica Neue, sans-serif",
+      secondary: "Helvetica Neue, sans-serif",
     },
     container: {
       padding: {

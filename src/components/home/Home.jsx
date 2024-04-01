@@ -11,14 +11,14 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <Featured />
+      {/* <Featured />
       <Recent />
       <Awards />
-      <Location />
+      <Location /> */}
       <Team />
       <Price />
     </>
-  )
+  );
 }
 
 export default Home
