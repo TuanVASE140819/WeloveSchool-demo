@@ -10,3 +10,9 @@
   height: 65px;
   margin: auto;
 }
+
+.wrapper{
+  display:grid;
+  height:100vh;
+  place-items:center
+}

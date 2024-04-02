@@ -6,9 +6,9 @@ import FeaturedCard from "./FeaturedCard"
 const Featured = () => {
   return (
     <>
-      <section className='featured background'>
+      <section className=''>
         <div className='container'>
-          <Heading title='Featured Property Types' subtitle='Find All Type of Property.' />
+          {/* <Heading title='Featured Property Types' subtitle='Find All Type of Property.' /> */}
           <FeaturedCard />
         </div>
       </section>
