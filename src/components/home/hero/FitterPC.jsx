@@ -1,38 +1,30 @@
 import React, { useState, useEffect } from "react";
-import FitterPC from "./FitterPC";
-
 import "./hero.css";
 
-const Hero = () => {
-  const [provinces, setProvinces] = useState([]);
-  const [selectedProvince, setSelectedProvince] = useState("");
-  const [districts, setDistricts] = useState([]);
-  const [selectedDistrict, setSelectedDistrict] = useState("");
-
-  useEffect(() => {
-    fetch("https://provinces.open-api.vn/api/p/")
-      .then((response) => response.json())
-      .then((data) => {
-        setProvinces(data);
-        setSelectedProvince(data[0]);
-      });
-  }, []);
-
-  useEffect(() => {
-    fetch(`https://provinces.open-api.vn/api/p/${selectedProvince}/d`)
-      .then((response) => response.json())
-      .then((data) => {
-        setDistricts(data);
-        setSelectedDistrict(data[0]);
-      });
-  }, [selectedProvince]);
-  return (
-    <>
-     <section className="hero">
-        <div className="container">
-          {/* <Heading title='Search Your Next Home ' subtitle='Find new & featured property located in your local city.' /> */}
-
-          <form className="d-flex justify-content-center align-items-center">
+const FitterPC = () => {
+    const [provinces, setProvinces] = useState([]);
+    const [selectedProvince, setSelectedProvince] = useState("");
+    const [districts, setDistricts] = useState([]);
+    const [selectedDistrict, setSelectedDistrict] = useState("");
+  
+    useEffect(() => {
+      fetch("https://provinces.open-api.vn/api/p/")
+        .then((response) => response.json())
+        .then((data) => {
+          setProvinces(data);
+          setSelectedProvince(data[0]);
+        });
+    }, []);
+  
+    useEffect(() => {
+      fetch(`https://provinces.open-api.vn/api/p/${selectedProvince}/d`)
+        .then((response) => response.json())
+        .then((data) => {
+          setDistricts(data);
+          setSelectedDistrict(data[0]);
+        });
+    }, [selectedProvince]);
+<form className="d-flex justify-content-center align-items-center">
           <div className="text-center">
           <h3
       className="text-xl font-bold p-4"
@@ -162,10 +154,7 @@ const Hero = () => {
             </div>
           </div>
           </form>
-        </div>
-      </section>
-    </>
-  );
-};
 
-export default Hero;
+}
+
+export default FitterPC

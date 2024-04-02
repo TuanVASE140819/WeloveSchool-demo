@@ -7,13 +7,15 @@ import Price from "./price/Price"
 import Recent from "./recent/Recent"
 import Team from "./team/Team"
 import Rank from "./rank/Rank"
+import Banner2 from './banner2/banner2';
 
 const Home = () => {
   return (
     <>
       <Hero />
       <Featured />
-      <Rank />
+      <Banner2 />
+      {/* <Rank /> */}
         {/* <Recent />
      <Awards />
       <Location /> */}
