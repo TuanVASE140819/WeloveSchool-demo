@@ -14,6 +14,7 @@ import HeroMB from "./hero/HeroMB";
 
 const Home = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isTablet, setIsTablet] = useState(window.innerWidth <= 1024);
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,7 +28,30 @@ const Home = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsTablet(window.innerWidth <= 1024);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   if (isMobile) {
+    return (
+      <div className="">
+        <HeroMB />
+        <School />
+        <RankMB />
+        {/* <Banner2 /> */}
+      </div>
+    );
+  }
+
+  if (isTablet) {
     return (
       <div className="">
         <HeroMB />
