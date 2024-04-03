@@ -17,13 +17,13 @@ const Rank = () => {
     <>
       {/*  tôi muốn   dùng flex chia làm 2 cột */}
       <div className="container mx-auto ">
-        <div className="grid grid-cols-2 mb-5 gap-2">
+        <div className="grid grid-cols-2 mb-5 gap-8">
           <div class="col-span-1">
-            <div class="relative max-w-xl mx-auto ">
+            <div class="relative  ">
               <img
                 src={rank1}
                 alt="rank1"
-                class="object-cover w-full h-full rounded-md"
+                class="object-cover w-full max-h-[13rem] rounded-md"
               />
               <div class="absolute inset-0 bg-gray-700 opacity-60 rounded-md"></div>
               <div class="absolute inset-0 flex items-center justify-center mt-32">
@@ -37,11 +37,11 @@ const Rank = () => {
                 </div>
               </div>
             </div>
-            <div class="relative max-w-xl mx-auto mt-10">
+            <div class="relative  mt-14">
               <img
                 src={rank1}
                 alt="rank1"
-                class="object-cover w-full h-full rounded-md"
+                class="object-cover w-full max-h-[13rem] rounded-md"
               />
               <div class="absolute inset-0 bg-gray-700 opacity-60 rounded-md"></div>
               <div class="absolute inset-0 flex items-center justify-center mt-32">
@@ -55,11 +55,11 @@ const Rank = () => {
                 </div>
               </div>
             </div>
-            <div class="relative max-w-xl mx-auto mt-10">
+            <div class="relative  mt-14">
               <img
                 src={rank1}
                 alt="rank1"
-                class="object-cover w-full h-full rounded-md"
+                class="object-cover w-full max-h-[13rem] rounded-md"
               />
               <div class="absolute inset-0 bg-gray-700 opacity-60 rounded-md"></div>
               <div class="absolute inset-0 flex items-center justify-center mt-32">
