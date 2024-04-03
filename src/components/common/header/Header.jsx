@@ -25,7 +25,7 @@ const Header = () => {
             <a href="/" className="flex items-center">
               <img
                 src={Logo}
-                className="mr-3 h-6 sm:h-9 object-contain"
+                className="h-6 sm:h-9 object-contain"
                 alt="WeloveSchool Logo"
               />
             </a>
