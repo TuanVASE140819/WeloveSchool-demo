@@ -9,6 +9,8 @@ import Team from "./team/Team";
 import Rank from "./rank/Rank";
 import Banner2 from "./banner2/banner2";
 import School from "./School/School";
+import RankMB from "./rank/RankMB";
+import HeroMB from "./hero/HeroMB";
 
 const Home = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -26,7 +28,14 @@ const Home = () => {
   }, []);
 
   if (isMobile) {
-    return <p>Bản mobile đang cập nhật</p>;
+    return (
+      <div className="">
+        <HeroMB />
+        <School />
+        <RankMB />
+        {/* <Banner2 /> */}
+      </div>
+    );
   }
 
   return (

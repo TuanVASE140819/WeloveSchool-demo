@@ -103,7 +103,7 @@ const Hero = () => {
                     onChange={(e) =>
                       handleAddressChange("province", e.target.value)
                     }
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mr-4"
                   >
                     <option disabled>Chọn tỉnh/thành phố</option>
                     {provinces.map((province) => (
@@ -123,7 +123,7 @@ const Hero = () => {
                     onChange={(e) =>
                       handleAddressChange("district", e.target.value)
                     }
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500  mr-4"
                   >
                     <option disabled>Chọn quận/huyện</option>
                     {districts.map((district) => (
@@ -143,7 +143,7 @@ const Hero = () => {
                     onChange={(e) =>
                       handleAddressChange("ward", e.target.value)
                     }
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500  mr-4"
                   >
                     <option disabled>Chọn xã/phường</option>
                     {wards.map((ward) => (
@@ -151,6 +151,24 @@ const Hero = () => {
                         {ward.ward_name}
                       </option>
                     ))}
+                  </select>
+                  <select
+                    id="cap"
+                    defaultValue="Cấp"
+                    disabled={!selectedDistrict}
+                    onChange={(e) =>
+                      handleAddressChange("ward", e.target.value)
+                    }
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 m-4"
+                  >
+                    <option disabled>Cấp</option>
+                    <option value="1">Tiểu học</option>
+                    <option value="2">Trung học cơ sở</option>
+                    <option value="3">Trung học phổ thông</option>
+                    <option value="4">Trung cấp</option>
+                    <option value="5">Cao đẳng</option>
+                    <option value="6">Đại học</option>
+                    <option value="7">Sau đại học</option>
                   </select>
                 </div>
 

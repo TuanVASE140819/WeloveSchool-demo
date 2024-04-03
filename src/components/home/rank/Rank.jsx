@@ -39,7 +39,7 @@ const Rank = () => {
             </div>
             <div class="relative  mt-14">
               <img
-                src={rank1}
+                src={rank2}
                 alt="rank1"
                 class="object-cover w-full max-h-[13rem] rounded-md"
               />
@@ -57,8 +57,8 @@ const Rank = () => {
             </div>
             <div class="relative  mt-14">
               <img
-                src={rank1}
-                alt="rank1"
+                src={rank3}
+                alt="rank3"
                 class="object-cover w-full max-h-[13rem] rounded-md"
               />
               <div class="absolute inset-0 bg-gray-700 opacity-60 rounded-md"></div>
@@ -68,7 +68,7 @@ const Rank = () => {
                   <img src={top10} alt="rank2" class="w-20 h-20" />
                   <div class="text-center">
                     <h3 class="text-2xl text-white">Trường Học</h3>
-                    <p class="text-blue-300">Truyền Cảm Hứng</p>
+                    <p class="text-blue-300">Chất Lượng Giáo Dục Tốt Nhất</p>
                   </div>
                 </div>
               </div>
