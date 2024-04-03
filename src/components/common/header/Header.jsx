@@ -25,7 +25,7 @@ const Header = () => {
             <a href="/" className="flex items-center">
               <img
                 src={Logo}
-                className="mr-3 h-6 sm:h-9"
+                className="mr-3 h-6 sm:h-9 object-contain"
                 alt="WeloveSchool Logo"
               />
             </a>
@@ -82,13 +82,15 @@ const Header = () => {
           <div className="flex items-center lg:order-2">
             <a
               href="/"
-              className="text-blue-500 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 text-blue-500"
+              className="text-[#3D92D1] hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 font-bold"
             >
               Đăng nhập
             </a>
-            <i className="fa-solid fa-bell text-blue-500"></i>
+            <div className="p-1 bg-gray-100 rounded-full">
+              <i className="fa-solid fa-bell text-[#3D92D1]"></i>
+            </div>
             {/* nút chuyển đổi ngôn ngữ */}
-            <button className="ml-8 text-blue-500 hidden lg:block">VN</button>
+            <button className="ml-8 text-[#3D92D1] hidden lg:block">VN</button>
             <span className="mx-2 hidden lg:block">|</span>
             <button className="hidden lg:block">EN</button>
             <button

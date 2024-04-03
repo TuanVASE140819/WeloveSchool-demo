@@ -12,7 +12,7 @@ const FeaturedCard = () => {
             <img src={cap1} alt="cap1" class="object-cover w-full h-full" />
           </div>
           <div class="p-6 text-center">
-            <h5 class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-500">
+            <h5 class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-[#3D92D1]">
               Trường Tiểu Học
             </h5>
             <p
@@ -29,7 +29,7 @@ const FeaturedCard = () => {
             <img src={cap1} alt="cap1" class="object-cover w-full h-full" />
           </div>
           <div class="p-6 text-center">
-            <h5 class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-500">
+            <h5 class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-[#3D92D1]">
               Trường Trung Học Cơ Sở
             </h5>
             <p class="block font-sans text-base antialiased font-light leading-relaxed text-inherit text-gray-500 italic ">
@@ -43,7 +43,7 @@ const FeaturedCard = () => {
             <img src={cap1} alt="cap1" class="object-cover w-full h-full" />
           </div>
           <div class="p-6 text-center">
-            <h5 class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-500">
+            <h5 class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-[#3D92D1]">
               Trường Trung Học Phổ Thông
             </h5>
             <p class="block font-sans text-base antialiased font-light leading-relaxed text-inherit text-gray-500 italic">

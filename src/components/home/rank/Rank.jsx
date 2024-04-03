@@ -30,9 +30,9 @@ const Rank = () => {
                 {/* TÔI MUỐN CHIA LÀM 2 CỘT */}
                 <div class="flex items-center">
                   <img src={top10} alt="rank2" class="w-20 h-20" />
-                  <div class="text-center">
-                    <h3 class="text-2xl text-white">Trường Học</h3>
-                    <p class="text-blue-300">Truyền Cảm Hứng</p>
+                  <div class="text-left">
+                    <h3 class="text-xl text-white">Trường Học</h3>
+                    <p class="text-[#3D92D1] font-bold">Truyền Cảm Hứng</p>
                   </div>
                 </div>
               </div>
@@ -48,9 +48,9 @@ const Rank = () => {
                 {/* TÔI MUỐN CHIA LÀM 2 CỘT */}
                 <div class="flex items-center">
                   <img src={top10} alt="rank2" class="w-20 h-20" />
-                  <div class="text-center">
-                    <h3 class="text-2xl text-white">Trường Học</h3>
-                    <p class="text-blue-300">Truyền Cảm Hứng</p>
+                  <div class="text-left">
+                    <h3 class="text-xl text-white">Trường Học</h3>
+                    <p class="text-[#3D92D1] font-bold">Truyền Cảm Hứng</p>
                   </div>
                 </div>
               </div>
@@ -66,9 +66,11 @@ const Rank = () => {
                 {/* TÔI MUỐN CHIA LÀM 2 CỘT */}
                 <div class="flex items-center">
                   <img src={top10} alt="rank2" class="w-20 h-20" />
-                  <div class="text-center">
-                    <h3 class="text-2xl text-white">Trường Học</h3>
-                    <p class="text-blue-300">Chất Lượng Giáo Dục Tốt Nhất</p>
+                  <div class="text-left">
+                    <h3 class="text-xl text-white">Trường Học</h3>
+                    <p class="text-[#3D92D1] font-bold">
+                      Chất Lượng Giáo Dục Tốt Nhất
+                    </p>
                   </div>
                 </div>
               </div>

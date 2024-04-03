@@ -36,6 +36,10 @@ module.exports = {
       dropShadow: {
         primary: " 0px 5px 5px rgba(75, 93, 104, 0.1)",
       },
+      objectFit: {
+        // Add this
+        contain: "contain",
+      },
     },
   },
   plugins: [],
