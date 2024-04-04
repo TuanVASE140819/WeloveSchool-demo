@@ -80,12 +80,53 @@ const Header = () => {
             </li>
           </ul>
           <div className="flex items-center lg:order-2 mr-10 ">
-            <a
+            {/* <a
               href="/"
               className="text-[#3D92D1] hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 font-bold"
             >
               Đăng nhập
-            </a>
+            </a> */}
+            <div class="relative inline-block text-left">
+              <div>
+                <button
+                  type="button"
+                  className="text-[#3D92D1] hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 font-bold"
+                  id="menu-button"
+                  aria-expanded="true"
+                  aria-haspopup="true"
+                >
+                  Đăng nhập
+                </button>
+              </div>
+              <div
+                class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                role="menu"
+                aria-orientation="vertical"
+                aria-labelledby="menu-button"
+                tabindex="-1"
+              >
+                <div class="py-1" role="none">
+                  <a
+                    href="/login"
+                    class="text-gray-700 block px-4 py-2 text-sm"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="menu-item-0"
+                  >
+                    Đăng nhập
+                  </a>
+                  <a
+                    href="/register"
+                    class="text-gray-700 block px-4 py-2 text-sm"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="menu-item-0"
+                  >
+                    Đăng ký
+                  </a>
+                </div>
+              </div>
+            </div>
             <div className="p-1 bg-gray-100 rounded-full">
               <i className="fa-solid fa-bell text-[#3D92D1]"></i>
             </div>

@@ -50,6 +50,7 @@ const School = () => {
       <section className="container mx-auto">
         <div className=" my-10">
           <Heading title="KHƠI GỢI KÝ ỨC" />
+
           <Slider {...settings}>
             <div class=" p-4">
               <div class="rounded overflow-hidden flex flex-col max-w-xl mx-auto">
