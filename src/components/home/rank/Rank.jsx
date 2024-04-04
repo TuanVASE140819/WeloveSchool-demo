@@ -21,12 +21,12 @@ const Rank = () => {
       <Heading title="CUỘC ĐUA XẾP HẠNG" />
       <div className="container mx-auto ">
         <div className="grid grid-cols-2 mb-5 gap-8 mt-6">
-          <div class="col-span-1">
+          <div class="col-span-1 ">
             <div class="relative  ">
               <img
                 src={rank1}
                 alt="rank1"
-                class="object-cover w-full max-h-[13rem] rounded-md"
+                class="object-cover w-full max-h-[14.5rem] rounded-md"
               />
               <div class="absolute inset-0 bg-gray-700 opacity-60 rounded-md"></div>
               <div class="absolute inset-0 flex items-center justify-center mt-32">
@@ -40,11 +40,11 @@ const Rank = () => {
                 </div>
               </div>
             </div>
-            <div class="relative  mt-14">
+            <div class="relative  mt-6">
               <img
                 src={rank2}
                 alt="rank1"
-                class="object-cover w-full max-h-[13rem] rounded-md"
+                class="object-cover w-full max-h-[14.5rem] rounded-md"
               />
               <div class="absolute inset-0 bg-gray-700 opacity-60 rounded-md"></div>
               <div class="absolute inset-0 flex items-center justify-center mt-32">
@@ -58,11 +58,11 @@ const Rank = () => {
                 </div>
               </div>
             </div>
-            <div class="relative  mt-14">
+            <div class="relative  mt-6">
               <img
                 src={rank3}
                 alt="rank3"
-                class="object-cover w-full max-h-[13rem] rounded-md"
+                class="object-cover w-full max-h-[14.5rem] rounded-md"
               />
               <div class="absolute inset-0 bg-gray-700 opacity-60 rounded-md"></div>
               <div class="absolute inset-0 flex items-center justify-center mt-32">

@@ -1,0 +1,4 @@
+.slick-active div {
+  background-color: red !important;
+  transform: scale(1.5);
+}
