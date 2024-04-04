@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import cap1 from "../../../assets/Home/cap1.png";
 import cap2 from "../../../assets/Home/cap2.png";
 import cap3 from "../../../assets/Home/cap3.png";
+import Heading from "../../common/Heading";
 
 const School = () => {
   var settings = {
@@ -46,6 +47,7 @@ const School = () => {
     <>
       <section className="container mx-auto">
         <div className=" my-10">
+          <Heading title="KHƠI GỢI KÝ ỨC" />
           <Slider {...settings}>
             <div class=" p-4">
               <div class="rounded overflow-hidden flex flex-col max-w-xl mx-auto">

@@ -7,7 +7,7 @@ const Team = () => {
   return (
     <div className="fim ">
       <div className="container mx-auto py-32">
-        <h3 className="text-center text-[#3D92D1]font-bold text-2xl mt-10">
+        <h3 className="text-center text-[#3D92D1] font-bold text-2xl mt-10">
           CHUYỆN TRƯỜNG XƯA
         </h3>
         <h2 className="text-center text-3xl font-bold mt-5">

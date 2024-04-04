@@ -12,12 +12,15 @@ import DrawSchool from "../../../assets/Home/drawschool.png";
 import top10 from "../../../assets/Home/Top10.png";
 
 import VanLangLogo from "../../../assets/Home/vanlang_logo.png";
+import Heading from "../../common/Heading";
 const Rank = () => {
   return (
     <>
-      {/*  tôi muốn   dùng flex chia làm 2 cột */}
+      {/* 
+       cuộc đua xếp hạng */}
+      <Heading title="CUỘC ĐUA XẾP HẠNG" />
       <div className="container mx-auto ">
-        <div className="grid grid-cols-2 mb-5 gap-8">
+        <div className="grid grid-cols-2 mb-5 gap-8 mt-6">
           <div class="col-span-1">
             <div class="relative  ">
               <img

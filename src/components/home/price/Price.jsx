@@ -1,16 +1,15 @@
 import React from "react"
 
 import "./price.css";
+import Heading from "../../common/Heading";
 
 const Price = () => {
   return (
     <>
-      <section className="price padding">
+      <section className="mt-6">
+        <Heading title="TÌM TRƯỜNG TẠI TỈNH CỦA BẠN" />
         <div className="container">
-          {/* <Heading title='Select Your Package' subtitle='At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores' />
-          <PriceCard /> */}
-
-          <div class="grid grid-cols-6 gap-4">
+          <div class="grid grid-cols-6 gap-4 mt-6">
             <div>Hồ Chí Minh(100)</div>
             <div>Hà Nội (100)</div>
             <div>Đà Nẵng (100)</div>
