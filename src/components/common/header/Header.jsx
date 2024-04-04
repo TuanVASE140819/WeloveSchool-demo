@@ -21,7 +21,7 @@ const Header = () => {
     <>
       <header>
         <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 sticky top-0 z-50 flex justify-between items-center">
-          <div className="flex items-center ml-10">
+          <div className="flex items-center lg:ml-10 md:ml-1 sm:ml-1">
             <a href="/" className="flex items-center">
               <img
                 src={Logo}
@@ -79,57 +79,53 @@ const Header = () => {
               </a>
             </li>
           </ul>
-          <div className="flex items-center lg:order-2 mr-10 ">
-            {/* <a
-              href="/"
-              className="text-[#3D92D1] hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 font-bold"
-            >
-              Đăng nhập
-            </a> */}
-            <div class="relative inline-block text-left">
-              <div>
-                <button
-                  type="button"
-                  className="text-[#3D92D1] hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 font-bold"
-                  id="menu-button"
-                  aria-expanded="true"
-                  aria-haspopup="true"
-                >
-                  Đăng nhập
-                </button>
-              </div>
-              <div
-                class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                role="menu"
-                aria-orientation="vertical"
-                aria-labelledby="menu-button"
-                tabindex="-1"
-              >
-                <div class="py-1" role="none">
-                  <a
-                    href="/login"
-                    class="text-gray-700 block px-4 py-2 text-sm"
-                    role="menuitem"
-                    tabindex="-1"
-                    id="menu-item-0"
+          <div className="flex items-center lg:order-2 lg:mr-10 md:mr-1 sm:mr-1">
+            <div className="relative inline-block text-left">
+              <div className="dropdown">
+                <div>
+                  <button
+                    type="button"
+                    className="text-[#3D92D1] hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 font-bold"
+                    id="menu-button"
+                    aria-expanded="true"
+                    aria-haspopup="true"
                   >
                     Đăng nhập
-                  </a>
-                  <a
-                    href="/register"
-                    class="text-gray-700 block px-4 py-2 text-sm"
-                    role="menuitem"
+                  </button>
+                </div>
+                <div className="dropdown-content">
+                  <div
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby="menu-button"
                     tabindex="-1"
-                    id="menu-item-0"
                   >
-                    Đăng ký
-                  </a>
+                    <div className="py-1" role="none">
+                      <a
+                        href="/login"
+                        className="text-gray-700 block px-4 py-2 text-sm"
+                        role="menuitem"
+                        tabindex="-1"
+                        id="menu-item-0"
+                      >
+                        Đăng nhập
+                      </a>
+                      <a
+                        href="/register"
+                        className="text-gray-700 block px-4 py-2 text-sm"
+                        role="menuitem"
+                        tabindex="-1"
+                        id="menu-item-0"
+                      >
+                        Đăng ký
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="p-1 bg-gray-100 rounded-full">
-              <i className="fa-solid fa-bell text-[#3D92D1]"></i>
-            </div>
+
+            <i className="p-2 bg-gray-100 rounded-full fa-solid fa-bell text-[#3D92D1]"></i>
             {/* nút chuyển đổi ngôn ngữ */}
             <button className="ml-8 text-[#3D92D1] hidden lg:block">VN</button>
             <span className="mx-2 hidden lg:block">|</span>

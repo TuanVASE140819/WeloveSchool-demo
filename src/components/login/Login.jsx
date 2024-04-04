@@ -12,13 +12,13 @@ const Login = () => {
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-10">
           <div className="w-full bg-white rounded-lg dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div
-              className="p-6 space-y-4 bg-gray-200
+              className="p-6 space-y-4 bg-gray-100
              md:space-y-6 sm:p-8"
             >
-              <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white text-center">
+              <h1 className="font-secondary text-xl font-bold leading-tight tracking-tight text-[#3D92D1] md:text-2xl dark:text-white text-center">
                 Đăng nhập
               </h1>
-              <form className="space-y-4 bg-gray-200  md:space-y-6 " action="#">
+              <form className="space-y-4 bg-gray-100  md:space-y-6 " action="#">
                 <div>
                   <label
                     htmlFor="email"
