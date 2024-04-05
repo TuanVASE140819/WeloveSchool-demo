@@ -7,6 +7,11 @@ import top1 from "../../assets/Home/Top1.png";
 import top2 from "../../assets/Home/Top2.png";
 import top3 from "../../assets/Home/Top3.png";
 
+import nui from "../../assets/More/nui2.png";
+import nui2 from "../../assets/More/nui.png";
+import song from "../../assets/More/song.png";
+import xilo from "../../assets/More/xilo.png";
+
 import Rmit from "../../assets/Logo/rmit.jpg";
 const DetailSchool = () => {
   const products = [
@@ -25,32 +30,32 @@ const DetailSchool = () => {
   ];
   return (
     <>
-      <div className="flex flex-row min-w-[1000px] ">
+      <div className=" flex flex-row  border-b border-gray-300">
         {/* left */}
         <div className="flex-1 border-r border-gray-300">
-          <div className="border-b border-gray-300">
+          <div className="border-b-1 border-gray-300">
             <form className="max-w-sm mx-auto mb-2">
               <select
                 id="underline_select"
-                className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+                className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-[1px] border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
               >
                 <option selected>Chọn tỉnh</option>
               </select>
               <select
                 id="underline_select"
-                className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+                className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-[1px] border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
               >
                 <option selected>Chọn quận huyện</option>
               </select>
               <select
                 id="underline_select"
-                className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+                className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-[1px] border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
               >
                 <option selected>Chọn phường xã</option>
               </select>
               <select
                 id="underline_select"
-                className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+                className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-[1px] border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
               >
                 <option selected>Chọn trường</option>
               </select>
@@ -58,20 +63,20 @@ const DetailSchool = () => {
               <div className="grid grid-cols-2 gap-5">
                 <select
                   id="underline_select"
-                  className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+                  className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-[1px] border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
                 >
                   <option selected>Chọn trường</option>
                 </select>
                 <select
                   id="underline_select"
-                  className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+                  className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-[1px] border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
                 >
                   <option selected>Chọn trường</option>
                 </select>
               </div>
               <button
                 type="submit"
-                className="mt-4 mb-8 mr-2 inline-flex items-center py-2 px-24 ml-2 text-sm font-medium text-white bg-blue-500 rounded-lg border border-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 "
+                className="mt-4 mb-8 mr-2 inline-flex items-center py-2 px-[5.5rem] ml-2 text-sm font-medium text-white bg-blue-500 rounded-lg border border-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 "
               >
                 <svg
                   className="mr-2 -ml-1 w-5 h-5"
@@ -87,7 +92,7 @@ const DetailSchool = () => {
                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                   />
                 </svg>
-                Search
+                Tìm kiếm
               </button>
             </form>
           </div>
@@ -155,13 +160,13 @@ const DetailSchool = () => {
             </div>
           </div>
           <div className="">
-            <h3>Gocs</h3>
+            <h3>Góc kết nối bạn cũ</h3>
           </div>
         </div>
         {/* center */}
         <div className="flex-3 mx-auto p-10">
-          <div className="grid grid-cols-7 ">
-            <div className="col-span-1 px-5">
+          <div className="grid grid-cols-7 px-10">
+            <div className="col-span-1 mr-2 ">
               <select
                 id="ward"
                 defaultValue="Chọn Cấp"
@@ -210,7 +215,7 @@ const DetailSchool = () => {
             <div className="col-span-1">
               <button
                 type="submit"
-                className="inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="inline-flex items-center py-2.5 px-[1.7rem] ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 <svg
                   className="mr-2 -ml-1 w-5 h-5"
@@ -231,45 +236,48 @@ const DetailSchool = () => {
             </div>
           </div>
           {/* card */}
-          <div className="grid grid-cols-2 mt-5 gap-5">
+          <div className="grid grid-cols-2 mt-5 gap-5 mx-10">
             {products.map((product, index) => (
               <div
                 key={index}
-                className="flex flex-row border border-gray-300 rounded-lg p-2 bg-gray-50 "
+                className="flex flex-row rounded-lg p-1 bg-gray-50 "
               >
-                <div className="basis-2/5">
+                <div className="basis-2/6">
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-40 h-40 rounded-2xl object-cover p-2"
+                    className="w-40 h-40 rounded-2xl object-cover p-1"
                   />
                 </div>
 
-                <div className="basis-3/5">
+                <div className="basis-4/6">
                   <h1 className="text-2xl font-bold text-gray-700 mb-4">
                     {product.name}
                   </h1>
                   <div className="flex flex-row max-w-[130px] mt-8 mb-3">
+                  <span className="">4415k</span>
                     <img
                       src={product.icon1}
                       alt="icon"
-                      className="w-7 h-7 rounded-lg object-cover mr-2"
+                      className="w-5 h-5 rounded-lg object-cover mr-10"
                     />
-                    <span className="mr-10">4415k</span>
+                    <span>4415k</span>
 
                     <img
                       src={product.icon2}
                       alt="icon"
-                      className="w-7 h-7 rounded-lg object-cover  mr-2"
+                      className="w-5 h-5 rounded-lg object-cover  mr-2"
                     />
-                    <span>4415k</span>
+                  
                   </div>
                   <div className="flex flex-row">
-                    <button className="bg-[#7DD2F5] text-white rounded-lg p-2.5 px-24 mr-1">
+                    <button className="bg-[#7DD2F5] text-white rounded-lg p-2 px-[5.5rem] mr-2 ml-2">
                       Xem trường
                     </button>
                     <button className="bg-gray-200 text-black rounded-lg p-2.5">
-                      ...
+                    <svg fill="#000000" width="16px" height="16px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M384 512c0 28.3-22.9 51.2-51.2 51.2s-51.2-22.9-51.2-51.2 22.9-51.2 51.2-51.2S384 483.7 384 512zm128-51.2c-28.3 0-51.2 22.9-51.2 51.2s22.9 51.2 51.2 51.2 51.2-22.9 51.2-51.2-22.9-51.2-51.2-51.2zm179.2 0c-28.3 0-51.2 22.9-51.2 51.2s22.9 51.2 51.2 51.2 51.2-22.9 51.2-51.2-22.9-51.2-51.2-51.2z"/>
+                      </svg>
                     </button>
                   </div>
                 </div>
@@ -290,9 +298,108 @@ const DetailSchool = () => {
           </div>
         </div>
         {/* right */}
-        <div className="flex-1">
-          {/* <div className="bg-slate-500">Right Sidebar</div> */}
+        <div className="flex-1 border-l border-gray-300">
+        <a
+  className="p-3 border-b bg-white
+    hover:shadow-xl hover:shadow-indigo-50 flex flex-col items-center"
+  href="#"
+>
+  <img
+    src="https://loremflickr.com/800/600/girl"
+    className="shadow rounded-lg overflow-hidden border"
+  />
+  <div className="mt-8">
+    <h4 className="font-bold text-xl">Exercises</h4>
+    <p className="mt-2 text-gray-600">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+      quam velit, vulputate eu pharetra nec, mattis ac neque.
+    </p>
+    <div className="mt-5">
+    </div>
+  </div>
+</a>
+
+<a
+  className="p-3 border-b bg-white
+    hover:shadow-xl hover:shadow-indigo-50 flex flex-col items-center"
+  href="#"
+>
+  <img
+    src="https://loremflickr.com/800/600/girl"
+    className="shadow rounded-lg overflow-hidden border"
+  />
+  <div className="mt-8">
+    <h4 className="font-bold text-xl">Exercises</h4>
+    <p className="mt-2 text-gray-600">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+      quam velit, vulputate eu pharetra nec, mattis ac neque.
+    </p>
+    <div className="mt-5">
+    </div>
+  </div>
+</a>
         </div>
+        {/* <div className="flex-1 mt-5 border-l border-gray-300">
+
+        <a
+  className="p-3 max-w-lg border-b bg-white
+    hover:shadow-xl hover:shadow-indigo-50 flex flex-col items-center"
+  href="#"
+>
+  <img
+    src="https://loremflickr.com/800/600/girl"
+    className="shadow rounded-lg overflow-hidden border"
+  />
+  <div className="mt-8">
+    <h4 className="font-bold text-xl">Exercises</h4>
+    <p className="mt-2 text-gray-600">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+      quam velit, vulputate eu pharetra nec, mattis ac neque.
+    </p>
+    <div className="mt-5">
+    </div>
+  </div>
+</a>
+
+        </div> */}
+      </div>
+      <div className="p-10">
+        <h4 className="text-2xl font-bold mt-5  pb-3">
+          Bài viết khác</h4>
+        {/* grid grid-cols-4 */}
+        <div className="grid grid-cols-4 gap-5">
+        <div className="col-span-1 p-2 border border-gray-300 rounded-lg">
+          <img src={nui} alt="top1" className="w-full h-[15rem]" />
+          
+          <div className="mt-2 text-sm font-bold">
+            "Du lịch cùng Xilo: Hành trình khám phá vẻ đẹp của Núi Đá Bia và Đồi Chè Cầu Đất - Bảo Lộc - Lâm Đồng, Việt Nam "
+          </div>
+        </div>
+        <div className="col-span-1 p-1 border border-gray-300  rounded-lg">
+          <img src={song} alt="top1" className="w-full h-[15rem]" />
+          
+          <div className="mt-2 text-sm font-bold">
+            "Du lịch cùng Xilo: Hành trình khám phá vẻ đẹp của Núi Đá Bia và Đồi Chè Cầu Đất - Bảo Lộc - Lâm Đồng, Việt Nam "
+          </div>
+        </div>
+        <div className="col-span-1 p-1 border border-gray-300  rounded-lg">
+          <img src={nui2} alt="top1" className="w-full h-[15rem]" />
+          
+          <div className="mt-2 text-sm font-bold">
+            "Du lịch cùng Xilo: Hành trình khám phá vẻ đẹp của Núi Đá Bia và Đồi Chè Cầu Đất - Bảo Lộc - Lâm Đồng, Việt Nam "
+          </div>
+        </div>
+        <div className="col-span-1 p-1 border border-gray-300  rounded-lg" >
+          <img src={xilo} alt="top1" className="w-full h-[15rem]" />
+          
+          <div className="mt-2 text-sm font-bold">
+            "Du lịch cùng Xilo: Hành trình khám phá vẻ đẹp của Núi Đá Bia và Đồi Chè Cầu Đất - Bảo Lộc - Lâm Đồng, Việt Nam "
+          </div>
+        </div>
+  
+
+        
+          </div>
       </div>
     </>
   );
