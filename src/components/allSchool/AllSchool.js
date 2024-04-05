@@ -71,7 +71,7 @@ const DetailSchool = () => {
               </div>
               <button
                 type="submit"
-                className="mt-4 mb-8 mr-2 inline-flex items-center py-2 px-28 ml-2 text-sm font-medium text-white bg-blue-500 rounded-lg border border-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 "
+                className="mt-4 mb-8 mr-2 inline-flex items-center py-2 px-24 ml-2 text-sm font-medium text-white bg-blue-500 rounded-lg border border-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 "
               >
                 <svg
                   className="mr-2 -ml-1 w-5 h-5"
@@ -87,7 +87,7 @@ const DetailSchool = () => {
                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                   />
                 </svg>
-                Tìm kiếm
+                Search
               </button>
             </form>
           </div>
