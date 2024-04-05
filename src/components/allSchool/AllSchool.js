@@ -291,7 +291,7 @@ const DetailSchool = () => {
         </div>
         {/* right */}
         <div className="flex-1">
-          <div className="bg-slate-500">Right Sidebar</div>
+          {/* <div className="bg-slate-500">Right Sidebar</div> */}
         </div>
       </div>
     </>
