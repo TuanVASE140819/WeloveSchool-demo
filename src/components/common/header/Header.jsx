@@ -51,7 +51,7 @@ const Header = () => {
                 className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 "
               >
                 <div className="flex items-center">
-                  <img src={human2} className="w-6 h-6" alt="home" />
+                  <img src={human2} className="w-6 h-6 mr-2" alt="home" />
                   <span>bạn bè</span>
                 </div>
               </a>
@@ -62,7 +62,7 @@ const Header = () => {
                 className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"
               >
                 <div className="flex items-center">
-                  <img src={human3} className="w-6 h-6" alt="home" />
+                  <img src={human3} className="w-6 h-6 mr-2" alt="home" />
                   <span>Hội Nhóm</span>
                 </div>
               </a>
@@ -127,9 +127,11 @@ const Header = () => {
 
             <i className="p-2 bg-gray-100 rounded-full fa-solid fa-bell text-[#3D92D1]"></i>
             {/* nút chuyển đổi ngôn ngữ */}
-            <button className="ml-8 text-[#3D92D1] hidden lg:block">VN</button>
+            <button className="ml-8 text-sm text-[#3D92D1] hidden lg:block">
+              VN
+            </button>
             <span className="mx-2 hidden lg:block">|</span>
-            <button className="hidden lg:block">EN</button>
+            <button className="hidden text-sm lg:block">EN</button>
             <button
               onClick={handleMenuToggle}
               data-collapse-toggle="mobile-menu-2"

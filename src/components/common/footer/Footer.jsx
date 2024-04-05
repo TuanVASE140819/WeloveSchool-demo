@@ -42,7 +42,7 @@ const Footer = () => {
             </div>
 
             <LinkGroup header="About Us" className="text-blue-500">
-              <NavLink link="/#" label="Home" />
+              <NavLink link="/About" label="Home" />
               <NavLink link="/#" label="Feature" />
               <NavLink link="/#" label="How its work" />
               <NavLink link="/#" label="Goal & Missions" />

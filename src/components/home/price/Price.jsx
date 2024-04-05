@@ -6,7 +6,7 @@ import Heading from "../../common/Heading";
 const Price = () => {
   return (
     <>
-      <section className="mt-6">
+      <section className="mt-6 mb-6">
         <Heading title="TÌM TRƯỜNG TẠI TỈNH CỦA BẠN" />
         <div className="container">
           <div class="grid grid-cols-6 gap-4 mt-6">

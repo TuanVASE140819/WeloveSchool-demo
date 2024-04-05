@@ -10,6 +10,7 @@ import Services from "../services/Services"
 import Contact from "../contact/Contact"
 import Login from "../login/Login";
 import Register from "../register/Register";
+import DetailSchool from "../detailSchool/DetailSchool";
 const Pages = () => {
   return (
     <>
@@ -18,8 +19,9 @@ const Pages = () => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/Login" component={Login} />
+          <Route exact path="/DetailSchool" component={DetailSchool} />
           <Route exact path="/Register" component={Register} />
-          <Route exact path="/friends" component={About} />
+          <Route exact path="/about" component={About} />
           <Route exact path="/services" component={Services} />
           <Route exact path="/blog" component={Blog} />
           <Route exact path="/pricing" component={Pricing} />

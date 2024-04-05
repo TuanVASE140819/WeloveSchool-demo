@@ -4,12 +4,12 @@ import Tivi from "../../../assets/Home/Tivi.png";
 const Banner2 = () => {
     return (
       <>
-        <section class="bg-white mb-20">
+        <section class="bg-white">
           <div class="grid max-w-screen-xl  mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-            <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+            <div class="hidden lg:mt-0 lg:col-span-6 lg:flex">
               <img src={Tivi} alt="mockup" class="object-contain w-[80%]" />
             </div>
-            <div class=" place-self-center lg:col-span-7  ">
+            <div class=" place-self-center lg:col-span-5  ml-8">
               <h2 className="text-xl font-bold text-gray-800 ">
                 HỘI NGỘ BẠN BÈ, ÔN LẠI KỸ NIỆM
                 <br />
