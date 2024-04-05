@@ -95,7 +95,7 @@ const School = () => {
               </div>
             </div>
 
-            <div class="p-4">
+            {/* <div class="p-4">
               <div class="rounded overflow-hidden flex flex-col max-w-xl mx-auto">
                 <a href="/">
                   <img
@@ -115,7 +115,7 @@ const School = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div class=" p-4">
               <div class="rounded overflow-hidden flex flex-col max-w-xl mx-auto">
                 <a href="/">
