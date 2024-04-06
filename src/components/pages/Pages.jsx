@@ -12,6 +12,7 @@ import Login from "../login/Login";
 import Register from "../register/Register";
 import DetailSchool from "../detailSchool/DetailSchool";
 import AllSchool from "../allSchool/AllSchool";
+import comsoon from "../comsoon/comsoon";
 const Pages = () => {
   return (
     <>
@@ -28,6 +29,7 @@ const Pages = () => {
           <Route exact path="/blog" component={Blog} />
           <Route exact path="/pricing" component={Pricing} />
           <Route exact path="/contact" component={Contact} />
+          <Route exact path="/coming-soon" component={comsoon} />
         </Switch>
         <Footer />
       </Router>

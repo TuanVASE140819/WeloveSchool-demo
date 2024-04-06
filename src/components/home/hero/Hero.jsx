@@ -103,7 +103,7 @@ const Hero = () => {
                     onChange={(e) =>
                       handleAddressChange("province", e.target.value)
                     }
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mr-4"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  mr-4"
                   >
                     <option disabled>Chọn tỉnh/thành phố</option>
                     {provinces.map((province) => (
@@ -160,7 +160,8 @@ const Hero = () => {
                     onChange={(e) =>
                       handleAddressChange("ward", e.target.value)
                     }
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  m-4"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full
+                     focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5  mr-4"
                   >
                     <option disabled>Cấp</option>
                     <option value="1">Tiểu học</option>
