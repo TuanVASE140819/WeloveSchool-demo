@@ -538,9 +538,15 @@ const DetailSchool = () => {
                     />
                   </div>
                   <div className="flex flex-row">
-                    <button className="bg-[#7DD2F5] text-white rounded-lg p-2 px-[5.5rem] mr-2 ml-2">
-                      Xem trường
-                    </button>
+                    <a
+                      href="/detailSchool"
+                      className="hover:underline"
+                      style={{ display: "flex" }}
+                    >
+                      <button className="bg-[#7DD2F5] text-white rounded-lg p-2 px-[5.5rem] mr-2 ml-2">
+                        Xem trường
+                      </button>
+                    </a>
                     <button className="bg-gray-200 text-black rounded-lg p-2.5">
                       <svg
                         fill="#000000"
