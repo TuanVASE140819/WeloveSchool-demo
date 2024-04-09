@@ -27,13 +27,14 @@ const Footer = () => {
                     alt="logo"
                     className="max-w-full dark:hidden "
                   /> */}
+                </a>
+                <p className="mb-7 text-base text-body-color font-semibold text-center">
                   <img
                     src={logo}
                     alt="logo"
-                    className="max-w-full hidden dark:block"
+                    className="
+                    w-80 "
                   />
-                </a>
-                <p className="mb-7 text-base text-body-color font-semibold text-center">
                   031-36 03 97
                   <br />
                   weloveschool@edu.vn
@@ -70,9 +71,9 @@ const Footer = () => {
                   <a href="/#">
                     <img src={tiktok} alt="tiktok" />
                   </a>
-                  <a href="/#">
+                  {/* <a href="/#">
                     <img src={shoppe} alt="shoppe" />
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>
@@ -101,33 +102,6 @@ const Footer = () => {
                   gradientUnits="userSpaceOnUse"
                 >
                   <stop stopColor="#3056D3" stopOpacity="0.08" />
-                  <stop offset={1} stopColor="#C4C4C4" stopOpacity={0} />
-                </linearGradient>
-              </defs>
-            </svg>
-          </span>
-          <span className="absolute right-10 top-10 z-[-1]">
-            <svg
-              width={75}
-              height={75}
-              viewBox="0 0 75 75"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M37.5 -1.63918e-06C58.2107 -2.54447e-06 75 16.7893 75 37.5C75 58.2107 58.2107 75 37.5 75C16.7893 75 -7.33885e-07 58.2107 -1.63918e-06 37.5C-2.54447e-06 16.7893 16.7893 -7.33885e-07 37.5 -1.63918e-06Z"
-                fill="url(#paint0_linear_1179_4)"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_1179_4"
-                  x1="-1.63917e-06"
-                  y1="37.5"
-                  x2={75}
-                  y2="37.5"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#13C296" stopOpacity="0.31" />
                   <stop offset={1} stopColor="#C4C4C4" stopOpacity={0} />
                 </linearGradient>
               </defs>

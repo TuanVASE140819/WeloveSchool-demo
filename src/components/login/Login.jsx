@@ -8,16 +8,16 @@ const Login = () => {
   };
   return (
     <>
-      <section className="bg-gray-50 dark:bg-gray-900">
+      <section className="bg-gray-50 ">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-10">
-          <div className="w-full bg-white rounded-lg dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+          <div className="w-full bg-white rounded-lg  md:mt-0 sm:max-w-md xl:p-0">
             <div
               className="p-6 space-y-4 bg-gray-100
              md:space-y-6 sm:p-8"
             >
               <h1
                 className="font-secondary text-xl font-bold leading-tight tracking-tight text-[#3D92D1]
-               md:text-2xl dark:text-white text-center"
+               md:text-2xl "
               >
                 Đăng nhập
               </h1>
@@ -25,7 +25,7 @@ const Login = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block mb-2 text-sm font-bold text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-bold text-gray-900"
                   >
                     Email:
                   </label>
@@ -41,7 +41,7 @@ const Login = () => {
                 <div>
                   <label
                     htmlFor="password"
-                    className="block mb-2 text-sm font-bold text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-bold text-gray-900 "
                   >
                     Password:
                   </label>
