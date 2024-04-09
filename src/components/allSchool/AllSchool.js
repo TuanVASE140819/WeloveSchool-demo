@@ -91,7 +91,7 @@ const DetailSchool = () => {
     <>
       <div className=" flex flex-row  border-b border-gray-300">
         {/* left */}
-        <div className="flex-1 border-r border-gray-300">
+        <div className="flex-1 border-r border-gray-300 bg-gray-50">
           <div className="border-b-1 border-gray-300">
             <div className="max-w-sm mx-auto mb-2 pt-5 px-5">
               <select
@@ -581,7 +581,7 @@ const DetailSchool = () => {
           </div>
         </div>
         {/* right */}
-        <div className="flex-1 border-l border-gray-300">
+        <div className="flex-1 border-l border-gray-300 bg-gray-50">
           <a
             className="p-3 border-b bg-white
     hover:shadow-xl hover:shadow-indigo-50 flex flex-col items-center"

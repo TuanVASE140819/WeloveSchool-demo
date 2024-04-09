@@ -198,7 +198,7 @@ const DetailSchool = () => {
     <>
       <div className=" flex flex-row  border-b border-gray-300">
         {/* left */}
-        <div className="basis-1/6 border-r border-gray-300">
+        <div className="basis-1/6 border-r border-gray-300 bg-gray-50">
           <div className="border-b-[1px] border-gray-300">
             <div className="max-w-sm mx-auto mb-2 pt-5 px-5 border-b-1 border-gray-300">
               <select
@@ -833,8 +833,8 @@ const DetailSchool = () => {
           </div>
         </div>
         {/* right */}
-        <div className="basis-1/6 border-l border-gray-300">
-          <div className="block w-full max-w-[18rem] bg-white text-surface shadow-secondary-1 border-b border-gray-300 p-5">
+        <div className="basis-1/6 border-l border-gray-300 bg-gray-50">
+          <div className="block w-full bg-white text-surface shadow-secondary-1 border-b border-gray-300 p-5">
             <ul className="w-full">
               <li className="w-full border-b-2 border-neutral-100 border-opacity-100 p-4  dark:border-white/10">
                 Hãy đăng tin của bạn

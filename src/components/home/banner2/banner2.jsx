@@ -10,14 +10,16 @@ const Banner2 = () => {
               <img src={Tivi} alt="mockup" class="object-contain w-[80%]" />
             </div>
             <div class=" place-self-center lg:col-span-5  ml-8">
-              <h2 className="text-xl font-bold text-gray-800 ">
+              <h2 className="text-xl font-bold text-[#4B4B4B]">
                 HỘI NGỘ BẠN BÈ, ÔN LẠI KỸ NIỆM
                 <br />
-                <span className="text-sm text-blue-500">CÙNG WELOVESCHOOL</span>
+                <span className="text-sm text-[#3D92D1]">
+                  CÙNG WELOVESCHOOL
+                </span>
               </h2>
               <ul>
                 <li className="mb-4">
-                  <h3 className="font-bold text-gray-800 relative before:content-[''] before:absolute before:h-2 before:w-2 before:bg-orange-500 before:top-1/2 before:-left-4 before:rounded-full">
+                  <h3 className="font-bold text-[#4B4B4B] relative before:content-[''] before:absolute before:h-2 before:w-2 before:bg-orange-500 before:top-1/2 before:-left-4 before:rounded-full">
                     Tìm trường cũ của bạn thật đơn giản
                   </h3>
                   <p className="text-sm ">
@@ -26,7 +28,7 @@ const Banner2 = () => {
                   </p>
                 </li>
                 <li className="mb-4">
-                  <h3 className="font-bold text-gray-800 relative before:content-[''] before:absolute before:h-2 before:w-2 before:bg-orange-500 before:top-1/2 before:-left-4 before:rounded-full">
+                  <h3 className="font-bold text-[#4B4B4B] relative before:content-[''] before:absolute before:h-2 before:w-2 before:bg-orange-500 before:top-1/2 before:-left-4 before:rounded-full">
                     Đăng tin hội ngộ bạn cũ
                   </h3>
                   <p className="text-sm ">
@@ -36,7 +38,7 @@ const Banner2 = () => {
                   </p>
                 </li>
                 <li className="mb-4">
-                  <h3 className="font-bold text-gray-800 relative before:content-[''] before:absolute before:h-2 before:w-2 before:bg-orange-500 before:top-1/2 before:-left-4 before:rounded-full">
+                  <h3 className="font-bold text-[#4B4B4B] relative before:content-[''] before:absolute before:h-2 before:w-2 before:bg-orange-500 before:top-1/2 before:-left-4 before:rounded-full">
                     sẽ kỉ niệm tại page trường - blog cá nhân
                   </h3>
                   <p className="text-sm ">
@@ -47,7 +49,7 @@ const Banner2 = () => {
                   </p>
                 </li>
                 <li className="mb-4">
-                  <h3 className="font-bold text-gray-800 relative before:content-[''] before:absolute before:h-2 before:w-2 before:bg-orange-500 before:top-1/2 before:-left-4 before:rounded-full">
+                  <h3 className="font-bold text-[#4B4B4B] relative before:content-[''] before:absolute before:h-2 before:w-2 before:bg-orange-500 before:top-1/2 before:-left-4 before:rounded-full">
                     Chia sẽ kỉ niệm tại page trường - blog cá nhân
                   </h3>
                   <p className="text-sm ">

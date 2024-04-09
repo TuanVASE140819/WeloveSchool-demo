@@ -16,6 +16,7 @@ const School = () => {
       <div className="w-6 h-1  bg-blue-500 rounded-full slick-active"></div>
     ),
     infinite: true,
+    loop: true,
     speed: 300,
     centerPadding: "10px",
     slidesToShow: 3,
@@ -62,7 +63,7 @@ const School = () => {
                   />
                 </a>
                 <div class="relative -mt-16 px-10 pt-5 pb-5 bg-white m-10 shadow-lg rounded-lg">
-                  <h3 class="font-bold text-sm text-blue-500 text-center mx-auto">
+                  <h3 class="font-bold text-sm text-[#3D92D1] text-center mx-auto">
                     Trường Tiểu Học
                   </h3>
                   <p class="text-gray-500 text-sm italic text-center mx-auto">
@@ -83,7 +84,7 @@ const School = () => {
                   />
                 </a>
                 <div class="relative -mt-16 px-10 pt-5 pb-5 bg-white m-10 shadow-lg rounded-lg">
-                  <h3 class="font-bold text-sm text-blue-500 text-center mx-auto">
+                  <h3 class="font-bold text-sm text-[#3D92D1] text-center mx-auto">
                     Trường Trung Học Cơ Sở
                   </h3>
 
@@ -105,7 +106,7 @@ const School = () => {
                   />
                 </a>
                 <div class="relative -mt-16 px-10 pt-5 pb-5 bg-white m-10 shadow-lg rounded-lg">
-                  <h3 class="font-bold text-sm text-blue-500 text-center mx-auto">
+                  <h3 class="font-bold text-sm text-[#3D92D1] text-center mx-auto">
                     Trường Trung Học Phổ Thông
                   </h3>
 
@@ -126,7 +127,7 @@ const School = () => {
                   />
                 </a>
                 <div class="relative -mt-16 px-10 pt-5 pb-5 bg-white m-10 shadow-lg rounded-lg">
-                  <h3 class="font-bold text-sm text-blue-500 text-center mx-auto">
+                  <h3 class="font-bold text-sm text-[#3D92D1] text-center mx-auto">
                     Trường Tiểu Học
                   </h3>
                   <p class="text-gray-500 text-sm italic text-center mx-auto">
