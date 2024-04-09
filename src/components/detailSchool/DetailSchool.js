@@ -312,7 +312,7 @@ const DetailSchool = () => {
                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                   />
                 </svg> */}
-                  Tìm kiếm
+                  Tìm
                 </button>
               </div>
             </div>
@@ -686,8 +686,8 @@ const DetailSchool = () => {
                     />
                   </div>
                 </div>
-                <div className="basis-4/6  justify-start">
-                  <div className="text-xl font-bold text-[#0487D9]">
+                <div className="basis-4/6  ml-5 ">
+                  <div className="  text-xl font-bold text-[#0487D9]">
                     Trường Đại học FPT Thành phố Hồ Chí Minh
                   </div>
                   <div className="text-[#6B6B6B] mt-4">
@@ -778,7 +778,7 @@ const DetailSchool = () => {
                 </div>
                 <div className="basis-1/6 text-right  mr-5 ">
                   <div className="text-right  mb-5 text-[#ED7D29]">
-                    <div className="flex flex-row ml-16">
+                    <div className="flex flex-row ml-8">
                       <div className="flex items-end">Đánh giá</div>
                       <div className="ml-2">
                         <svg

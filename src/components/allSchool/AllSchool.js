@@ -205,7 +205,7 @@ const DetailSchool = () => {
                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                   />
                 </svg> */}
-                  Tìm kiếm
+                  Tìm
                 </button>
               </div>
             </div>
@@ -715,23 +715,22 @@ const DetailSchool = () => {
                     </div>
                   </div>
                   <div className="flex flex-row">
-                    <button
-                      className="bg-[#7DD2F5] text-white rounded-lg p-2 px-[3.5rem]
-                    hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 mr-2 ml-2"
+                    <a
+                      href="/detailSchool"
+                      className="hover:underline text-white text-sm"
+                      style={{
+                        display: "flex",
+                        // bỏ dấu gạch chân
+                        textDecoration: "none",
+                      }}
                     >
-                      <a
-                        href="/detailSchool"
-                        className="hover:underline text-white text-sm"
-                        style={{
-                          display: "flex",
-                          // bỏ dấu gạch chân
-                          textDecoration: "none",
-                        }}
+                      <button
+                        className="bg-[#7DD2F5] text-white rounded-lg p-2 px-[3.5rem]
+                    hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 mr-2 ml-2"
                       >
                         Xem trường
-                      </a>
-                    </button>
-
+                      </button>
+                    </a>
                     <button className="bg-gray-200 text-black rounded-lg p-2.5">
                       <svg
                         fill="#000000"
