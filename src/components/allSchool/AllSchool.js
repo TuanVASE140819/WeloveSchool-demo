@@ -189,7 +189,7 @@ const DetailSchool = () => {
                 <button
                   type="submit"
                   className="mt-4 mb-2
-                  inline-flex items-center py-2 px-[7rem]  text-sm font-medium text-white bg-[#0487D9] rounded-lg border border-[#0487D9] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 "
+                  inline-flex items-center py-2 px-[5rem]  text-sm font-medium text-white bg-[#0487D9] rounded-lg border border-[#0487D9] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 "
                 >
                   {/* <svg
                   className="mr-2 -ml-1 w-5 h-5"
@@ -547,7 +547,7 @@ const DetailSchool = () => {
           </div>
         </div>
         {/* center */}
-        <div className="basis-3/5 mx-auto px-20 pt-5">
+        <div className="basis-3/5 mx-auto px-5 pt-5">
           <div className="grid grid-cols-7 px-10">
             <div className="col-span-1 mr-2 ">
               <select
@@ -630,13 +630,13 @@ const DetailSchool = () => {
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-32 h-32 rounded-2xl object-cover"
+                      className="w-32 h-32 rounded-2xl "
                     />
                   </div>
                 </div>
 
                 <div className="basis-4/6">
-                  <h1 className="text-xl font-bold text-gray-700 mb-2">
+                  <h1 className="text-sm font-bold text-gray-700 mb-2">
                     {product.name}
                   </h1>
                   <div className="flex flex-row max-w-[130px]  mb-3">
@@ -716,12 +716,12 @@ const DetailSchool = () => {
                   </div>
                   <div className="flex flex-row">
                     <button
-                      className="bg-[#7DD2F5] text-white rounded-lg p-2 px-[4.5rem]
+                      className="bg-[#7DD2F5] text-white rounded-lg p-2 px-[3.5rem]
                     hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 mr-2 ml-2"
                     >
                       <a
                         href="/detailSchool"
-                        className="hover:underline text-white"
+                        className="hover:underline text-white text-sm"
                         style={{
                           display: "flex",
                           // bỏ dấu gạch chân
