@@ -296,7 +296,7 @@ const DetailSchool = () => {
                 <button
                   type="submit"
                   className="mt-4 mb-2
-                  inline-flex items-center py-2 px-[7rem]  text-sm font-medium text-white bg-[#0487D9] rounded-lg border border-[#0487D9] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 "
+                  inline-flex items-center py-2 px-[5rem]  text-sm font-medium text-white bg-[#0487D9] rounded-lg border border-[#0487D9] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 "
                 >
                   {/* <svg
                   className="mr-2 -ml-1 w-5 h-5"
@@ -671,12 +671,11 @@ const DetailSchool = () => {
               <div className="flex flex-row justify-start py-5 bg-[#FCFCFC]">
                 <div className="basis-1/6">
                   <div
-                    className="bg-white p-2 rounded-lg w-40 h-40  rounded-full object-cover"
+                    className="bg-white p-2  w-32 h-32  rounded-full object-cover"
                     style={{
                       position: "absolute",
-                      left: "50%",
-                      top: "50%",
-                      transform: "translate(-355%,-0%)",
+                      top: "45%",
+                      left: "1%",
                       borderRadius: "50%",
                     }}
                   >
@@ -688,7 +687,7 @@ const DetailSchool = () => {
                   </div>
                 </div>
                 <div className="basis-4/6  justify-start">
-                  <div className="text-2xl font-bold text-[#0487D9]">
+                  <div className="text-xl font-bold text-[#0487D9]">
                     Trường Đại học FPT Thành phố Hồ Chí Minh
                   </div>
                   <div className="text-[#6B6B6B] mt-4">
