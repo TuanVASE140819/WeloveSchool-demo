@@ -824,7 +824,7 @@ const DetailSchool = () => {
             </div>
           </div>
           {/* Bài đăng phổ biến */}
-          <div className="popular_post  min-h-[10rem]  bg-[#0487D9] p-10 rounded-lg">
+          <div className="popular_post  min-h-[10rem]  bg-[#05AFF2] p-10 rounded-lg">
             <h3 className="text-white text-font-bold pb-5">
               Bài đăng phổ biến
             </h3>

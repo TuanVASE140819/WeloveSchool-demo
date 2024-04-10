@@ -97,74 +97,150 @@ const Hero = () => {
               </h3>
               <div className="flex flex-row">
                 <div className="basis-4/6 p-4 flex flex-row">
-                  <select
-                    id="address"
-                    defaultValue="Tỉnh"
-                    onChange={(e) =>
-                      handleAddressChange("province", e.target.value)
-                    }
-                    className="bg-[#F4F4F4] border border-gray-300 text-gray-900 text-sm rounded-2xl focus:ring-blue-500 focus:border-blue-500 block w-full  mr-4"
-                  >
-                    <option disabled>Tỉnh</option>
-
-                    {provinces.map((province) => (
-                      <option
-                        key={province.province_id}
-                        value={province.province_id}
+                  <div className="relative w-full mr-2">
+                    <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                      <svg
+                        width="24px"
+                        height="24px"
+                        viewBox="0 0 8.4666669 8.4666669"
+                        id="svg8"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        {province.province_name}
-                      </option>
-                    ))}
-                  </select>
+                        <defs id="defs2" />
 
-                  <select
-                    id="district"
-                    defaultValue="Quận/huyện"
-                    disabled={!selectedProvince}
-                    onChange={(e) =>
-                      handleAddressChange("district", e.target.value)
-                    }
-                    className="bg-[#F4F4F4] border border-gray-300 text-gray-900 text-sm rounded-2xl focus:ring-blue-500 focus:border-blue-500 block w-full  mr-4"
-                  >
-                    <option disabled>Quận/huyện</option>
-                    {districts.map((district) => (
-                      <option
-                        key={district.district_id}
-                        value={district.district_id}
+                        <g id="layer1" transform="translate(0,-288.53332)">
+                          <path
+                            d="m 15.996094,0.99609375 c -6.0632836,0 -10.9980445,4.93673065 -10.9980471,11.00000025 -3.8e-6,10.668737 10.3789061,18.779297 10.3789061,18.779297 0.364612,0.290384 0.881482,0.290384 1.246094,0 0,0 10.380882,-8.11056 10.380859,-18.779297 C 27.003893,5.9328244 22.059377,0.99609375 15.996094,0.99609375 Z m 0,6.00195315 c 2.749573,0 5.00585,2.2484784 5.005859,4.9980471 C 21.001971,14.7457 18.745685,17 15.996094,17 c -2.749591,0 -4.998064,-2.2543 -4.998047,-5.003906 9e-6,-2.7495687 2.248474,-4.9980471 4.998047,-4.9980471 z"
+                            id="path929"
+                            style={{ fill: "#6B7280" }}
+                            transform="matrix(0.26458333,0,0,0.26458333,0,288.53332)"
+                          />
+                        </g>
+                      </svg>
+                    </div>
+                    <select
+                      id="province"
+                      className="bg-[#F4F4F4]
+                      rounded-xl
+                        border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2  placeholder-gray-500"
+                      onChange={(e) =>
+                        handleAddressChange("province", e.target.value)
+                      }
+                    >
+                      <option value="" disabled selected>
+                        Tỉnh/thành phố
+                      </option>
+                      {provinces.map((province) => (
+                        <option
+                          key={province.province_id}
+                          value={province.province_id}
+                        >
+                          {province.province_name}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="relative w-full mr-2">
+                    <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                      <svg
+                        width="24px"
+                        height="24px"
+                        viewBox="0 0 8.4666669 8.4666669"
+                        id="svg8"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        {district.district_name}
-                      </option>
-                    ))}
-                  </select>
+                        <defs id="defs2" />
 
-                  <select
-                    id="ward"
-                    defaultValue="Xã/phường"
-                    disabled={!selectedDistrict}
-                    onChange={(e) =>
-                      handleAddressChange("ward", e.target.value)
-                    }
-                    className="bg-[#F4F4F4] border border-gray-300 text-gray-900 text-sm rounded-2xl focus:ring-blue-500 focus:border-blue-500 block w-full  mr-4"
-                  >
-                    <option disabled>Xã/phường</option>
-                    {wards.map((ward) => (
-                      <option key={ward.ward_id} value={ward.ward_id}>
-                        {ward.ward_name}
-                      </option>
-                    ))}
-                  </select>
+                        <g id="layer1" transform="translate(0,-288.53332)">
+                          <path
+                            d="m 15.996094,0.99609375 c -6.0632836,0 -10.9980445,4.93673065 -10.9980471,11.00000025 -3.8e-6,10.668737 10.3789061,18.779297 10.3789061,18.779297 0.364612,0.290384 0.881482,0.290384 1.246094,0 0,0 10.380882,-8.11056 10.380859,-18.779297 C 27.003893,5.9328244 22.059377,0.99609375 15.996094,0.99609375 Z m 0,6.00195315 c 2.749573,0 5.00585,2.2484784 5.005859,4.9980471 C 21.001971,14.7457 18.745685,17 15.996094,17 c -2.749591,0 -4.998064,-2.2543 -4.998047,-5.003906 9e-6,-2.7495687 2.248474,-4.9980471 4.998047,-4.9980471 z"
+                            id="path929"
+                            style={{ fill: "#6B7280" }}
+                            transform="matrix(0.26458333,0,0,0.26458333,0,288.53332)"
+                          />
+                        </g>
+                      </svg>
+                    </div>
+                    <select
+                      id="district"
+                      defaultValue="Quận/huyện"
+                      disabled={!selectedProvince}
+                      onChange={(e) =>
+                        handleAddressChange("district", e.target.value)
+                      }
+                      className="bg-[#F4F4F4]
+                      rounded-2xl
+                        border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2  placeholder-gray-500"
+                    >
+                      <option disabled>Quận/huyện</option>
+                      {districts.map((district) => (
+                        <option
+                          key={district.district_id}
+                          value={district.district_id}
+                        >
+                          {district.district_name}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="relative w-full mr-2">
+                    <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                      <svg
+                        width="24px"
+                        height="24px"
+                        viewBox="0 0 8.4666669 8.4666669"
+                        id="svg8"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <defs id="defs2" />
+
+                        <g id="layer1" transform="translate(0,-288.53332)">
+                          <path
+                            d="m 15.996094,0.99609375 c -6.0632836,0 -10.9980445,4.93673065 -10.9980471,11.00000025 -3.8e-6,10.668737 10.3789061,18.779297 10.3789061,18.779297 0.364612,0.290384 0.881482,0.290384 1.246094,0 0,0 10.380882,-8.11056 10.380859,-18.779297 C 27.003893,5.9328244 22.059377,0.99609375 15.996094,0.99609375 Z m 0,6.00195315 c 2.749573,0 5.00585,2.2484784 5.005859,4.9980471 C 21.001971,14.7457 18.745685,17 15.996094,17 c -2.749591,0 -4.998064,-2.2543 -4.998047,-5.003906 9e-6,-2.7495687 2.248474,-4.9980471 4.998047,-4.9980471 z"
+                            id="path929"
+                            style={{ fill: "#6B7280" }}
+                            transform="matrix(0.26458333,0,0,0.26458333,0,288.53332)"
+                          />
+                        </g>
+                      </svg>
+                    </div>
+                    <select
+                      id="ward"
+                      defaultValue="Xã/phường"
+                      disabled={!selectedDistrict}
+                      onChange={(e) =>
+                        handleAddressChange("ward", e.target.value)
+                      }
+                      className="bg-[#F4F4F4]
+                      rounded-2xl
+                        border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2  placeholder-gray-500"
+                    >
+                      <option disabled>Xã/phường</option>
+                      {wards.map((ward) => (
+                        <option key={ward.ward_id} value={ward.ward_id}>
+                          {ward.ward_name}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
                   <select
                     id="cap"
                     defaultValue="Cấp"
-                    disabled={!selectedDistrict}
+                    disabled={!selectedWard}
                     onChange={(e) =>
                       handleAddressChange("ward", e.target.value)
                     }
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full
-                     focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5  mr-4"
+                    className="bg-[#F4F4F4]
+                      rounded-2xl
+                        border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2  placeholder-gray-500"
                   >
                     <option disabled>Chọn Cấp</option>
-                    <option value="1">Tiểu học</option>
+                    <option value="1">Chọn Cấp</option>
                     <option value="2">Trung học cơ sở</option>
                     <option value="3">Trung học phổ thông</option>
                     <option value="4">Trung cấp</option>
