@@ -21,57 +21,60 @@ const Rank = () => {
       <Heading title="CUỘC ĐUA XẾP HẠNG" />
       <div className="container mx-auto ">
         <div className="grid grid-cols-2 mb-5 gap-8 mt-6">
-          <div class="col-span-1 ">
-            <div class="relative  ">
+          <div className="col-span-1 ">
+            <div className="relative  ">
               <img
                 src={rank1}
                 alt="rank1"
-                class="object-cover w-full max-h-[17.4rem] rounded-md"
+                className="object-cover w-full max-h-[17.4rem] rounded-md"
               />
-              <div class="absolute inset-0 bg-gray-700 opacity-60 rounded-md"></div>
-              <div class="absolute inset-0 flex items-center justify-center mt-32 mr-[30rem]">
+              <div className="absolute inset-0 bg-gray-700 opacity-60 rounded-md"></div>
+              <div
+                className="absolute inset-0 flex items-center justify-center mt-32 right-[20rem]
+              "
+              >
                 {/* TÔI MUỐN CHIA LÀM 2 CỘT */}
-                <div class="flex items-center">
-                  <img src={top10} alt="rank2" class="w-20 h-20" />
-                  <div class="text-left">
-                    <h3 class="text-xl text-white">Trường Học</h3>
-                    <p class="text-[#05AFF2] font-bold">Truyền Cảm Hứng</p>
+                <div className="flex items-center">
+                  <img src={top10} alt="rank2" className="w-20 h-20" />
+                  <div className="">
+                    <h3 className="text-xl text-white">Trường Học</h3>
+                    <p className="text-[#05AFF2] font-bold">Truyền Cảm Hứng</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="relative  mt-6">
+            <div className="relative  mt-6">
               <img
                 src={rank2}
                 alt="rank1"
-                class="object-cover w-full max-h-[17.4rem] rounded-md"
+                className="object-cover w-full max-h-[17.4rem] rounded-md"
               />
-              <div class="absolute inset-0 bg-gray-700 opacity-60 rounded-md"></div>
-              <div class="absolute inset-0 flex items-center justify-center mt-32 mr-[30rem]">
+              <div className="absolute inset-0 bg-gray-700 opacity-60 rounded-md"></div>
+              <div className="absolute inset-0 flex items-center justify-center mt-32 right-[20rem]">
                 {/* TÔI MUỐN CHIA LÀM 2 CỘT */}
-                <div class="flex items-center">
-                  <img src={top10} alt="rank2" class="w-20 h-20" />
-                  <div class="text-left">
-                    <h3 class="text-xl text-white">Trường Học</h3>
-                    <p class="text-[#05AFF2] font-bold">Truyền Cảm Hứng</p>
+                <div className="flex items-center">
+                  <img src={top10} alt="rank2" className="w-20 h-20" />
+                  <div className="text-left">
+                    <h3 className="text-xl text-white">Trường Học</h3>
+                    <p className="text-[#05AFF2] font-bold">Truyền Cảm Hứng</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="relative  mt-6">
+            <div className="relative  mt-6">
               <img
                 src={rank3}
                 alt="rank3"
-                class="object-cover w-full max-h-[17.4rem] rounded-md"
+                className="object-cover w-full max-h-[17.4rem] rounded-md"
               />
-              <div class="absolute inset-0 bg-gray-700 opacity-60 rounded-md"></div>
-              <div class="absolute inset-0 flex items-center justify-center mt-32 mr-[24rem]">
+              <div className="absolute inset-0 bg-gray-700 opacity-60 rounded-md"></div>
+              <div className="absolute inset-0 flex items-center justify-center mt-32 right-[14rem]">
                 {/* TÔI MUỐN CHIA LÀM 2 CỘT */}
-                <div class="flex items-center">
-                  <img src={top10} alt="rank2" class="w-20 h-20" />
-                  <div class="text-left">
-                    <h3 class="text-xl text-white">Trường Học</h3>
-                    <p class="text-[#05AFF2] font-bold">
+                <div className="flex items-center">
+                  <img src={top10} alt="rank2" className="w-20 h-20" />
+                  <div className="text-left">
+                    <h3 className="text-xl text-white">Trường Học</h3>
+                    <p className="text-[#05AFF2] font-bold ">
                       Chất Lượng Giáo Dục Tốt Nhất
                     </p>
                   </div>
@@ -79,16 +82,16 @@ const Rank = () => {
               </div>
             </div>
           </div>
-          <div class="col-span-1  border border-gray-300 rounded-md pt-4 bg-[#F7F7F7]">
-            <div class="relative ">
-              <div class="flex flex-row">
-                <div class="basis-1/5 text-[#3D92D1] font-bold text-2xl mt-4 ml-4">
+          <div className="col-span-1  border border-gray-300 rounded-md pt-4 bg-[#F7F7F7]">
+            <div className="relative ">
+              <div className="flex flex-row">
+                <div className="basis-1/5 text-[#3D92D1] font-bold text-2xl mt-4 ml-4">
                   Bảng <br />
                   Xếp Hạng
                 </div>
 
-                <div class="basis-4/5">
-                  <img src={DrawSchool} alt="rank2" class="w-full h-full" />
+                <div className="basis-4/5">
+                  <img src={DrawSchool} alt="rank2" className="w-full h-full" />
                 </div>
               </div>
               <div className="block w-full  text-surface shadow-secondary-1 ">
@@ -96,7 +99,11 @@ const Rank = () => {
                   <li className="w-full border-b-2  border-[#D9D9D9] py-4  ">
                     <div className="flex flex-row">
                       <div className="basis-1/5">
-                        <img src={top1} alt="rank2" class="w-10 h-10 ml-4" />
+                        <img
+                          src={top1}
+                          alt="rank2"
+                          className="w-10 h-10 ml-4"
+                        />
                       </div>
                       <div className="basis-3/5">
                         <div className="flex flex-row items-center justify-center">
@@ -104,7 +111,7 @@ const Rank = () => {
                             <img
                               src={VanLangLogo}
                               alt="rank2"
-                              class="w-10 h-10"
+                              className="w-10 h-10"
                             />
                           </div>
                           <div className="basis-5/6 text-[#969696] font-bold">
@@ -140,7 +147,11 @@ const Rank = () => {
                   <li className="w-full border-b-2  border-[#D9D9D9] py-4  ">
                     <div className="flex flex-row">
                       <div className="basis-1/5">
-                        <img src={top2} alt="rank2" class="w-10 h-10 ml-4" />
+                        <img
+                          src={top2}
+                          alt="rank2"
+                          className="w-10 h-10 ml-4"
+                        />
                       </div>
                       <div className="basis-3/5">
                         <div className="flex flex-row items-center justify-center">
@@ -148,7 +159,7 @@ const Rank = () => {
                             <img
                               src={VanLangLogo}
                               alt="rank2"
-                              class="w-10 h-10"
+                              className="w-10 h-10"
                             />
                           </div>
                           <div className="basis-5/6 text-[#969696] font-bold">
@@ -184,7 +195,11 @@ const Rank = () => {
                   <li className="w-full border-b-2  border-[#D9D9D9] py-4  ">
                     <div className="flex flex-row">
                       <div className="basis-1/5">
-                        <img src={top3} alt="rank2" class="w-10 h-10 ml-4" />
+                        <img
+                          src={top3}
+                          alt="rank2"
+                          className="w-10 h-10 ml-4"
+                        />
                       </div>
                       <div className="basis-3/5">
                         <div className="flex flex-row items-center justify-center">
@@ -192,7 +207,7 @@ const Rank = () => {
                             <img
                               src={VanLangLogo}
                               alt="rank2"
-                              class="w-10 h-10"
+                              className="w-10 h-10"
                             />
                           </div>
                           <div className="basis-5/6 text-[#969696] font-bold">
@@ -238,7 +253,7 @@ const Rank = () => {
                             <img
                               src={VanLangLogo}
                               alt="rank2"
-                              class="w-10 h-10"
+                              className="w-10 h-10"
                             />
                           </div>
                           <div className="basis-5/6 text-[#969696] font-bold">
@@ -284,7 +299,7 @@ const Rank = () => {
                             <img
                               src={VanLangLogo}
                               alt="rank2"
-                              class="w-10 h-10"
+                              className="w-10 h-10"
                             />
                           </div>
                           <div className="basis-5/6 text-[#969696] font-bold">
@@ -330,7 +345,7 @@ const Rank = () => {
                             <img
                               src={VanLangLogo}
                               alt="rank2"
-                              class="w-10 h-10"
+                              className="w-10 h-10"
                             />
                           </div>
                           <div className="basis-5/6 text-[#969696] font-bold">
@@ -376,7 +391,7 @@ const Rank = () => {
                             <img
                               src={VanLangLogo}
                               alt="rank2"
-                              class="w-10 h-10"
+                              className="w-10 h-10"
                             />
                           </div>
                           <div className="basis-5/6 text-[#969696] font-bold">
@@ -422,7 +437,7 @@ const Rank = () => {
                             <img
                               src={VanLangLogo}
                               alt="rank2"
-                              class="w-10 h-10"
+                              className="w-10 h-10"
                             />
                           </div>
                           <div className="basis-5/6 text-[#969696] font-bold">
@@ -468,7 +483,7 @@ const Rank = () => {
                             <img
                               src={VanLangLogo}
                               alt="rank2"
-                              class="w-10 h-10"
+                              className="w-10 h-10"
                             />
                           </div>
                           <div className="basis-5/6 text-[#969696] font-bold">
@@ -514,7 +529,7 @@ const Rank = () => {
                             <img
                               src={VanLangLogo}
                               alt="rank2"
-                              class="w-10 h-10"
+                              className="w-10 h-10"
                             />
                           </div>
                           <div className="basis-5/6 text-[#969696] font-bold">
