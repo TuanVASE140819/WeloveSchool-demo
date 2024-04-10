@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../../assets/Logo/Logo.png";
+import logofooter from "../../../assets/Logo/Logofooter.png";
 import Copyright from "../copyright/Copyright";
 
 import facebook from "../../../assets/Icon/facebook.png";
@@ -28,17 +28,20 @@ const Footer = () => {
                     className="max-w-full dark:hidden "
                   /> */}
                 </a>
-                <p className="mb-7 text-base text-body-color font-semibold text-center">
-                  <img
-                    src={logo}
-                    alt="logo"
-                    className="
-                    w-80 "
-                  />
-                  031-36 03 97
-                  <br />
-                  weloveschool@edu.vn
-                </p>
+                <div
+                  className="mb-7 text-base text-body-color font-semibold 
+                items-center justify-center space-x-4 flex flex-col
+                "
+                >
+                  <img src={logofooter} alt="logo" className=" ml-7 w-44" />
+                  <p className="items-center justify-center space-x-4 flex flex-col">
+                    031-36 03 97
+                    <br />
+                    <p className="items-center justify-center space-x-4 flex flex-col">
+                      weloveschool@edu.vn
+                    </p>
+                  </p>
+                </div>
               </div>
             </div>
 
