@@ -851,7 +851,7 @@ const DetailSchool = () => {
                     <a href="/">
                       <h5 className="mb-2 text-sm font-bold tracking-tight text-[#6B6B6B] ">
                         Dưới đây là một số hướng dẫn và lời khuyên để bạn có một
-                        khởi đầu suôn sẻ và thành...
+                        khởi đầu suôn sẻ và thành....
                       </h5>
                     </a>
                   </div>
