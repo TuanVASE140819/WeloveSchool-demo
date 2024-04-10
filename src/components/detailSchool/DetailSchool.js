@@ -802,7 +802,7 @@ const DetailSchool = () => {
                         </div>
                       </div>
                       <div className="basis-1/3">
-                        <button className="bg-[#05AFF2]  text-white rounded-full p-2 px-[2.5rem] ">
+                        <button className="bg-[#05AFF2] ml-48 text-white rounded-full p-2 px-[2.5rem] ">
                           Flollow
                         </button>
                       </div>
