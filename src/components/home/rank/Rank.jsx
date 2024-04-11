@@ -19,14 +19,16 @@ const Rank = () => {
       {/* 
        cuộc đua xếp hạng */}
       <Heading title="CUỘC ĐUA XẾP HẠNG" />
-      <div className="container mx-auto ">
-        <div className="grid grid-cols-2 mb-5 gap-8 mt-6">
-          <div className="col-span-1 ">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid grid-cols-2 mb-5 gap-8 mt-6  h-[900px]">
+          <div className="col-span-1">
             <div className="relative  ">
               <img
                 src={rank1}
                 alt="rank1"
-                className="object-cover w-full max-h-[17.4rem] rounded-md"
+                className="object-cover w-full 
+                
+                h-[271px] rounded-md"
               />
               <div className="absolute inset-0 bg-gray-700 opacity-60 rounded-md"></div>
               <div
@@ -47,7 +49,7 @@ const Rank = () => {
               <img
                 src={rank2}
                 alt="rank1"
-                className="object-cover w-full max-h-[17.4rem] rounded-md"
+                className="object-cover w-full   h-[271px] rounded-md"
               />
               <div className="absolute inset-0 bg-gray-700 opacity-60 rounded-md"></div>
               <div className="absolute inset-0 flex items-center justify-center mt-32 right-[20rem]">
@@ -65,7 +67,7 @@ const Rank = () => {
               <img
                 src={rank3}
                 alt="rank3"
-                className="object-cover w-full max-h-[17.4rem] rounded-md"
+                className="object-cover w-full   h-[271px] rounded-md"
               />
               <div className="absolute inset-0 bg-gray-700 opacity-60 rounded-md"></div>
               <div className="absolute inset-0 flex items-center justify-center mt-32 right-[14rem]">
@@ -82,9 +84,9 @@ const Rank = () => {
               </div>
             </div>
           </div>
-          <div className="col-span-1  border border-gray-300 rounded-md pt-4 bg-[#F7F7F7]">
-            <div className="relative ">
-              <div className="flex flex-row">
+          <div className="col-span-1  h-[860px]  border border-gray-300 rounded-md pt-4 bg-[#F7F7F7]">
+            <div className=" h-[900px]">
+              <div className="flex flex-row ">
                 <div className="basis-1/5 text-[#3D92D1] font-bold text-2xl mt-4 ml-4">
                   Bảng <br />
                   Xếp Hạng

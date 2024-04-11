@@ -48,13 +48,16 @@ const School = () => {
   };
   return (
     <>
-      <section className="container mx-auto">
-        <div className=" my-10">
+      <section className="mx-auto max-w-7xl">
+        <div className="py-6">
           <Heading title="KHƠI GỢI KÝ ỨC" />
 
           <Slider {...settings}>
-            <div class=" p-4">
-              <div class="rounded overflow-hidden flex flex-col max-w-xl mx-auto">
+            <div class="px-4 ">
+              <div
+                class="
+               rounded overflow-hidden flex flex-col max-w-xl mx-auto"
+              >
                 <a href="/">
                   <img
                     class="w-full"
@@ -74,7 +77,7 @@ const School = () => {
               </div>
             </div>
 
-            <div class="p-4">
+            <div class="px-4">
               <div class="rounded overflow-hidden flex flex-col max-w-xl mx-auto">
                 <a href="/">
                   <img
@@ -117,7 +120,7 @@ const School = () => {
                 </div>
               </div>
             </div> */}
-            <div class=" p-4">
+            <div class="px-4">
               <div class="rounded overflow-hidden flex flex-col max-w-xl mx-auto">
                 <a href="/">
                   <img
@@ -137,7 +140,26 @@ const School = () => {
                 </div>
               </div>
             </div>
-
+            <div class="px-4">
+              <div class="rounded overflow-hidden flex flex-col max-w-xl mx-auto">
+                <a href="/">
+                  <img
+                    class="w-full"
+                    src={cap1}
+                    alt="Sunset in the mountains"
+                  />
+                </a>
+                <div class="relative -mt-16 px-10 pt-5 pb-5 bg-white m-10 shadow-lg rounded-lg">
+                  <h3 class="font-bold text-sm text-[#3D92D1] text-center mx-auto">
+                    Trường Tiểu Học
+                  </h3>
+                  <p class="text-gray-500 text-sm italic text-center mx-auto">
+                    Nơi ươm mầm trí thức đầu đời <br />
+                    chấp cánh ước mơ
+                  </p>
+                </div>
+              </div>
+            </div>
             {/* Repeat the above div for each slide you want to display */}
           </Slider>
         </div>

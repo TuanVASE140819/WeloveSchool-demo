@@ -547,7 +547,10 @@ const DetailSchool = () => {
           </div>
         </div>
         {/* center */}
-        <div className="basis-3/5 mx-auto px-5 pt-5">
+        <div
+          className="basis-3/5 mx-auto px-5 pt-5
+        mx-auto max-w-7xl"
+        >
           <div className="grid grid-cols-7 px-10">
             <div className="col-span-1 mr-2 ">
               <select
@@ -753,7 +756,7 @@ const DetailSchool = () => {
           </div>
           {/* nút thêm xem thêm */}
           <div
-            className="flex justify-center mt-5"
+            className="mb-5 flex justify-center mt-5"
             style={{ display: "flex", justifyContent: "center" }}
           >
             <button
