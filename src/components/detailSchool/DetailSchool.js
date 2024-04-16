@@ -837,11 +837,15 @@ const DetailSchool = () => {
             </div>
           </div>
           {/* Bài đăng phổ biến */}
-          <div className="popular_post mx-auto max-w-7xl  min-h-[8rem]  bg-[#0487D9] p-10 rounded-lg">
+          <div className="popular_post mx-auto max-w-7xl  min-h-[5rem]  bg-[#0487D9] py-5 px-10 rounded-lg">
             <div className="grid grid-cols-3 gap-5">
               {/* flex flex-row 3 côt */}
               <div className="col-span-2">
-                <h3 className="text-white font-bold text-lg">Hội nhóm</h3>
+                <a href="/allGroup">
+                  <button className="bg-[#F97821] text-white rounded-full text-xs p-1 px-4">
+                    Hội nhóm
+                  </button>
+                </a>
               </div>
               <div className="col-span-1">
                 {/* flex flex-row 2 côt */}
@@ -868,7 +872,7 @@ const DetailSchool = () => {
                   </div>
                   <div className="basis-1/2">
                     {/*  nút tìm kiếm */}
-                    <button className="ml-5  bg-[#F97821] text-white rounded-full text-xs p-1 px-4">
+                    <button className="ml-5  bg-[#4ABC96] text-white rounded-full text-xs p-1 px-4">
                       Tìm kiếm
                     </button>
                   </div>
