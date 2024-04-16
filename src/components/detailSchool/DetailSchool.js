@@ -730,8 +730,8 @@ const DetailSchool = () => {
                               </div>
                               <div class="basis-2/3">
                                 <svg
-                                  width="32px"
-                                  height="32px"
+                                  width="20px"
+                                  height="20px"
                                   viewBox="0 0 24 24"
                                   fill="none"
                                   xmlns="http://www.w3.org/2000/svg"
@@ -774,8 +774,8 @@ const DetailSchool = () => {
                               </div>
                               <div class="basis-2/3">
                                 <svg
-                                  width="28px"
-                                  height="28px"
+                                  width="18px"
+                                  height="18px"
                                   viewBox="0 0 32 32"
                                   version="1.1"
                                   xmlns="http://www.w3.org/2000/svg"
@@ -837,11 +837,44 @@ const DetailSchool = () => {
             </div>
           </div>
           {/* Bài đăng phổ biến */}
-          <div className="popular_post mx-auto max-w-7xl  min-h-[10rem]  bg-[#0487D9] p-10 rounded-lg">
-            <h3 className="text-white text-font-bold pb-5">
-              Bài đăng phổ biến
-            </h3>
+          <div className="popular_post mx-auto max-w-7xl  min-h-[8rem]  bg-[#0487D9] p-10 rounded-lg">
             <div className="grid grid-cols-3 gap-5">
+              {/* flex flex-row 3 côt */}
+              <div className="col-span-2">
+                <h3 className="text-white font-bold text-lg">Hội nhóm</h3>
+              </div>
+              <div className="col-span-1">
+                {/* flex flex-row 2 côt */}
+                <div className="flex flex-row">
+                  <div className="basis-1/2">
+                    {/* select */}
+                    <select
+                      id="underline_select"
+                      className="bg-[#F8F8F8] border border-gray-300 text-gray-900 text-xs rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full p-1 px-4"
+                    >
+                      {/*  niềm khóa */}
+                      <option selected>Niên khóa</option>
+                      <option>2021</option>
+                      <option>2022</option>
+                      <option>2023</option>
+                      <option>2024</option>
+                      <option>2025</option>
+                      <option>2026</option>
+                      <option>2027</option>
+                      <option>2028</option>
+                      <option>2029</option>
+                      <option>2030</option>
+                    </select>
+                  </div>
+                  <div className="basis-1/2">
+                    {/*  nút tìm kiếm */}
+                    <button className="ml-5  bg-[#F97821] text-white rounded-full text-xs p-1 px-4">
+                      Tìm kiếm
+                    </button>
+                  </div>
+                </div>
+              </div>
+
               <div>
                 <div className="max-w-sm bg-white rounded-lg shadow">
                   <a href="/">
@@ -857,22 +890,78 @@ const DetailSchool = () => {
                   </div>
 
                   <div class="flex ">
-                    <div class="flex-none w-24 h-24">
+                    <div class="flex-none w-16 h-10">
                       <img
                         src={FPT}
                         alt="FPT"
-                        className="w-24 h-24 rounded-full"
+                        className="w-10 h-10 rounded-full"
                       />
                     </div>
-                    <div class="grow h-14 mt-2">
+                    <div class="">
                       <h3 className="text-sm font-bold text-[#6B6B6B]">FPT</h3>
                       <h3 className="text-sm">Niêm khóa K23</h3>
+                    </div>
+                    <div className="ml-2">
+                      <svg
+                        fill="#000000"
+                        width="40px"
+                        height="40px"
+                        viewBox="0 0 24 24"
+                        id="right-circle-2"
+                        data-name="Flat Line"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon flat-line"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0" />
 
-                      <h3 className="text-sm">15/03/2024 lúc 2PM</h3>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+
+                        <g id="SVGRepo_iconCarrier">
+                          <circle
+                            id="secondary"
+                            cx="12"
+                            cy="12"
+                            r="9"
+                            // style="fill: #f0f0f0; stroke-width: 2;"
+                            style={{ fill: "#f0f0f0", strokeWidth: 2 }}
+                          />
+
+                          <polyline
+                            id="primary"
+                            points="13.5 9.5 16 12 13.5 14.5"
+                            // style="fill: none; stroke: #5cbc6c; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"
+                            style={{
+                              fill: "none",
+                              stroke: "#5cbc6c",
+                              strokeLinecap: "round",
+                              strokeLinejoin: "round",
+                            }}
+                          />
+
+                          <path
+                            id="primary-2"
+                            data-name="primary"
+                            d="M8,12h8m5,0a9,9,0,1,0-9,9A9,9,0,0,0,21,12Z"
+                            // style="fill: none; stroke: #5cbc6c; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"
+                            style={{
+                              fill: "none",
+                              stroke: "#5cbc6c",
+                              strokeLinecap: "round",
+                              strokeLinejoin: "round",
+                              strokeWidth: 2,
+                            }}
+                          />
+                        </g>
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
+
               <div>
                 <div className="max-w-sm bg-white rounded-lg shadow">
                   <a href="/">
@@ -888,22 +977,78 @@ const DetailSchool = () => {
                   </div>
 
                   <div class="flex ">
-                    <div class="flex-none w-24 h-24">
+                    <div class="flex-none w-16 h-10">
                       <img
                         src={FPT}
                         alt="FPT"
-                        className="w-24 h-24 rounded-full"
+                        className="w-10 h-10 rounded-full"
                       />
                     </div>
-                    <div class="grow h-14 mt-2">
+                    <div class="">
                       <h3 className="text-sm font-bold text-[#6B6B6B]">FPT</h3>
                       <h3 className="text-sm">Niêm khóa K23</h3>
+                    </div>
+                    <div className="ml-2">
+                      <svg
+                        fill="#000000"
+                        width="40px"
+                        height="40px"
+                        viewBox="0 0 24 24"
+                        id="right-circle-2"
+                        data-name="Flat Line"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon flat-line"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0" />
 
-                      <h3 className="text-sm">15/03/2024 lúc 2PM</h3>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+
+                        <g id="SVGRepo_iconCarrier">
+                          <circle
+                            id="secondary"
+                            cx="12"
+                            cy="12"
+                            r="9"
+                            // style="fill: #f0f0f0; stroke-width: 2;"
+                            style={{ fill: "#f0f0f0", strokeWidth: 2 }}
+                          />
+
+                          <polyline
+                            id="primary"
+                            points="13.5 9.5 16 12 13.5 14.5"
+                            // style="fill: none; stroke: #5cbc6c; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"
+                            style={{
+                              fill: "none",
+                              stroke: "#5cbc6c",
+                              strokeLinecap: "round",
+                              strokeLinejoin: "round",
+                            }}
+                          />
+
+                          <path
+                            id="primary-2"
+                            data-name="primary"
+                            d="M8,12h8m5,0a9,9,0,1,0-9,9A9,9,0,0,0,21,12Z"
+                            // style="fill: none; stroke: #5cbc6c; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"
+                            style={{
+                              fill: "none",
+                              stroke: "#5cbc6c",
+                              strokeLinecap: "round",
+                              strokeLinejoin: "round",
+                              strokeWidth: 2,
+                            }}
+                          />
+                        </g>
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
+
               <div>
                 <div className="max-w-sm bg-white rounded-lg shadow">
                   <a href="/">
@@ -919,85 +1064,326 @@ const DetailSchool = () => {
                   </div>
 
                   <div class="flex ">
-                    <div class="flex-none w-24 h-24">
+                    <div class="flex-none w-16 h-10">
                       <img
                         src={FPT}
                         alt="FPT"
-                        className="w-24 h-24 rounded-full"
+                        className="w-10 h-10 rounded-full"
                       />
                     </div>
-                    <div class="grow h-14 mt-2">
+                    <div class="">
                       <h3 className="text-sm font-bold text-[#6B6B6B]">FPT</h3>
                       <h3 className="text-sm">Niêm khóa K23</h3>
+                    </div>
+                    <div className="ml-2">
+                      <svg
+                        fill="#000000"
+                        width="40px"
+                        height="40px"
+                        viewBox="0 0 24 24"
+                        id="right-circle-2"
+                        data-name="Flat Line"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon flat-line"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0" />
 
-                      <h3 className="text-sm">15/03/2024 lúc 2PM</h3>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+
+                        <g id="SVGRepo_iconCarrier">
+                          <circle
+                            id="secondary"
+                            cx="12"
+                            cy="12"
+                            r="9"
+                            // style="fill: #f0f0f0; stroke-width: 2;"
+                            style={{ fill: "#f0f0f0", strokeWidth: 2 }}
+                          />
+
+                          <polyline
+                            id="primary"
+                            points="13.5 9.5 16 12 13.5 14.5"
+                            // style="fill: none; stroke: #5cbc6c; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"
+                            style={{
+                              fill: "none",
+                              stroke: "#5cbc6c",
+                              strokeLinecap: "round",
+                              strokeLinejoin: "round",
+                            }}
+                          />
+
+                          <path
+                            id="primary-2"
+                            data-name="primary"
+                            d="M8,12h8m5,0a9,9,0,1,0-9,9A9,9,0,0,0,21,12Z"
+                            // style="fill: none; stroke: #5cbc6c; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"
+                            style={{
+                              fill: "none",
+                              stroke: "#5cbc6c",
+                              strokeLinecap: "round",
+                              strokeLinejoin: "round",
+                              strokeWidth: 2,
+                            }}
+                          />
+                        </g>
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          {/* Bảng tin mới */}
-          <div className="news mx-auto max-w-7xl py-5">
-            <h3 className="font-bold text-[#6B6B6B]">Bảng tin mới</h3>
-            <div className="grid grid-cols-5 gap-5 my-6">
-              <div className="col-span-2">
-                <img src={nui} alt="nui" className="w-full h-full rounded-lg" />
-              </div>
-              <div className="px-5 col-span-3">
-                <h3 className="text-xl font-bold pb-5">
-                  "Góc Nhỏ Trường Học: Khoảnh Khắc Đón Chờ Bạn Cũ Quay Trở Lại"
-                </h3>
-                <p className="text-sm pb-10">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                  aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                  nostrud exerci tation ullam
-                </p>
-                <p className="mt-10 text-sm text-[#6B6B6B]">
-                  15/03/2024 lúc 2PM
-                </p>
+
+          <div className="popular_post mx-auto max-w-7xl  min-h-[10rem]   p-10 rounded-lg mt-5">
+            <div className="mt-5">
+              <div className="bg-white p-8 rounded-lg shadow-md mb-6">
+                {/* User Info with Three-Dot Menu */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-2">
+                    <img
+                      src="https://i.pravatar.cc/300"
+                      alt="User Avatar"
+                      className="w-8 h-8 rounded-full"
+                    />
+                    <div>
+                      <p className="text-gray-800 font-semibold">
+                        Hồ Lê Bảo Hân
+                      </p>
+                      <p className="text-gray-500 text-sm">
+                        Posted 2 hours ago
+                      </p>
+                    </div>
+                  </div>
+                  <div className="text-gray-500 cursor-pointer">
+                    {/* Three-dot menu icon */}
+                    <button className="hover:bg-gray-50 rounded-full p-1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={24}
+                        height={24}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <circle cx={12} cy={7} r={1} />
+                        <circle cx={12} cy={12} r={1} />
+                        <circle cx={12} cy={17} r={1} />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                {/* Message */}
+                <div className="mb-4">
+                  <p className="text-gray-800 text-lg font-semibold">
+                    "Điểm Dừng Kỷ Niệm: Gặp Lại Bạn Học Cũ Trên Đường Đời"
+                  </p>
+
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                    quis nostrud exerci tation ullam laoreet dolore magna
+                    aliquam and bneem ándnd erat volutpat...
+                  </p>
+                </div>
+
+                <div className="flex items-center justify-between text-gray-500">
+                  <div className="flex items-center space-x-2">
+                    <button className="flex justify-center items-center gap-2 px-2 hover:bg-gray-50 rounded-full p-1">
+                      <svg
+                        className="w-5 h-5 fill-current"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M12 21.35l-1.45-1.32C6.11 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-4.11 6.86-8.55 11.54L12 21.35z" />
+                      </svg>
+                      <span>177</span>
+                    </button>
+                    <button className="flex justify-center items-center gap-2 px-2 hover:bg-gray-50 rounded-full p-1">
+                      {/* share */}
+                      <svg
+                        width="22px"
+                        height="22px"
+                        viewBox="0 0 24 24"
+                        className="w-5 h-5 fill-current"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g id="SVGRepo_bgCarrier" strokeWidth={0} />
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <g id="SVGRepo_iconCarrier">
+                          <path d="M12 22C 17.5228 22 22 17.5228 22 12C 22 6.47715 17.5228 2 12 2C 6.47715 2 2 6.47715 2 12C 2 13.5997 2.37562 15.1116 3.04346 16.4525C 3.22094 16.8088 3.28001 17.2161 3.17712 17.6006L 2.58151 19.8267C 2.32295 20.793 3.20701 21.677 4.17335 21.4185L 6.39939 20.8229C 6.78393 20.72 7.19121 20.7791 7.54753 20.9565C 8.88837 21.6244 10.4003 22 12 22ZM 8 13.25C 7.58579 13.25 7.25 13.5858 7.25 14C 7.25 14.4142 7.58579 14.75 8 14.75H 13.5C 13.9142 14.75 14.25 14.4142 14.25 14C 14.25 13.5858 13.9142 13.25 13.5 13.25H 8ZM 7.25 10.5C 7.25 10.0858 7.58579 9.75 8 9.75H 16C 16.4142 9.75 16.75 10.0858 16.75 10.5C 16.75 10.9142 16.4142 11.25 16 11.25H 8C 7.58579 11.25 7.25 10.9142 7.25 10.5Z" />
+                        </g>
+                      </svg>
+
+                      <span>177</span>
+                    </button>
+                  </div>
+                  <button className="flex justify-center items-center gap-2 px-2 hover:bg-gray-50 rounded-full p-1">
+                    <svg
+                      width="22px"
+                      height="22px"
+                      viewBox="0 0 24 24"
+                      className="w-5 h-5 fill-current"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g id="SVGRepo_bgCarrier" strokeWidth={0} />
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 13.5997 2.37562 15.1116 3.04346 16.4525C3.22094 16.8088 3.28001 17.2161 3.17712 17.6006L2.58151 19.8267C2.32295 20.793 3.20701 21.677 4.17335 21.4185L6.39939 20.8229C6.78393 20.72 7.19121 20.7791 7.54753 20.9565C8.88837 21.6244 10.4003 22 12 22ZM8 13.25C7.58579 13.25 7.25 13.5858 7.25 14C7.25 14.4142 7.58579 14.75 8 14.75H13.5C13.9142 14.75 14.25 14.4142 14.25 14C14.25 13.5858 13.9142 13.25 13.5 13.25H8ZM7.25 10.5C7.25 10.0858 7.58579 9.75 8 9.75H16C16.4142 9.75 16.75 10.0858 16.75 10.5C16.75 10.9142 16.4142 11.25 16 11.25H8C7.58579 11.25 7.25 10.9142 7.25 10.5Z"
+                        />
+                      </g>
+                    </svg>
+                    <span>3 Bình luận</span>
+                  </button>
+                </div>
               </div>
             </div>
-            <div className="grid grid-cols-5 gap-5 my-6">
-              <div className="col-span-2">
-                <img src={nui} alt="nui" className="w-full h-full rounded-lg" />
-              </div>
-              <div className="px-5 col-span-3">
-                <h3 className="text-xl font-bold pb-5">
-                  "Góc Nhỏ Trường Học: Khoảnh Khắc Đón Chờ Bạn Cũ Quay Trở Lại"
-                </h3>
-                <p className="text-sm pb-10">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                  aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                  nostrud exerci tation ullam
-                </p>
-                <p className="mt-10 text-sm text-[#6B6B6B]">
-                  15/03/2024 lúc 2PM
-                </p>
-              </div>
-            </div>
-            <div className="grid grid-cols-5 gap-5 my-6">
-              <div className="col-span-2">
-                <img src={nui} alt="nui" className="w-full h-full rounded-lg" />
-              </div>
-              <div className="px-5 col-span-3">
-                <h3 className="text-xl font-bold pb-5">
-                  "Góc Nhỏ Trường Học: Khoảnh Khắc Đón Chờ Bạn Cũ Quay Trở Lại"
-                </h3>
-                <p className="text-sm pb-10">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                  aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                  nostrud exerci tation ullam
-                </p>
-                <p className="mt-10 text-sm text-[#6B6B6B]">
-                  15/03/2024 lúc 2PM
-                </p>
+
+            <div className="mt-5">
+              <div className="bg-white p-8 rounded-lg shadow-md mb-6">
+                {/* User Info with Three-Dot Menu */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-2">
+                    <img
+                      src="https://i.pravatar.cc/300"
+                      alt="User Avatar"
+                      className="w-8 h-8 rounded-full"
+                    />
+                    <div>
+                      <p className="text-gray-800 font-semibold">
+                        Hồ Lê Bảo Hân
+                      </p>
+                      <p className="text-gray-500 text-sm">
+                        Posted 2 hours ago
+                      </p>
+                    </div>
+                  </div>
+                  <div className="text-gray-500 cursor-pointer">
+                    {/* Three-dot menu icon */}
+                    <button className="hover:bg-gray-50 rounded-full p-1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={24}
+                        height={24}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <circle cx={12} cy={7} r={1} />
+                        <circle cx={12} cy={12} r={1} />
+                        <circle cx={12} cy={17} r={1} />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                {/* Message */}
+                <div className="mb-4">
+                  <p className="text-gray-800 text-lg font-semibold">
+                    "Điểm Dừng Kỷ Niệm: Gặp Lại Bạn Học Cũ Trên Đường Đời"
+                  </p>
+                  <div className="mb-4">
+                    <img
+                      src="https://www.vietnamworks.com/hrinsider/wp-content/uploads/2022/10/fewfewf.jpg"
+                      className="w-full rounded-lg"
+                      alt="Post"
+                    />
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                    quis nostrud exerci tation ullam laoreet dolore magna
+                    aliquam and bneem ándnd erat volutpat...
+                  </p>
+                </div>
+                {/* Image */}
+
+                {/* Like and Comment Section */}
+                <div className="flex items-center justify-between text-gray-500">
+                  <div className="flex items-center space-x-2">
+                    <button className="flex justify-center items-center gap-2 px-2 hover:bg-gray-50 rounded-full p-1">
+                      <svg
+                        className="w-5 h-5 fill-current"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M12 21.35l-1.45-1.32C6.11 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-4.11 6.86-8.55 11.54L12 21.35z" />
+                      </svg>
+                      <span>177</span>
+                    </button>
+                    <button className="flex justify-center items-center gap-2 px-2 hover:bg-gray-50 rounded-full p-1">
+                      {/* share */}
+                      <svg
+                        width="22px"
+                        height="22px"
+                        viewBox="0 0 24 24"
+                        className="w-5 h-5 fill-current"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g id="SVGRepo_bgCarrier" strokeWidth={0} />
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <g id="SVGRepo_iconCarrier">
+                          <path d="M12 22C 17.5228 22 22 17.5228 22 12C 22 6.47715 17.5228 2 12 2C 6.47715 2 2 6.47715 2 12C 2 13.5997 2.37562 15.1116 3.04346 16.4525C 3.22094 16.8088 3.28001 17.2161 3.17712 17.6006L 2.58151 19.8267C 2.32295 20.793 3.20701 21.677 4.17335 21.4185L 6.39939 20.8229C 6.78393 20.72 7.19121 20.7791 7.54753 20.9565C 8.88837 21.6244 10.4003 22 12 22ZM 8 13.25C 7.58579 13.25 7.25 13.5858 7.25 14C 7.25 14.4142 7.58579 14.75 8 14.75H 13.5C 13.9142 14.75 14.25 14.4142 14.25 14C 14.25 13.5858 13.9142 13.25 13.5 13.25H 8ZM 7.25 10.5C 7.25 10.0858 7.58579 9.75 8 9.75H 16C 16.4142 9.75 16.75 10.0858 16.75 10.5C 16.75 10.9142 16.4142 11.25 16 11.25H 8C 7.58579 11.25 7.25 10.9142 7.25 10.5Z" />
+                        </g>
+                      </svg>
+
+                      <span>177</span>
+                    </button>
+                  </div>
+                  <button className="flex justify-center items-center gap-2 px-2 hover:bg-gray-50 rounded-full p-1">
+                    <svg
+                      width="22px"
+                      height="22px"
+                      viewBox="0 0 24 24"
+                      className="w-5 h-5 fill-current"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g id="SVGRepo_bgCarrier" strokeWidth={0} />
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 13.5997 2.37562 15.1116 3.04346 16.4525C3.22094 16.8088 3.28001 17.2161 3.17712 17.6006L2.58151 19.8267C2.32295 20.793 3.20701 21.677 4.17335 21.4185L6.39939 20.8229C6.78393 20.72 7.19121 20.7791 7.54753 20.9565C8.88837 21.6244 10.4003 22 12 22ZM8 13.25C7.58579 13.25 7.25 13.5858 7.25 14C7.25 14.4142 7.58579 14.75 8 14.75H13.5C13.9142 14.75 14.25 14.4142 14.25 14C14.25 13.5858 13.9142 13.25 13.5 13.25H8ZM7.25 10.5C7.25 10.0858 7.58579 9.75 8 9.75H16C16.4142 9.75 16.75 10.0858 16.75 10.5C16.75 10.9142 16.4142 11.25 16 11.25H8C7.58579 11.25 7.25 10.9142 7.25 10.5Z"
+                        />
+                      </g>
+                    </svg>
+                    <span>3 Bình luận</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
+
           {/* nút thêm xem thêm */}
           <div
             className="flex justify-center mt-5 mb-5"
@@ -1021,190 +1407,6 @@ const DetailSchool = () => {
           //   position: "sticky",
           // }}
         >
-          <div className="block w-full bg-white text-surface shadow-secondary-1 border-b border-gray-300 p-5">
-            <ul className="w-full">
-              <li className="w-full border-b-2 border-neutral-100 border-opacity-100 p-4  dark:border-white/10">
-                <div className="flex">
-                  <div className="basis-1/6">
-                    <svg
-                      version="1.1"
-                      id="PAGE"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="30px"
-                      height="30px"
-                      viewBox="0 0 1800 1800"
-                      enable-background="new 0 0 1800 1800"
-                    >
-                      <g>
-                        <path
-                          fill="#333333"
-                          d="M1720.335,5.563H85.245c-43.937,0-79.679,35.739-79.679,79.667v1635.1c0,43.928,35.743,79.67,79.679,79.67
-		h1635.09c43.927,0,79.665-35.742,79.665-79.67V85.23C1800,41.302,1764.262,5.563,1720.335,5.563z M85.245,68.575h1635.09
-		c9.182,0,16.653,7.473,16.653,16.655v195.532H68.578V85.23C68.578,76.048,76.055,68.575,85.245,68.575z M1720.335,1736.988H85.245
-		c-9.19,0-16.667-7.472-16.667-16.658V343.774h1668.41V1720.33C1736.988,1729.517,1729.517,1736.988,1720.335,1736.988z"
-                        />
-                        <path
-                          fill="#333333"
-                          d="M1518.679,1150.928H333.948c-47.154,0-85.517,38.363-85.517,85.517v315.061
-		c0,47.152,38.363,85.516,85.517,85.516h1184.73c47.154,0,85.518-38.363,85.518-85.516v-315.061
-		C1604.196,1189.291,1565.833,1150.928,1518.679,1150.928z M1541.184,1551.505c0,12.403-10.096,22.504-22.505,22.504H333.948
-		c-12.409,0-22.504-10.101-22.504-22.504v-315.061c0-12.412,10.096-22.505,22.504-22.505h1184.73
-		c12.409,0,22.505,10.093,22.505,22.505V1551.505z"
-                        />
-                        <path
-                          fill="#333333"
-                          d="M333.948,913.886h305.565c47.153,0,85.517-38.365,85.517-85.519V522.802
-		c0-47.154-38.363-85.516-85.517-85.516H333.948c-47.154,0-85.517,38.362-85.517,85.516v305.565
-		C248.432,875.521,286.794,913.886,333.948,913.886z M311.444,522.802c0-12.408,10.096-22.504,22.504-22.504h305.565
-		c12.408,0,22.505,10.096,22.505,22.504v305.565c0,12.408-10.097,22.505-22.505,22.505H333.948
-		c-12.409,0-22.504-10.097-22.504-22.505V522.802z"
-                        />
-                        <path
-                          fill="#333333"
-                          d="M1572.689,996.396H279.938c-17.401,0-31.506,14.108-31.506,31.505c0,17.406,14.105,31.507,31.506,31.507
-		h1292.751c17.401,0,31.507-14.101,31.507-31.507C1604.196,1010.505,1590.091,996.396,1572.689,996.396z"
-                        />
-                        <path
-                          fill="#333333"
-                          d="M1572.689,832.116H858.558c-17.402,0-31.507,14.105-31.507,31.507c0,17.401,14.105,31.505,31.507,31.505
-		h714.132c17.401,0,31.507-14.104,31.507-31.505C1604.196,846.222,1590.091,832.116,1572.689,832.116z"
-                        />
-                        <path
-                          fill="#333333"
-                          d="M1572.689,643.081H858.558c-17.402,0-31.507,14.105-31.507,31.506c0,17.401,14.105,31.505,31.507,31.505
-		h714.132c17.401,0,31.507-14.104,31.507-31.505C1604.196,657.186,1590.091,643.081,1572.689,643.081z"
-                        />
-                        <path
-                          fill="#333333"
-                          d="M1572.689,454.044H858.558c-17.402,0-31.507,14.105-31.507,31.507c0,17.401,14.105,31.505,31.507,31.505
-		h714.132c17.401,0,31.507-14.104,31.507-31.505C1604.196,468.15,1590.091,454.044,1572.689,454.044z"
-                        />
-                        <circle
-                          fill="#333333"
-                          cx="204.913"
-                          cy="171.616"
-                          r="50.635"
-                        />
-                        <circle
-                          fill="#333333"
-                          cx="364.694"
-                          cy="171.616"
-                          r="50.635"
-                        />
-                        <circle
-                          fill="#333333"
-                          cx="524.474"
-                          cy="171.616"
-                          r="50.635"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                  <div className="basis-4/6 font-bold text-[#6B6B6B]">
-                    Hãy đăng tin của bạn
-                  </div>
-                </div>
-              </li>
-              <li className="w-full border-b-2 border-neutral-100 border-opacity-100 p-4  dark:border-white/10">
-                <div className="flex">
-                  <div className="basis-1/6">
-                    <svg
-                      width="30px"
-                      height="30px"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle
-                        cx="12"
-                        cy="8"
-                        r="2.5"
-                        stroke="#222222"
-                        stroke-linecap="round"
-                      />
-                      <path
-                        d="M13.7679 6.5C13.9657 6.15743 14.2607 5.88121 14.6154 5.70625C14.9702 5.5313 15.3689 5.46548 15.7611 5.51711C16.1532 5.56874 16.5213 5.73551 16.8187 5.99632C17.1161 6.25713 17.3295 6.60028 17.4319 6.98236C17.5342 7.36445 17.521 7.76831 17.3939 8.14288C17.2667 8.51745 17.0313 8.8459 16.7175 9.08671C16.4037 9.32751 16.0255 9.46985 15.6308 9.49572C15.2361 9.52159 14.8426 9.42983 14.5 9.23205"
-                        stroke="#222222"
-                      />
-                      <path
-                        d="M10.2321 6.5C10.0343 6.15743 9.73935 5.88121 9.38458 5.70625C9.02981 5.5313 8.63113 5.46548 8.23895 5.51711C7.84677 5.56874 7.47871 5.73551 7.18131 5.99632C6.88391 6.25713 6.67053 6.60028 6.56815 6.98236C6.46577 7.36445 6.47899 7.76831 6.60614 8.14288C6.73329 8.51745 6.96866 8.8459 7.28248 9.08671C7.5963 9.32751 7.97448 9.46985 8.36919 9.49572C8.76391 9.52159 9.15743 9.42983 9.5 9.23205"
-                        stroke="#222222"
-                      />
-                      <path
-                        d="M12 12.5C16.0802 12.5 17.1335 15.8022 17.4054 17.507C17.4924 18.0524 17.0523 18.5 16.5 18.5H7.5C6.94771 18.5 6.50763 18.0524 6.59461 17.507C6.86649 15.8022 7.91976 12.5 12 12.5Z"
-                        stroke="#222222"
-                        stroke-linecap="round"
-                      />
-                      <path
-                        d="M19.2965 15.4162L18.8115 15.5377L19.2965 15.4162ZM13.0871 12.5859L12.7179 12.2488L12.0974 12.9283L13.0051 13.0791L13.0871 12.5859ZM17.1813 16.5L16.701 16.639L16.8055 17H17.1813V16.5ZM15.5 12C16.5277 12 17.2495 12.5027 17.7783 13.2069C18.3177 13.9253 18.6344 14.8306 18.8115 15.5377L19.7816 15.2948C19.5904 14.5315 19.2329 13.4787 18.578 12.6065C17.9126 11.7203 16.9202 11 15.5 11V12ZM13.4563 12.923C13.9567 12.375 14.6107 12 15.5 12V11C14.2828 11 13.3736 11.5306 12.7179 12.2488L13.4563 12.923ZM13.0051 13.0791C15.3056 13.4614 16.279 15.1801 16.701 16.639L17.6616 16.361C17.1905 14.7326 16.019 12.5663 13.1691 12.0927L13.0051 13.0791ZM18.395 16H17.1813V17H18.395V16ZM18.8115 15.5377C18.8653 15.7526 18.7075 16 18.395 16V17C19.2657 17 20.0152 16.2277 19.7816 15.2948L18.8115 15.5377Z"
-                        fill="#222222"
-                      />
-                      <path
-                        d="M10.9129 12.5859L10.9949 13.0791L11.9026 12.9283L11.2821 12.2488L10.9129 12.5859ZM4.70343 15.4162L5.18845 15.5377L4.70343 15.4162ZM6.81868 16.5V17H7.19453L7.29898 16.639L6.81868 16.5ZM8.49999 12C9.38931 12 10.0433 12.375 10.5436 12.923L11.2821 12.2488C10.6264 11.5306 9.71723 11 8.49999 11V12ZM5.18845 15.5377C5.36554 14.8306 5.68228 13.9253 6.22167 13.2069C6.75048 12.5027 7.47226 12 8.49999 12V11C7.0798 11 6.08743 11.7203 5.42199 12.6065C4.76713 13.4787 4.40955 14.5315 4.21841 15.2948L5.18845 15.5377ZM5.60498 16C5.29247 16 5.13465 15.7526 5.18845 15.5377L4.21841 15.2948C3.98477 16.2277 4.73424 17 5.60498 17V16ZM6.81868 16H5.60498V17H6.81868V16ZM7.29898 16.639C7.72104 15.1801 8.69435 13.4614 10.9949 13.0791L10.8309 12.0927C7.98101 12.5663 6.8095 14.7326 6.33838 16.361L7.29898 16.639Z"
-                        fill="#222222"
-                      />
-                    </svg>
-                  </div>
-                  <div className="basis-4/6 font-bold text-[#6B6B6B]">
-                    Cộng đồng
-                  </div>
-                </div>
-              </li>
-              <li className="w-full p-4">
-                <div className="flex">
-                  <div className="basis-1/6">
-                    <svg
-                      width="30px"
-                      height="30px"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 21.4V2.6C4 2.26863 4.26863 2 4.6 2H16.2515C16.4106 2 16.5632 2.06321 16.6757 2.17574L19.8243 5.32426C19.9368 5.43679 20 5.5894 20 5.74853V21.4C20 21.7314 19.7314 22 19.4 22H4.6C4.26863 22 4 21.7314 4 21.4Z"
-                        stroke="#222222"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M16 5.4V2.35355C16 2.15829 16.1583 2 16.3536 2C16.4473 2 16.5372 2.03725 16.6036 2.10355L19.8964 5.39645C19.9628 5.46275 20 5.55268 20 5.64645C20 5.84171 19.8417 6 19.6464 6H16.6C16.2686 6 16 5.73137 16 5.4Z"
-                        fill="#222222"
-                        stroke="#222222"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M8 10L16 10"
-                        stroke="#222222"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M8 18L16 18"
-                        stroke="#222222"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M8 14L12 14"
-                        stroke="#222222"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <div className="basis-4/6 font-bold text-[#6B6B6B]">
-                    Thông tin hữu ích
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
           <div className="Ads border-b border-gray-300 p-5">
             <img
               src="https://daihoc.fpt.edu.vn/wp-content/uploads/2021/03/tien_phong_tuyen_sinh_jzut-373x206.jpg"
@@ -1218,40 +1420,6 @@ const DetailSchool = () => {
             <img src={Ads2} alt="Ads" className="w-full h-full" />
             <h5 className=" text-[#6B6B6B] ">dmx.com</h5>
             <h5 className="text-bold ">Nóng quá!!!!</h5>
-          </div>
-        </div>
-      </div>
-      <div className="p-10">
-        <h4 className="text-2xl font-bold mt-5  pb-3">
-          Gợi ý một số trường khác
-        </h4>
-        {/* grid grid-cols-4 */}
-        <div className="grid grid-cols-4 gap-5">
-          <div className="col-span-1 p-4 border border-gray-300 rounded-lg flex flex-col items-center justify-center">
-            <img src={schooldemo} alt="top1" className="w-full h-[15rem]" />
-            <h1>Logo</h1>
-            <div className="mt-2 text-sm font-bold">
-              Trường THPT Lê Quý Đôn - Long Bình Tân
-            </div>
-          </div>
-          <div className="col-span-1 p-4 border border-gray-300 rounded-lg flex flex-col items-center justify-center">
-            <img src={schooldemo} alt="top1" className="w-full h-[15rem]" />
-            <h1>Logo</h1>
-            <div className="mt-2 text-sm font-bold">Trường THCS Hòa Bình</div>
-          </div>
-          <div className="col-span-1 p-4 border border-gray-300 rounded-lg flex flex-col items-center justify-center">
-            <img src={schooldemo} alt="top1" className="w-full h-[15rem]" />
-            <h1>Logo</h1>
-            <div className="mt-2 text-sm font-bold">
-              Trường THPT Lương Thế Vinh
-            </div>
-          </div>
-          <div className="col-span-1 p-4 border border-gray-300 rounded-lg flex flex-col items-center justify-center">
-            <img src={schooldemo} alt="top1" className="w-full h-[15rem]" />
-            <h1>Logo</h1>
-            <div className="mt-2 text-sm font-bold">
-              Trường THPT chuyên Lê Hồng Phong
-            </div>
           </div>
         </div>
       </div>
