@@ -34,13 +34,13 @@ const Footer = () => {
                 "
                 >
                   <img src={logofooter} alt="logo" className=" ml-7 w-44" />
-                  <p className="items-center justify-center space-x-4 flex flex-col">
+                  <div className="items-center justify-center space-x-4 flex flex-col">
                     031-36 03 97
                     <br />
                     <p className="items-center justify-center space-x-4 flex flex-col">
                       weloveschool@edu.vn
                     </p>
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>
