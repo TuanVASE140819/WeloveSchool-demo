@@ -1,7 +1,18 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import {
+  getAuth,
+  GoogleAuthProvider,
+  FacebookAuthProvider,
+} from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/database";
+import { getStorage } from "firebase/storage";
+
+import { getDatabase } from "firebase/database";
 const firebaseConfig = {
   apiKey: "AIzaSyB0zqOHLBW9ACCg6AZk8pFoLP-8XrHFZJc",
   authDomain: "weloveschool-212d8.firebaseapp.com",
@@ -12,7 +23,18 @@ const firebaseConfig = {
   measurementId: "G-BCPQ9141EJ",
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
 
-export const database = getAuth(app);
+export default app;
+//gôgle auth
+const auth = getAuth();
+const provider = new GoogleAuthProvider();
+
+//facebook auth
+// const auth2 = getAuth();
+const provider2 = new FacebookAuthProvider();
+
+export { auth, provider, provider2 };
+export const db = getDatabase(app);
+
+export const storage = getStorage(app);

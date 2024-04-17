@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import Select from "react-select";
 import "./Register.css";
 
-import { database } from "../../firebase/FirebaseConfig";
+import { db } from "../../firebase/FirebaseConfig";
+import { auth } from "../../firebase/FirebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+
 import { useHistory } from "react-router-dom";
+
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
 import * as Yup from "yup";
@@ -30,12 +33,17 @@ const Register = () => {
   const history = useHistory();
   const handleSumbit = (values, { setSubmitting }) => {
     const { email, password } = values;
-    createUserWithEmailAndPassword(database, email, password)
+    createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        console.log("userCredential", userCredential);
+        const user = userCredential.user;
+        console.log(user);
+        alert("Đăng ký thành công");
+
         history.push("/login");
+
         setSubmitting(false);
       })
+
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;

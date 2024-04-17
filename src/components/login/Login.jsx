@@ -1,10 +1,47 @@
 import React, { useState } from "react";
+
+import firebase from "firebase/app";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { Formik, Field, Form, ErrorMessage } from "formik";
+
+import * as Yup from "yup";
+import { useHistory } from "react-router-dom";
 import "./Login.css";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+
 const Login = () => {
+  const history = useHistory();
+
   const [showPassword, setShowPassword] = useState(false);
 
-  const toggleShowPassword = () => {
-    setShowPassword(!showPassword);
+  const validationSchema = Yup.object().shape({
+    email: Yup.string()
+      .email("Invalid email")
+      .matches(/@gmail.com$/, "Must be a Gmail address")
+      .required("Xin vui lòng nhập email"),
+    // Check if email is a Gmail address
+    password: Yup.string().required("Xin vui lòng nhập mật khẩu"),
+  });
+
+  const handleSubmit = async (values, { setSubmitting }) => {
+    const auth = getAuth();
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        values.email,
+        values.password
+      );
+      // Signed in
+      history.push("/");
+      const user = userCredential.user;
+    } catch (error) {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // Handle errors here.
+    }
+    setSubmitting(false);
   };
   return (
     <>
@@ -15,58 +52,77 @@ const Login = () => {
               className="p-6 space-y-4 bg-gray-100
              md:space-y-6 sm:p-8"
             >
-              <h1
-                className="font-secondary text-xl font-bold leading-tight tracking-tight text-[#3D92D1]
-               md:text-2xl "
-              >
+              <h1 className="font-secondary text-xl font-bold leading-tight tracking-tight text-[#3D92D1] md:text-2xl text-center">
                 Đăng nhập
               </h1>
-              <form className="space-y-4 bg-gray-100  md:space-y-6 " action="#">
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block mb-2 text-sm font-bold text-gray-900"
-                  >
-                    Email:
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    className="bg-white placeholder-gray-500 border-gray-700"
-                    placeholder="Nhập Email của bạn"
-                    required=""
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="password"
-                    className="block mb-2 text-sm font-bold text-gray-900 "
-                  >
-                    Password:
-                  </label>
-                  <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="Nhập password của bạn"
-                    className="bg-white placeholder-gray-500 border-gray-700"
-                    required=""
-                  />
-                </div>
-                <div className="flex justify-center items-center"></div>
-              </form>
-              <div
-                className="flex justify-center mt-6"
-                style={{ display: "flex", justifyContent: "center" }}
+              <Formik
+                initialValues={{ email: "", password: "" }}
+                validationSchema={validationSchema}
+                onSubmit={handleSubmit}
               >
-                <button
-                  type="button"
-                  className="text-white bg-[#3D92D1] hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-sm text-sm px-16 py-2.5"
-                >
-                  Đăng nhập
-                </button>
-              </div>
+                {({ isSubmitting }) => (
+                  <Form className="space-y-4 bg-gray-100  md:space-y-6 ">
+                    <div className="w-full h-20">
+                      <label
+                        htmlFor="email"
+                        className="block mb-2 text-sm font-bold text-gray-900"
+                      >
+                        Email:
+                      </label>
+                      <Field
+                        type="email"
+                        name="email"
+                        className="bg-white placeholder-gray-500 border-gray-700"
+                      />
+                      <ErrorMessage
+                        name="email"
+                        component="div"
+                        className="text-red-500 text-sm italic"
+                      />
+                    </div>
+                    <div className="w-full h-20">
+                      <label
+                        htmlFor="password"
+                        className="block mb-2 text-sm font-bold text-gray-900 "
+                      >
+                        Password:
+                      </label>
+                      <Field
+                        name="password"
+                        type={showPassword ? "text" : "password"}
+                      >
+                        {({ field }) => (
+                          <div className="relative">
+                            <input {...field} className="form-input" />
+                            <FontAwesomeIcon
+                              icon={showPassword ? faEyeSlash : faEye}
+                              onClick={() => setShowPassword(!showPassword)}
+                              className="absolute right-0 top-2 mt-3 mr-3"
+                            />
+                          </div>
+                        )}
+                      </Field>
+                      <ErrorMessage
+                        name="password"
+                        component="div"
+                        className="error"
+                      />
+                    </div>
+                    <div
+                      className="flex justify-center mt-6"
+                      style={{ display: "flex", justifyContent: "center" }}
+                    >
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="text-white bg-[#3D92D1] hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-sm text-sm px-16 py-2.5"
+                      >
+                        Đăng nhập
+                      </button>
+                    </div>
+                  </Form>
+                )}
+              </Formik>
             </div>
           </div>
         </div>
