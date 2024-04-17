@@ -13,6 +13,7 @@ import Register from "../register/Register";
 import DetailSchool from "../detailSchool/DetailSchool";
 import AllSchool from "../allSchool/AllSchool";
 import comsoon from "../comsoon/comsoon";
+import AllGroup from "../AllGroup/AllGroup";
 const Pages = () => {
   return (
     <>
@@ -23,6 +24,7 @@ const Pages = () => {
           <Route exact path="/Login" component={Login} />
           <Route exact path="/allSchool" component={AllSchool} />
           <Route exact path="/detailSchool" component={DetailSchool} />
+          <Route exact path="/allGroup" component={AllGroup} />
           <Route exact path="/Register" component={Register} />
           <Route exact path="/about" component={About} />
           <Route exact path="/services" component={Services} />

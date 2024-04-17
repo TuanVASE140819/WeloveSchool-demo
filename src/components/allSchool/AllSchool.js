@@ -341,7 +341,7 @@ const DetailSchool = () => {
                 </h5>
               </div>
               <a href="/" className="hover:underline ">
-                <button className="text-sm text-white p-2.5 bg-[#0487D9] rounded-lg border border-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 ">
+                <button className="text-sm text-white  w-full p-2.5 bg-[#0487D9] rounded-lg border border-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 ">
                   Tham gia
                 </button>
               </a>

@@ -161,7 +161,7 @@ const Header = () => {
         <div
           className={
             isMobileMenuOpen
-              ? "justify-between items-center w-full lg:hidden"
+              ? "justify-between items-center w-full lg:hidden z-50 bg-white border-gray-200 px-4 lg:px-6 py-2.5"
               : "hidden"
           }
           id="mobile-menu-2"
