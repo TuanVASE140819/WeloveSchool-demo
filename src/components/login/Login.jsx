@@ -39,7 +39,15 @@ const Login = () => {
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
-      // Handle errors here.
+      if (errorCode === "auth/user-not-found") {
+        alert("Tài khoản không tồn tại");
+      } else if (errorCode === "auth/wrong-password") {
+        alert("Sai mật khẩu");
+      } else if (errorCode === "auth/invalid-email") {
+        alert("Email không hợp lệ");
+      } else if (errorCode === "auth/invalid-credential") {
+        alert("Tài khoản không tồn tại");
+      }
     }
     setSubmitting(false);
   };
@@ -72,7 +80,7 @@ const Login = () => {
                       <Field
                         type="email"
                         name="email"
-                        className="bg-white placeholder-gray-500 border-gray-700"
+                        // className="bg-white placeholder-gray-500 border-gray-700"
                       />
                       <ErrorMessage
                         name="email"
@@ -89,6 +97,7 @@ const Login = () => {
                       </label>
                       <Field
                         name="password"
+                        className="bg-white placeholder-gray-500 border-gray-700"
                         type={showPassword ? "text" : "password"}
                       >
                         {({ field }) => (
@@ -105,7 +114,7 @@ const Login = () => {
                       <ErrorMessage
                         name="password"
                         component="div"
-                        className="error"
+                        className="text-red-500 text-sm italic"
                       />
                     </div>
                     <div

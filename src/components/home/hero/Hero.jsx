@@ -68,7 +68,10 @@ const Hero = () => {
       ).district_name;
     } else if (type === "ward") {
       setSelectedWard(value);
-      newAddress.ward = wards.find((ward) => ward.ward_id === value).ward_name;
+      const ward = wards.find((ward) => ward.ward_id === value);
+      if (ward) {
+        newAddress.ward = ward.ward_name;
+      }
     }
 
     setAddress(newAddress);
@@ -82,7 +85,7 @@ const Hero = () => {
           <form className="d-flex justify-content-center align-items-center">
             <div className="text-center">
               <h3
-                className="text-xl font-bold p-4"
+                className="text-xl font-bold  title-font"
                 style={{
                   lineHeight: "1.5",
                   color: "#696969",
@@ -90,7 +93,7 @@ const Hero = () => {
                 }}
               >
                 Tìm bạn học cũ chưa bao giờ dễ dàng hơn với
-                <span className="text-[#3D92D1] text-xl font-bold">
+                <span className="text-[#3D92D1] text-xl font-bold title-font">
                   {" "}
                   WeLoveSchool
                 </span>
@@ -110,7 +113,12 @@ const Hero = () => {
                         handleAddressChange("province", e.target.value)
                       }
                     >
-                      <option value="" disabled selected>
+                      <option
+                        value=""
+                        disabled
+                        selected
+                        className="text-[1rem]"
+                      >
                         Tỉnh/thành phố
                       </option>
                       {provinces.map((province) => (

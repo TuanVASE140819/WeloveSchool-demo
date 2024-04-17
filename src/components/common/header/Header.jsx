@@ -40,7 +40,8 @@ const Header = () => {
                 className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 "
               >
                 <div className="flex items-center">
-                  <img src={home} className="w-6 h-6 mr-1" alt="home" />
+                  {/* <img src={home} className="w-6 h-6 mr-1" alt="home" /> */}
+                  <i className="fa-solid fa-school-flag w-6 h-6 mr-2"></i>
                   <span>Trường của tôi</span>
                 </div>
               </a>
@@ -130,7 +131,7 @@ const Header = () => {
             </button>
             <span className="mx-2 hidden lg:block">|</span>
             <button className="hidden text-sm lg:block">EN</button>
-            <button
+            <buttonconfi
               onClick={handleMenuToggle}
               data-collapse-toggle="mobile-menu-2"
               type="button"
@@ -155,7 +156,7 @@ const Header = () => {
               >
                 <path d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"></path>
               </svg>
-            </button>
+            </buttonconfi>
           </div>
         </nav>
         <div
