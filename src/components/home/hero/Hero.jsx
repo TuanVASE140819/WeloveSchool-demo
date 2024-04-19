@@ -82,7 +82,7 @@ const Hero = () => {
         <div className="container">
           {/* <Heading title='Search Your Next Home ' subtitle='Find new & featured property located in your local city.' /> */}
 
-          <form className="d-flex justify-content-center align-items-center">
+          <form className=" mt-32 d-flex justify-content-center align-items-center">
             <div className="text-center">
               <h3
                 className="text-xl font-bold  title-font"

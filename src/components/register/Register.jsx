@@ -109,7 +109,7 @@ const Register = () => {
                     type="text"
                     name="name"
                     id="name"
-                    // className="bg-white placeholder-gray-500 border-gray-700"
+                    className="bg-white placeholder-gray-500 "
                     placeholder="Nhập tên của bạn"
                     required=""
                   />
@@ -127,7 +127,7 @@ const Register = () => {
                     type="text"
                     name="ho"
                     id="ho"
-                    // className="bg-white placeholder-gray-500 border-gray-700"
+                    className="bg-white placeholder-gray-500  "
                     placeholder="Nhập họ của bạn"
                     required=""
                   />
@@ -144,7 +144,7 @@ const Register = () => {
                     type="email"
                     name="email"
                     id="email"
-                    // className="bg-white placeholder-gray-500 border-gray-700"
+                    className="bg-white placeholder-gray-500  "
                     placeholder="Nhập Email của bạn"
                     required=""
                   />
@@ -166,7 +166,7 @@ const Register = () => {
                     name="password"
                     id="password"
                     placeholder="Nhập password của bạn"
-                    // className="bg-white placeholder-gray-500 border-gray-700"
+                    className="bg-white placeholder-gray-500  "
                     required=""
                   />
                   <ErrorMessage
@@ -188,7 +188,7 @@ const Register = () => {
                     name="confirmPassword"
                     id="confirmPassword"
                     placeholder="Nhập lại password của bạn"
-                    // className="bg-white placeholder-gray-500 border-gray-700"
+                    className="bg-white placeholder-gray-500  "
                     required=""
                   />
                   <ErrorMessage
@@ -208,7 +208,7 @@ const Register = () => {
                     type="date"
                     name="birthday"
                     id="birthday"
-                    // className="bg-white placeholder-gray-500 border-gray-700"
+                    className="bg-white placeholder-gray-500  "
                     required=""
                   />
                   <ErrorMessage
