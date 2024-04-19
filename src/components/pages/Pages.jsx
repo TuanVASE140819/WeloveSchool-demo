@@ -23,7 +23,7 @@ const Pages = () => {
           <Route exact path="/" component={Home} />
           <Route exact path="/Login" component={Login} />
           <Route exact path="/allSchool" component={AllSchool} />
-          <Route exact path="/detailSchool" component={DetailSchool} />
+          <Route exact path="/detailSchool/:id" component={DetailSchool} />
           <Route exact path="/allGroup" component={AllGroup} />
           <Route exact path="/Register" component={Register} />
           <Route exact path="/about" component={About} />

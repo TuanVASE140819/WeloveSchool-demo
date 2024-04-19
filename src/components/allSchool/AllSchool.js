@@ -27,7 +27,13 @@ import Ads2 from "../../assets/Ads/Ads2.png";
 
 import { ListSchooklFake } from "../../Data/top10"; 
 
+// import data
+import data from "../../Data/school.json";
+
 import Comsoon from "../comsoon/comsoon";
+
+
+import { Link } from "react-router-dom";
 
 const DetailSchool = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -154,7 +160,7 @@ const DetailSchool = () => {
                     <option selected>Chọn trường</option>
                   </select>
                   {/* grid grid-cols-2 */}
-                  <div className="grid grid-cols-2 gap-5">
+                  {/* <div className="grid grid-cols-2 gap-5">
                     <select
                       id="underline_select"
                       className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-[1px] border-gray-200    "
@@ -167,7 +173,7 @@ const DetailSchool = () => {
                     >
                       <option selected>Chọn khóa học</option>
                     </select>
-                  </div>
+                  </div> */}
                 </div>
                 <button
                   type="submit"
@@ -606,7 +612,7 @@ const DetailSchool = () => {
           </div>
           {/* card */}
           <div className="grid grid-cols-2 mt-5 gap-5 mx-10">
-            {ListSchooklFake.map((product, index) => (
+            {data.map((product, index) => (
               <div
                 key={index}
                 className="flex flex-row rounded-lg p-1 bg-gray-50 "
@@ -706,36 +712,28 @@ const DetailSchool = () => {
                     </div>
                   </div>
                   <div className="flex flex-row">
-                    <a
-                      href="/detailSchool"
-                      className="hover:underline text-white text-sm"
-                      style={{
-                        display: "flex",
-                        // bỏ dấu gạch chân
-                        textDecoration: "none",
-                      }}
-                    >
-                      <button
-                        className="bg-[#7DD2F5] text-white rounded-lg p-2 px-[3.5rem]
+                    <Link to={`/detailSchool/${product.id}`}>
+                      <div
+                        // href="/detailSchool"
+                        className="hover:underline text-white text-sm"
+                        style={{
+                          display: "flex",
+                          // bỏ dấu gạch chân
+                          textDecoration: "none",
+                        }}
+                      >
+                        <button
+                          className="bg-[#7DD2F5] text-white rounded-lg p-2 px-[3.5rem]
                     hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 mr-2 ml-2"
-                      >
-                        Xem trường
-                      </button>
-                    </a>
+                        >
+                          Xem trường
+                        </button>
+                      </div>
+                    </Link>
+
                     <button className="bg-gray-200 text-black rounded-lg p-2.5">
-                      <svg
-                        fill="#000000"
-                        width="16px"
-                        height="16px"
-                        viewBox="0 0 1024 1024"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M384 512c0 28.3-22.9 51.2-51.2 51.2s-51.2-22.9-51.2-51.2 22.9-51.2 51.2-51.2S384 483.7 384 512zm128-51.2c-28.3 0-51.2 22.9-51.2 51.2s22.9 51.2 51.2 51.2 51.2-22.9 51.2-51.2-22.9-51.2-51.2-51.2zm179.2 0c-28.3 0-51.2 22.9-51.2 51.2s22.9 51.2 51.2 51.2 51.2-22.9 51.2-51.2-22.9-51.2-51.2-51.2z"
-                        />
-                      </svg>
+                      {/*  icon 3 chấm */}
+                      <i className="fas fa-ellipsis-h"></i>
                     </button>
                   </div>
                 </div>

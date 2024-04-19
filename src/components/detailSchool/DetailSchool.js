@@ -28,8 +28,8 @@ import NEW_FPT from "../../assets/DetailShool/new_fpt.png";
 import Ads1 from "../../assets/Ads/Ads1.png";
 import Ads2 from "../../assets/Ads/Ads2.png";
 
-
-
+import data from "../../Data/school.json";
+import { useParams } from "react-router-dom";
 
 import Comsoon from "../comsoon/comsoon";
 const DetailSchool = () => {
@@ -61,6 +61,16 @@ const DetailSchool = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const [school, setSchool] = useState(null);
+  const { id } = useParams(); // giả sử bạn đang sử dụng react-router
+
+  useEffect(() => {
+    const foundSchool = data.find((school) => school.id === Number(id));
+    setSchool(foundSchool);
+  }, [id]);
+
+  if (!school) return <div>Loading...</div>;
 
   if (isMobile) {
     return (
@@ -568,7 +578,7 @@ const DetailSchool = () => {
                   <div className="p-4 text-center lg:text-left">
                     <div className="flex flex-row">
                       <h1 className="basis-/6 text-xl font-bold text-[#0487D9]">
-                        Trường Đại học FPT Thành phố Hồ Chí Minh
+                        {school.name}
                       </h1>
                       <div className="basis-2/6">
                         <div className="pl-[1rem] text-[#5b3131] font-bold">
@@ -607,7 +617,7 @@ const DetailSchool = () => {
                             <div class=" basis-1/2 flex flex-row items-center justify-center">
                               <div class="basis-1/3">
                                 <div className="text-[#A3A3A3] font-bold">
-                                  8815
+                                  {school.user}
                                 </div>
                               </div>
                               <div class="basis-2/3">
@@ -651,7 +661,7 @@ const DetailSchool = () => {
                             <div class="flex flex-row items-center justify-center">
                               <div class="basis-1/3">
                                 <div className="text-[#A3A3A3] font-bold">
-                                  8815
+                                  {school.follow}
                                 </div>
                               </div>
                               <div class="basis-2/3">
@@ -700,20 +710,13 @@ const DetailSchool = () => {
             {/* title school */}
             <div className=" mx-auto max-w-7xl px-4 my-5">
               <div className="title_school text-[#6B6B6B] ">
-                Trường Đại học FPT là một trong những cơ sở giáo dục hàng đầu
-                tại Việt Nam, với sứ mệnh cung cấp môi trường học tập và nền
-                tảng công nghệ tiên tiến cho sinh viên. Với hơn 20 năm hoạt
-                động, trường đã xây dựng được uy tín vững chắc trong lĩnh vực
-                đào tạo Công nghệ thông tin và các ngành liên quan
+                {school.content}
               </div>
               <div className="address_school  border-l-4 border-[#6B6B6B] pl-5 mt-5  text-[#6B6B6B] italic">
                 {/* <div className="ml-5"> */}
-                <h3>
-                  Lô E2a-7, Đường D1 Khu Công nghệ cao, P. Long Thạnh Mỹ, TP.
-                  Thủ Đức, TP. Hồ Chí Minh
-                </h3>
-                <h3>028 7300 1866</h3>
-                <h3>daihocfpt@fpt.edu.vn</h3>
+                <h3>{school.address}</h3>
+                <h3>{school.phone}</h3>
+                <h3>{school.email}</h3>
                 {/* </div> */}
               </div>
             </div>
@@ -760,267 +763,95 @@ const DetailSchool = () => {
                   </div>
                 </div>
               </div>
-
-              <div>
-                <div className="max-w-sm bg-white rounded-lg shadow">
-                  <a href="/">
-                    <img className="rounded-t-lg" src={NEW_FPT} alt="" />
-                  </a>
-                  <div className="p-3 border-b-[1px] border-[#D1D1D1]">
+              {school.group.map((item, index) => (
+                <div>
+                  <div className="max-w-sm bg-white rounded-lg shadow">
                     <a href="/">
-                      <h5 className="mb-2 text-sm font-bold tracking-tight text-[#6B6B6B] ">
-                        Dưới đây là một số hướng dẫn và lời khuyên để bạn có một
-                        khởi đầu suôn sẻ và thành...
-                      </h5>
+                      <img className="rounded-t-lg" src={NEW_FPT} alt="" />
                     </a>
-                  </div>
-
-                  <div class="flex ">
-                    <div class="flex-none w-16 h-10">
-                      <img
-                        src={FPT}
-                        alt="FPT"
-                        className="w-10 h-10 rounded-full"
-                      />
+                    <div className="p-3 border-b-[1px] border-[#D1D1D1]">
+                      <a href="/">
+                        <h5 className="mb-2 text-sm font-bold tracking-tight text-[#6B6B6B] ">
+                          {item.name}
+                        </h5>
+                      </a>
                     </div>
-                    <div class="">
-                      <h3 className="text-sm font-bold text-[#6B6B6B]">FPT</h3>
-                      <h3 className="text-sm">Niêm khóa K23</h3>
-                    </div>
-                    <div className="ml-2">
-                      <svg
-                        fill="#000000"
-                        width="40px"
-                        height="40px"
-                        viewBox="0 0 24 24"
-                        id="right-circle-2"
-                        data-name="Flat Line"
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="icon flat-line"
-                      >
-                        <g id="SVGRepo_bgCarrier" stroke-width="0" />
 
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                    <div class="flex ">
+                      <div class="flex-none w-16 h-10">
+                        <img
+                          src={FPT}
+                          alt="FPT"
+                          className="w-10 h-10 rounded-full"
                         />
+                      </div>
+                      <div class="">
+                        <h3 className="text-xs font-bold text-[#6B6B6B]">
+                          {school.name}
+                        </h3>
+                        <h3 className="text-sm">{item.content}</h3>
+                      </div>
+                      <div className="ml-2">
+                        <svg
+                          fill="#000000"
+                          width="40px"
+                          height="40px"
+                          viewBox="0 0 24 24"
+                          id="right-circle-2"
+                          data-name="Flat Line"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="icon flat-line"
+                        >
+                          <g id="SVGRepo_bgCarrier" stroke-width="0" />
 
-                        <g id="SVGRepo_iconCarrier">
-                          <circle
-                            id="secondary"
-                            cx="12"
-                            cy="12"
-                            r="9"
-                            // style="fill: #f0f0f0; stroke-width: 2;"
-                            style={{ fill: "#f0f0f0", strokeWidth: 2 }}
+                          <g
+                            id="SVGRepo_tracerCarrier"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
                           />
 
-                          <polyline
-                            id="primary"
-                            points="13.5 9.5 16 12 13.5 14.5"
-                            // style="fill: none; stroke: #5cbc6c; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"
-                            style={{
-                              fill: "none",
-                              stroke: "#5cbc6c",
-                              strokeLinecap: "round",
-                              strokeLinejoin: "round",
-                            }}
-                          />
+                          <g id="SVGRepo_iconCarrier">
+                            <circle
+                              id="secondary"
+                              cx="12"
+                              cy="12"
+                              r="9"
+                              // style="fill: #f0f0f0; stroke-width: 2;"
+                              style={{ fill: "#f0f0f0", strokeWidth: 2 }}
+                            />
 
-                          <path
-                            id="primary-2"
-                            data-name="primary"
-                            d="M8,12h8m5,0a9,9,0,1,0-9,9A9,9,0,0,0,21,12Z"
-                            // style="fill: none; stroke: #5cbc6c; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"
-                            style={{
-                              fill: "none",
-                              stroke: "#5cbc6c",
-                              strokeLinecap: "round",
-                              strokeLinejoin: "round",
-                              strokeWidth: 2,
-                            }}
-                          />
-                        </g>
-                      </svg>
+                            <polyline
+                              id="primary"
+                              points="13.5 9.5 16 12 13.5 14.5"
+                              // style="fill: none; stroke: #5cbc6c; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"
+                              style={{
+                                fill: "none",
+                                stroke: "#5cbc6c",
+                                strokeLinecap: "round",
+                                strokeLinejoin: "round",
+                              }}
+                            />
+
+                            <path
+                              id="primary-2"
+                              data-name="primary"
+                              d="M8,12h8m5,0a9,9,0,1,0-9,9A9,9,0,0,0,21,12Z"
+                              // style="fill: none; stroke: #5cbc6c; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"
+                              style={{
+                                fill: "none",
+                                stroke: "#5cbc6c",
+                                strokeLinecap: "round",
+                                strokeLinejoin: "round",
+                                strokeWidth: 2,
+                              }}
+                            />
+                          </g>
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-
-              <div>
-                <div className="max-w-sm bg-white rounded-lg shadow">
-                  <a href="/">
-                    <img className="rounded-t-lg" src={NEW_FPT} alt="" />
-                  </a>
-                  <div className="p-3 border-b-[1px] border-[#D1D1D1]">
-                    <a href="/">
-                      <h5 className="mb-2 text-sm font-bold tracking-tight text-[#6B6B6B] ">
-                        Dưới đây là một số hướng dẫn và lời khuyên để bạn có một
-                        khởi đầu suôn sẻ và thành...
-                      </h5>
-                    </a>
-                  </div>
-
-                  <div class="flex ">
-                    <div class="flex-none w-16 h-10">
-                      <img
-                        src={FPT}
-                        alt="FPT"
-                        className="w-10 h-10 rounded-full"
-                      />
-                    </div>
-                    <div class="">
-                      <h3 className="text-sm font-bold text-[#6B6B6B]">FPT</h3>
-                      <h3 className="text-sm">Niêm khóa K23</h3>
-                    </div>
-                    <div className="ml-2">
-                      <svg
-                        fill="#000000"
-                        width="40px"
-                        height="40px"
-                        viewBox="0 0 24 24"
-                        id="right-circle-2"
-                        data-name="Flat Line"
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="icon flat-line"
-                      >
-                        <g id="SVGRepo_bgCarrier" stroke-width="0" />
-
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-
-                        <g id="SVGRepo_iconCarrier">
-                          <circle
-                            id="secondary"
-                            cx="12"
-                            cy="12"
-                            r="9"
-                            // style="fill: #f0f0f0; stroke-width: 2;"
-                            style={{ fill: "#f0f0f0", strokeWidth: 2 }}
-                          />
-
-                          <polyline
-                            id="primary"
-                            points="13.5 9.5 16 12 13.5 14.5"
-                            // style="fill: none; stroke: #5cbc6c; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"
-                            style={{
-                              fill: "none",
-                              stroke: "#5cbc6c",
-                              strokeLinecap: "round",
-                              strokeLinejoin: "round",
-                            }}
-                          />
-
-                          <path
-                            id="primary-2"
-                            data-name="primary"
-                            d="M8,12h8m5,0a9,9,0,1,0-9,9A9,9,0,0,0,21,12Z"
-                            // style="fill: none; stroke: #5cbc6c; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"
-                            style={{
-                              fill: "none",
-                              stroke: "#5cbc6c",
-                              strokeLinecap: "round",
-                              strokeLinejoin: "round",
-                              strokeWidth: 2,
-                            }}
-                          />
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <div className="max-w-sm bg-white rounded-lg shadow">
-                  <a href="/">
-                    <img className="rounded-t-lg" src={NEW_FPT} alt="" />
-                  </a>
-                  <div className="p-3 border-b-[1px] border-[#D1D1D1]">
-                    <a href="/">
-                      <h5 className="mb-2 text-sm font-bold tracking-tight text-[#6B6B6B] ">
-                        Dưới đây là một số hướng dẫn và lời khuyên để bạn có một
-                        khởi đầu suôn sẻ và thành...
-                      </h5>
-                    </a>
-                  </div>
-
-                  <div class="flex ">
-                    <div class="flex-none w-16 h-10">
-                      <img
-                        src={FPT}
-                        alt="FPT"
-                        className="w-10 h-10 rounded-full"
-                      />
-                    </div>
-                    <div class="">
-                      <h3 className="text-sm font-bold text-[#6B6B6B]">FPT</h3>
-                      <h3 className="text-sm">Niêm khóa K23</h3>
-                    </div>
-                    <div className="ml-2">
-                      <svg
-                        fill="#000000"
-                        width="40px"
-                        height="40px"
-                        viewBox="0 0 24 24"
-                        id="right-circle-2"
-                        data-name="Flat Line"
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="icon flat-line"
-                      >
-                        <g id="SVGRepo_bgCarrier" stroke-width="0" />
-
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-
-                        <g id="SVGRepo_iconCarrier">
-                          <circle
-                            id="secondary"
-                            cx="12"
-                            cy="12"
-                            r="9"
-                            // style="fill: #f0f0f0; stroke-width: 2;"
-                            style={{ fill: "#f0f0f0", strokeWidth: 2 }}
-                          />
-
-                          <polyline
-                            id="primary"
-                            points="13.5 9.5 16 12 13.5 14.5"
-                            // style="fill: none; stroke: #5cbc6c; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"
-                            style={{
-                              fill: "none",
-                              stroke: "#5cbc6c",
-                              strokeLinecap: "round",
-                              strokeLinejoin: "round",
-                            }}
-                          />
-
-                          <path
-                            id="primary-2"
-                            data-name="primary"
-                            d="M8,12h8m5,0a9,9,0,1,0-9,9A9,9,0,0,0,21,12Z"
-                            // style="fill: none; stroke: #5cbc6c; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"
-                            style={{
-                              fill: "none",
-                              stroke: "#5cbc6c",
-                              strokeLinecap: "round",
-                              strokeLinejoin: "round",
-                              strokeWidth: 2,
-                            }}
-                          />
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
@@ -1105,200 +936,91 @@ const DetailSchool = () => {
                 <p>Bạn cần đăng nhập để post bài</p>
               </div>
             )}
-            <div className="mt-5">
-              <div className="bg-white p-8 rounded-lg shadow-md mb-6">
-                {/* User Info with Three-Dot Menu */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-2">
-                    <img
-                      src="https://i.pravatar.cc/300"
-                      alt="User Avatar"
-                      className="w-8 h-8 rounded-full"
-                    />
-                    <div>
-                      <p className="text-gray-800 font-semibold">
-                        Hồ Lê Bảo Hân
-                      </p>
-                      <p className="text-gray-500 text-sm">
-                        Posted 2 hours ago
-                      </p>
+
+            {school.news.map((item, index) => (
+              <div className="mt-5">
+                <div className="bg-white p-8 rounded-lg shadow-md mb-6">
+                  {/* User Info with Three-Dot Menu */}
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-2">
+                      <img
+                        src="https://i.pravatar.cc/300"
+                        alt="User Avatar"
+                        className="w-8 h-8 rounded-full"
+                      />
+                      <div>
+                        <p className="text-gray-800 font-semibold">
+                          {item.user}
+                        </p>
+                        <p className="text-gray-500 text-sm">
+                          Posted 2 hours ago
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="text-gray-500 cursor-pointer">
-                    {/* Three-dot menu icon */}
-                    <button className="hover:bg-gray-50 rounded-full p-1">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <circle cx={12} cy={7} r={1} />
-                        <circle cx={12} cy={12} r={1} />
-                        <circle cx={12} cy={17} r={1} />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                {/* Message */}
-                <div className="mb-4">
-                  <p className="text-gray-800 text-lg font-semibold">
-                    "Điểm Dừng Kỷ Niệm: Gặp Lại Bạn Học Cũ Trên Đường Đời"
-                  </p>
-
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-                    quis nostrud exerci tation ullam laoreet dolore magna
-                    aliquam and bneem ándnd erat volutpat...
-                  </p>
-                </div>
-
-                <div className="flex items-center justify-between text-gray-500">
-                  <div className="flex items-center space-x-2">
-                    <button className="flex justify-center items-center gap-2 px-2 hover:bg-gray-50 rounded-full p-1">
-                      <svg
-                        className="w-5 h-5 fill-current"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M12 21.35l-1.45-1.32C6.11 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-4.11 6.86-8.55 11.54L12 21.35z" />
-                      </svg>
-                      <span>177</span>
-                    </button>
-                    <button className="flex justify-center items-center gap-2 px-2 hover:bg-gray-50 rounded-full p-1">
-                      {/* share */}
-                      <svg
-                        width="22px"
-                        height="22px"
-                        viewBox="0 0 24 24"
-                        className="w-5 h-5 fill-current"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g id="SVGRepo_bgCarrier" strokeWidth={0} />
-                        <g
-                          id="SVGRepo_tracerCarrier"
+                    <div className="text-gray-500 cursor-pointer">
+                      {/* Three-dot menu icon */}
+                      <button className="hover:bg-gray-50 rounded-full p-1">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={24}
+                          height={24}
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={2}
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                        />
-                        <g id="SVGRepo_iconCarrier">
-                          <path d="M12 22C 17.5228 22 22 17.5228 22 12C 22 6.47715 17.5228 2 12 2C 6.47715 2 2 6.47715 2 12C 2 13.5997 2.37562 15.1116 3.04346 16.4525C 3.22094 16.8088 3.28001 17.2161 3.17712 17.6006L 2.58151 19.8267C 2.32295 20.793 3.20701 21.677 4.17335 21.4185L 6.39939 20.8229C 6.78393 20.72 7.19121 20.7791 7.54753 20.9565C 8.88837 21.6244 10.4003 22 12 22ZM 8 13.25C 7.58579 13.25 7.25 13.5858 7.25 14C 7.25 14.4142 7.58579 14.75 8 14.75H 13.5C 13.9142 14.75 14.25 14.4142 14.25 14C 14.25 13.5858 13.9142 13.25 13.5 13.25H 8ZM 7.25 10.5C 7.25 10.0858 7.58579 9.75 8 9.75H 16C 16.4142 9.75 16.75 10.0858 16.75 10.5C 16.75 10.9142 16.4142 11.25 16 11.25H 8C 7.58579 11.25 7.25 10.9142 7.25 10.5Z" />
-                        </g>
-                      </svg>
-
-                      <span>177</span>
-                    </button>
-                  </div>
-                  <button className="flex justify-center items-center gap-2 px-2 hover:bg-gray-50 rounded-full p-1">
-                    <svg
-                      width="22px"
-                      height="22px"
-                      viewBox="0 0 24 24"
-                      className="w-5 h-5 fill-current"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g id="SVGRepo_bgCarrier" strokeWidth={0} />
-                      <g
-                        id="SVGRepo_tracerCarrier"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <g id="SVGRepo_iconCarrier">
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 13.5997 2.37562 15.1116 3.04346 16.4525C3.22094 16.8088 3.28001 17.2161 3.17712 17.6006L2.58151 19.8267C2.32295 20.793 3.20701 21.677 4.17335 21.4185L6.39939 20.8229C6.78393 20.72 7.19121 20.7791 7.54753 20.9565C8.88837 21.6244 10.4003 22 12 22ZM8 13.25C7.58579 13.25 7.25 13.5858 7.25 14C7.25 14.4142 7.58579 14.75 8 14.75H13.5C13.9142 14.75 14.25 14.4142 14.25 14C14.25 13.5858 13.9142 13.25 13.5 13.25H8ZM7.25 10.5C7.25 10.0858 7.58579 9.75 8 9.75H16C16.4142 9.75 16.75 10.0858 16.75 10.5C16.75 10.9142 16.4142 11.25 16 11.25H8C7.58579 11.25 7.25 10.9142 7.25 10.5Z"
-                        />
-                      </g>
-                    </svg>
-                    <span>3 Bình luận</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="mt-5">
-              <div className="bg-white p-8 rounded-lg shadow-md mb-6">
-                {/* User Info with Three-Dot Menu */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-2">
-                    <img
-                      src="https://i.pravatar.cc/300"
-                      alt="User Avatar"
-                      className="w-8 h-8 rounded-full"
-                    />
-                    <div>
-                      <p className="text-gray-800 font-semibold">
-                        Hồ Lê Bảo Hân
-                      </p>
-                      <p className="text-gray-500 text-sm">
-                        Posted 2 hours ago
-                      </p>
+                        >
+                          <circle cx={12} cy={7} r={1} />
+                          <circle cx={12} cy={12} r={1} />
+                          <circle cx={12} cy={17} r={1} />
+                        </svg>
+                      </button>
                     </div>
                   </div>
-                  <div className="text-gray-500 cursor-pointer">
-                    {/* Three-dot menu icon */}
-                    <button className="hover:bg-gray-50 rounded-full p-1">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <circle cx={12} cy={7} r={1} />
-                        <circle cx={12} cy={12} r={1} />
-                        <circle cx={12} cy={17} r={1} />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                {/* Message */}
-                <div className="mb-4">
-                  <p className="text-gray-800 text-lg font-semibold">
-                    "Điểm Dừng Kỷ Niệm: Gặp Lại Bạn Học Cũ Trên Đường Đời"
-                  </p>
+                  {/* Message */}
                   <div className="mb-4">
-                    <img
-                      src="https://www.vietnamworks.com/hrinsider/wp-content/uploads/2022/10/fewfewf.jpg"
-                      className="w-full rounded-lg"
-                      alt="Post"
-                    />
+                    <p className="text-gray-800 text-lg font-semibold">
+                      {item.content}
+                    </p>
                   </div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-                    quis nostrud exerci tation ullam laoreet dolore magna
-                    aliquam and bneem ándnd erat volutpat...
-                  </p>
-                </div>
-                {/* Image */}
 
-                {/* Like and Comment Section */}
-                <div className="flex items-center justify-between text-gray-500">
-                  <div className="flex items-center space-x-2">
+                  <div className="flex items-center justify-between text-gray-500">
+                    <div className="flex items-center space-x-2">
+                      <button className="flex justify-center items-center gap-2 px-2 hover:bg-gray-50 rounded-full p-1">
+                        <svg
+                          className="w-5 h-5 fill-current"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M12 21.35l-1.45-1.32C6.11 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-4.11 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                        <span>{item.like}</span>
+                      </button>
+                      <button className="flex justify-center items-center gap-2 px-2 hover:bg-gray-50 rounded-full p-1">
+                        {/* share */}
+                        <svg
+                          width="22px"
+                          height="22px"
+                          viewBox="0 0 24 24"
+                          className="w-5 h-5 fill-current"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g id="SVGRepo_bgCarrier" strokeWidth={0} />
+                          <g
+                            id="SVGRepo_tracerCarrier"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                          <g id="SVGRepo_iconCarrier">
+                            <path d="M12 22C 17.5228 22 22 17.5228 22 12C 22 6.47715 17.5228 2 12 2C 6.47715 2 2 6.47715 2 12C 2 13.5997 2.37562 15.1116 3.04346 16.4525C 3.22094 16.8088 3.28001 17.2161 3.17712 17.6006L 2.58151 19.8267C 2.32295 20.793 3.20701 21.677 4.17335 21.4185L 6.39939 20.8229C 6.78393 20.72 7.19121 20.7791 7.54753 20.9565C 8.88837 21.6244 10.4003 22 12 22ZM 8 13.25C 7.58579 13.25 7.25 13.5858 7.25 14C 7.25 14.4142 7.58579 14.75 8 14.75H 13.5C 13.9142 14.75 14.25 14.4142 14.25 14C 14.25 13.5858 13.9142 13.25 13.5 13.25H 8ZM 7.25 10.5C 7.25 10.0858 7.58579 9.75 8 9.75H 16C 16.4142 9.75 16.75 10.0858 16.75 10.5C 16.75 10.9142 16.4142 11.25 16 11.25H 8C 7.58579 11.25 7.25 10.9142 7.25 10.5Z" />
+                          </g>
+                        </svg>
+
+                        <span>{item.comment}</span>
+                      </button>
+                    </div>
                     <button className="flex justify-center items-center gap-2 px-2 hover:bg-gray-50 rounded-full p-1">
-                      <svg
-                        className="w-5 h-5 fill-current"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M12 21.35l-1.45-1.32C6.11 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-4.11 6.86-8.55 11.54L12 21.35z" />
-                      </svg>
-                      <span>177</span>
-                    </button>
-                    <button className="flex justify-center items-center gap-2 px-2 hover:bg-gray-50 rounded-full p-1">
-                      {/* share */}
                       <svg
                         width="22px"
                         height="22px"
@@ -1313,40 +1035,19 @@ const DetailSchool = () => {
                           strokeLinejoin="round"
                         />
                         <g id="SVGRepo_iconCarrier">
-                          <path d="M12 22C 17.5228 22 22 17.5228 22 12C 22 6.47715 17.5228 2 12 2C 6.47715 2 2 6.47715 2 12C 2 13.5997 2.37562 15.1116 3.04346 16.4525C 3.22094 16.8088 3.28001 17.2161 3.17712 17.6006L 2.58151 19.8267C 2.32295 20.793 3.20701 21.677 4.17335 21.4185L 6.39939 20.8229C 6.78393 20.72 7.19121 20.7791 7.54753 20.9565C 8.88837 21.6244 10.4003 22 12 22ZM 8 13.25C 7.58579 13.25 7.25 13.5858 7.25 14C 7.25 14.4142 7.58579 14.75 8 14.75H 13.5C 13.9142 14.75 14.25 14.4142 14.25 14C 14.25 13.5858 13.9142 13.25 13.5 13.25H 8ZM 7.25 10.5C 7.25 10.0858 7.58579 9.75 8 9.75H 16C 16.4142 9.75 16.75 10.0858 16.75 10.5C 16.75 10.9142 16.4142 11.25 16 11.25H 8C 7.58579 11.25 7.25 10.9142 7.25 10.5Z" />
+                          <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 13.5997 2.37562 15.1116 3.04346 16.4525C3.22094 16.8088 3.28001 17.2161 3.17712 17.6006L2.58151 19.8267C2.32295 20.793 3.20701 21.677 4.17335 21.4185L6.39939 20.8229C6.78393 20.72 7.19121 20.7791 7.54753 20.9565C8.88837 21.6244 10.4003 22 12 22ZM8 13.25C7.58579 13.25 7.25 13.5858 7.25 14C7.25 14.4142 7.58579 14.75 8 14.75H13.5C13.9142 14.75 14.25 14.4142 14.25 14C14.25 13.5858 13.9142 13.25 13.5 13.25H8ZM7.25 10.5C7.25 10.0858 7.58579 9.75 8 9.75H16C16.4142 9.75 16.75 10.0858 16.75 10.5C16.75 10.9142 16.4142 11.25 16 11.25H8C7.58579 11.25 7.25 10.9142 7.25 10.5Z"
+                          />
                         </g>
                       </svg>
-
-                      <span>177</span>
+                      <span>{item.share} Chia sẻ</span>
                     </button>
                   </div>
-                  <button className="flex justify-center items-center gap-2 px-2 hover:bg-gray-50 rounded-full p-1">
-                    <svg
-                      width="22px"
-                      height="22px"
-                      viewBox="0 0 24 24"
-                      className="w-5 h-5 fill-current"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g id="SVGRepo_bgCarrier" strokeWidth={0} />
-                      <g
-                        id="SVGRepo_tracerCarrier"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <g id="SVGRepo_iconCarrier">
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 13.5997 2.37562 15.1116 3.04346 16.4525C3.22094 16.8088 3.28001 17.2161 3.17712 17.6006L2.58151 19.8267C2.32295 20.793 3.20701 21.677 4.17335 21.4185L6.39939 20.8229C6.78393 20.72 7.19121 20.7791 7.54753 20.9565C8.88837 21.6244 10.4003 22 12 22ZM8 13.25C7.58579 13.25 7.25 13.5858 7.25 14C7.25 14.4142 7.58579 14.75 8 14.75H13.5C13.9142 14.75 14.25 14.4142 14.25 14C14.25 13.5858 13.9142 13.25 13.5 13.25H8ZM7.25 10.5C7.25 10.0858 7.58579 9.75 8 9.75H16C16.4142 9.75 16.75 10.0858 16.75 10.5C16.75 10.9142 16.4142 11.25 16 11.25H8C7.58579 11.25 7.25 10.9142 7.25 10.5Z"
-                        />
-                      </g>
-                    </svg>
-                    <span>3 Bình luận</span>
-                  </button>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
 
           {/* nút thêm xem thêm */}

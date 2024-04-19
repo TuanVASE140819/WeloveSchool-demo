@@ -79,7 +79,7 @@ const Header = () => {
                       aria-expanded="true"
                       aria-haspopup="true"
                     >
-                      <div className="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                      <div className="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full ">
                         <svg
                           className="absolute w-10 h-10 text-gray-400 -left-1"
                           fill="currentColor"
@@ -166,9 +166,9 @@ const Header = () => {
               aria-expanded="true"
               aria-haspopup="true"
             >
-              <div className="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+              <div className="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full ">
                 <svg
-                  className="absolute w-6 h-6 text-gray-400  top-[8px] left-3"
+                  className="absolute w-6 h-6 text-gray-400  top-[5px] left-2"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
