@@ -3,6 +3,11 @@ import FitterPC from "./FitterPC";
 import axios from "axios";
 import "./hero.css";
 
+// import get, post, put, delete from "./api";
+
+import { fetchData } from "../../../api/apiServices";
+
+
 const Hero = () => {
   const [provinces, setProvinces] = useState([]);
   const [districts, setDistricts] = useState([]);
@@ -15,7 +20,7 @@ const Hero = () => {
     district: "",
     ward: "",
   });
-
+//"https://vapi.vnappmob.com/api/province"
   useEffect(() => {
     const fetchProvinces = async () => {
       const response = await axios.get(

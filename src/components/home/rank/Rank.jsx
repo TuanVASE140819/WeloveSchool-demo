@@ -13,6 +13,10 @@ import top10 from "../../../assets/Home/Top10.png";
 
 import VanLangLogo from "../../../assets/Home/vanlang_logo.png";
 import Heading from "../../common/Heading";
+
+
+// import Datatop10
+import { Top10 } from "../../../Data/top10";
 const Rank = () => {
   return (
     <>
@@ -98,472 +102,64 @@ const Rank = () => {
               </div>
               <div className="block w-full  text-surface shadow-secondary-1 ">
                 <ul className="w-full">
-                  <li className="w-full border-b-2  border-[#D9D9D9] py-4  ">
-                    <div className="flex flex-row">
-                      <div className="basis-1/5">
-                        <img
-                          src={top1}
-                          alt="rank2"
-                          className="w-10 h-10 ml-4"
-                        />
-                      </div>
-                      <div className="basis-3/5">
-                        <div className="flex flex-row items-center justify-center">
-                          <div className="basis-1/6">
+                  {Top10.map((item, index) => {
+                    return (
+                      <li
+                        className={`w-full py-4 ${
+                          index !== Top10.length - 1
+                            ? "border-b-2 border-[#D9D9D9]"
+                            : ""
+                        }`}
+                      >
+                        <div className="flex flex-row">
+                          <div className="basis-1/5">
                             <img
-                              src={VanLangLogo}
-                              alt="rank2"
-                              className="w-10 h-10"
+                              src={top1}
+                              alt={item.top}
+                              className="w-10 h-10 ml-4"
                             />
                           </div>
-                          <div className="basis-5/6 text-[#969696] font-bold">
-                            Đại học Văn Lang
-                          </div>
-                        </div>
-                      </div>
-                      <div className="basis-1/5 ">
-                        <div className="flex flex-row items-center justify-center mt-2">
-                          <div className="basis-1/6 text-[#969696] mr-3">
-                            5842k
-                          </div>
-                          <div className="basis-5/6 text-[#969696] font-bold">
-                            <span>
-                              <svg
-                                width="20px"
-                                height="20px"
-                                viewBox="0 -0.5 32 32"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z"
-                                  fill="#FFCB45"
+                          <div className="basis-3/5">
+                            <div className="flex flex-row items-center justify-center">
+                              <div className="basis-1/6">
+                                <img
+                                  src={VanLangLogo}
+                                  alt={item.top}
+                                  className="w-10 h-10"
                                 />
-                              </svg>
-                            </span>
+                              </div>
+                              <div className="basis-5/6 text-[#969696] font-bold">
+                                {item.name}
+                              </div>
+                            </div>
+                          </div>
+                          <div className="basis-1/5 ">
+                            <div className="flex flex-row items-center justify-center mt-2">
+                              <div className="basis-1/6 text-[#969696] mr-3">
+                                {item.rating}
+                              </div>
+                              <div className="basis-5/6 text-[#969696] font-bold">
+                                <span>
+                                  <svg
+                                    width="20px"
+                                    height="20px"
+                                    viewBox="0 -0.5 32 32"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z"
+                                      fill="#FFCB45"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="w-full border-b-2  border-[#D9D9D9] py-4  ">
-                    <div className="flex flex-row">
-                      <div className="basis-1/5">
-                        <img
-                          src={top2}
-                          alt="rank2"
-                          className="w-10 h-10 ml-4"
-                        />
-                      </div>
-                      <div className="basis-3/5">
-                        <div className="flex flex-row items-center justify-center">
-                          <div className="basis-1/6">
-                            <img
-                              src={VanLangLogo}
-                              alt="rank2"
-                              className="w-10 h-10"
-                            />
-                          </div>
-                          <div className="basis-5/6 text-[#969696] font-bold">
-                            Đại học Văn Lang
-                          </div>
-                        </div>
-                      </div>
-                      <div className="basis-1/5 ">
-                        <div className="flex flex-row items-center justify-center mt-2">
-                          <div className="basis-1/6 text-[#969696] mr-3">
-                            5842k
-                          </div>
-                          <div className="basis-5/6 text-[#969696] font-bold">
-                            <span>
-                              <svg
-                                width="20px"
-                                height="20px"
-                                viewBox="0 -0.5 32 32"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z"
-                                  fill="#FFCB45"
-                                />
-                              </svg>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="w-full border-b-2  border-[#D9D9D9] py-4  ">
-                    <div className="flex flex-row">
-                      <div className="basis-1/5">
-                        <img
-                          src={top3}
-                          alt="rank2"
-                          className="w-10 h-10 ml-4"
-                        />
-                      </div>
-                      <div className="basis-3/5">
-                        <div className="flex flex-row items-center justify-center">
-                          <div className="basis-1/6">
-                            <img
-                              src={VanLangLogo}
-                              alt="rank2"
-                              className="w-10 h-10"
-                            />
-                          </div>
-                          <div className="basis-5/6 text-[#969696] font-bold">
-                            Đại học Văn Lang
-                          </div>
-                        </div>
-                      </div>
-                      <div className="basis-1/5 ">
-                        <div className="flex flex-row items-center justify-center mt-2">
-                          <div className="basis-1/6 text-[#969696] mr-3">
-                            5842k
-                          </div>
-                          <div className="basis-5/6 text-[#969696] font-bold">
-                            <span>
-                              <svg
-                                width="20px"
-                                height="20px"
-                                viewBox="0 -0.5 32 32"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z"
-                                  fill="#FFCB45"
-                                />
-                              </svg>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="w-full border-b-2  border-[#D9D9D9] py-4  ">
-                    <div className="flex flex-row">
-                      <div className="basis-1/5">
-                        <div className="w-10 h-10 ml-4 bg-gray-200 rounded-full flex items-center justify-center font-bold                text-gray-500">
-                          4
-                        </div>
-                      </div>
-                      <div className="basis-3/5">
-                        <div className="flex flex-row items-center justify-center">
-                          <div className="basis-1/6">
-                            <img
-                              src={VanLangLogo}
-                              alt="rank2"
-                              className="w-10 h-10"
-                            />
-                          </div>
-                          <div className="basis-5/6 text-[#969696] font-bold">
-                            Đại học Văn Lang
-                          </div>
-                        </div>
-                      </div>
-                      <div className="basis-1/5 ">
-                        <div className="flex flex-row items-center justify-center mt-2">
-                          <div className="basis-1/6 text-[#969696] mr-3">
-                            5842k
-                          </div>
-                          <div className="basis-5/6 text-[#969696] font-bold">
-                            <span>
-                              <svg
-                                width="20px"
-                                height="20px"
-                                viewBox="0 -0.5 32 32"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z"
-                                  fill="#FFCB45"
-                                />
-                              </svg>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="w-full border-b-2  border-[#D9D9D9] py-4  ">
-                    <div className="flex flex-row">
-                      <div className="basis-1/5">
-                        <div className="w-10 h-10 ml-4 bg-gray-200 rounded-full flex items-center justify-center font-bold                text-gray-500">
-                          5
-                        </div>
-                      </div>
-                      <div className="basis-3/5">
-                        <div className="flex flex-row items-center justify-center">
-                          <div className="basis-1/6">
-                            <img
-                              src={VanLangLogo}
-                              alt="rank2"
-                              className="w-10 h-10"
-                            />
-                          </div>
-                          <div className="basis-5/6 text-[#969696] font-bold">
-                            Đại học Văn Lang
-                          </div>
-                        </div>
-                      </div>
-                      <div className="basis-1/5 ">
-                        <div className="flex flex-row items-center justify-center mt-2">
-                          <div className="basis-1/6 text-[#969696] mr-3">
-                            5842k
-                          </div>
-                          <div className="basis-5/6 text-[#969696] font-bold">
-                            <span>
-                              <svg
-                                width="20px"
-                                height="20px"
-                                viewBox="0 -0.5 32 32"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z"
-                                  fill="#FFCB45"
-                                />
-                              </svg>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="w-full border-b-2  border-[#D9D9D9] py-4  ">
-                    <div className="flex flex-row">
-                      <div className="basis-1/5">
-                        <div className="w-10 h-10 ml-4 bg-gray-200 rounded-full flex items-center justify-center font-bold                text-gray-500">
-                          6
-                        </div>
-                      </div>
-                      <div className="basis-3/5">
-                        <div className="flex flex-row items-center justify-center">
-                          <div className="basis-1/6">
-                            <img
-                              src={VanLangLogo}
-                              alt="rank2"
-                              className="w-10 h-10"
-                            />
-                          </div>
-                          <div className="basis-5/6 text-[#969696] font-bold">
-                            Đại học Văn Lang
-                          </div>
-                        </div>
-                      </div>
-                      <div className="basis-1/5 ">
-                        <div className="flex flex-row items-center justify-center mt-2">
-                          <div className="basis-1/6 text-[#969696] mr-3">
-                            5842k
-                          </div>
-                          <div className="basis-5/6 text-[#969696] font-bold">
-                            <span>
-                              <svg
-                                width="20px"
-                                height="20px"
-                                viewBox="0 -0.5 32 32"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z"
-                                  fill="#FFCB45"
-                                />
-                              </svg>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="w-full border-b-2  border-[#D9D9D9] py-4  ">
-                    <div className="flex flex-row">
-                      <div className="basis-1/5">
-                        <div className="w-10 h-10 ml-4 bg-gray-200 rounded-full flex items-center justify-center font-bold                text-gray-500">
-                          7
-                        </div>
-                      </div>
-                      <div className="basis-3/5">
-                        <div className="flex flex-row items-center justify-center">
-                          <div className="basis-1/6">
-                            <img
-                              src={VanLangLogo}
-                              alt="rank2"
-                              className="w-10 h-10"
-                            />
-                          </div>
-                          <div className="basis-5/6 text-[#969696] font-bold">
-                            Đại học Văn Lang
-                          </div>
-                        </div>
-                      </div>
-                      <div className="basis-1/5 ">
-                        <div className="flex flex-row items-center justify-center mt-2">
-                          <div className="basis-1/6 text-[#969696] mr-3">
-                            5842k
-                          </div>
-                          <div className="basis-5/6 text-[#969696] font-bold">
-                            <span>
-                              <svg
-                                width="20px"
-                                height="20px"
-                                viewBox="0 -0.5 32 32"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z"
-                                  fill="#FFCB45"
-                                />
-                              </svg>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="w-full border-b-2  border-[#D9D9D9] py-4  ">
-                    <div className="flex flex-row">
-                      <div className="basis-1/5">
-                        <div className="w-10 h-10 ml-4 bg-gray-200 rounded-full flex items-center justify-center font-bold                text-gray-500">
-                          8
-                        </div>
-                      </div>
-                      <div className="basis-3/5">
-                        <div className="flex flex-row items-center justify-center">
-                          <div className="basis-1/6">
-                            <img
-                              src={VanLangLogo}
-                              alt="rank2"
-                              className="w-10 h-10"
-                            />
-                          </div>
-                          <div className="basis-5/6 text-[#969696] font-bold">
-                            Đại học Văn Lang
-                          </div>
-                        </div>
-                      </div>
-                      <div className="basis-1/5 ">
-                        <div className="flex flex-row items-center justify-center mt-2">
-                          <div className="basis-1/6 text-[#969696] mr-3">
-                            5842k
-                          </div>
-                          <div className="basis-5/6 text-[#969696] font-bold">
-                            <span>
-                              <svg
-                                width="20px"
-                                height="20px"
-                                viewBox="0 -0.5 32 32"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z"
-                                  fill="#FFCB45"
-                                />
-                              </svg>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="w-full border-b-2  border-[#D9D9D9] py-4  ">
-                    <div className="flex flex-row">
-                      <div className="basis-1/5">
-                        <div className="w-10 h-10 ml-4 bg-gray-200 rounded-full flex items-center justify-center font-bold                text-gray-500">
-                          9
-                        </div>
-                      </div>
-                      <div className="basis-3/5">
-                        <div className="flex flex-row items-center justify-center">
-                          <div className="basis-1/6">
-                            <img
-                              src={VanLangLogo}
-                              alt="rank2"
-                              className="w-10 h-10"
-                            />
-                          </div>
-                          <div className="basis-5/6 text-[#969696] font-bold">
-                            Đại học Văn Lang
-                          </div>
-                        </div>
-                      </div>
-                      <div className="basis-1/5 ">
-                        <div className="flex flex-row items-center justify-center mt-2">
-                          <div className="basis-1/6 text-[#969696] mr-3">
-                            5842k
-                          </div>
-                          <div className="basis-5/6 text-[#969696] font-bold">
-                            <span>
-                              <svg
-                                width="20px"
-                                height="20px"
-                                viewBox="0 -0.5 32 32"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z"
-                                  fill="#FFCB45"
-                                />
-                              </svg>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="w-full py-4  ">
-                    <div className="flex flex-row">
-                      <div className="basis-1/5">
-                        <div className="w-10 h-10 ml-4 bg-gray-200 rounded-full flex items-center justify-center font-bold                text-gray-500">
-                          10
-                        </div>
-                      </div>
-                      <div className="basis-3/5">
-                        <div className="flex flex-row items-center justify-center">
-                          <div className="basis-1/6">
-                            <img
-                              src={VanLangLogo}
-                              alt="rank2"
-                              className="w-10 h-10"
-                            />
-                          </div>
-                          <div className="basis-5/6 text-[#969696] font-bold">
-                            Đại học Văn Lang
-                          </div>
-                        </div>
-                      </div>
-                      <div className="basis-1/5 ">
-                        <div className="flex flex-row items-center justify-center mt-2">
-                          <div className="basis-1/6 text-[#969696] mr-3">
-                            5842k
-                          </div>
-                          <div className="basis-5/6 text-[#969696] font-bold">
-                            <span>
-                              <svg
-                                width="20px"
-                                height="20px"
-                                viewBox="0 -0.5 32 32"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z"
-                                  fill="#FFCB45"
-                                />
-                              </svg>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>

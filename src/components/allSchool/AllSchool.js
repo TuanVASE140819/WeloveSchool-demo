@@ -22,7 +22,13 @@ import iconchat from "../../assets/Icon/iconchat.png";
 import Ads1 from "../../assets/Ads/Ads1.png";
 import Ads2 from "../../assets/Ads/Ads2.png";
 
+
+// list school
+
+import { ListSchooklFake } from "../../Data/top10"; 
+
 import Comsoon from "../comsoon/comsoon";
+
 const DetailSchool = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isTablet, setIsTablet] = useState(window.innerWidth <= 1024);
@@ -50,29 +56,6 @@ const DetailSchool = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  const products = [
-    { name: "ĐẠI HỌC RMIT", image: RMIT, icon1: humanblue, icon2: Startblue },
-    { name: "ĐẠI HỌC RMIT", image: RMIT, icon1: humanblue, icon2: Startblue },
-    { name: "ĐẠI HỌC RMIT", image: RMIT, icon1: humanblue, icon2: Startblue },
-    { name: "ĐẠI HỌC RMIT", image: RMIT, icon1: humanblue, icon2: Startblue },
-    { name: "ĐẠI HỌC RMIT", image: RMIT, icon1: humanblue, icon2: Startblue },
-    { name: "ĐẠI HỌC RMIT", image: RMIT, icon1: humanblue, icon2: Startblue },
-    { name: "ĐẠI HỌC RMIT", image: RMIT, icon1: humanblue, icon2: Startblue },
-    { name: "ĐẠI HỌC RMIT", image: RMIT, icon1: humanblue, icon2: Startblue },
-    { name: "ĐẠI HỌC RMIT", image: RMIT, icon1: humanblue, icon2: Startblue },
-    { name: "ĐẠI HỌC RMIT", image: RMIT, icon1: humanblue, icon2: Startblue },
-    { name: "ĐẠI HỌC RMIT", image: RMIT, icon1: humanblue, icon2: Startblue },
-    { name: "ĐẠI HỌC RMIT", image: RMIT, icon1: humanblue, icon2: Startblue },
-    { name: "ĐẠI HỌC RMIT", image: RMIT, icon1: humanblue, icon2: Startblue },
-    { name: "ĐẠI HỌC RMIT", image: RMIT, icon1: humanblue, icon2: Startblue },
-    { name: "ĐẠI HỌC RMIT", image: RMIT, icon1: humanblue, icon2: Startblue },
-    { name: "ĐẠI HỌC RMIT", image: RMIT, icon1: humanblue, icon2: Startblue },
-    { name: "ĐẠI HỌC RMIT", image: RMIT, icon1: humanblue, icon2: Startblue },
-    { name: "ĐẠI HỌC RMIT", image: RMIT, icon1: humanblue, icon2: Startblue },
-    { name: "ĐẠI HỌC RMIT", image: RMIT, icon1: humanblue, icon2: Startblue },
-    { name: "ĐẠI HỌC RMIT", image: RMIT, icon1: humanblue, icon2: Startblue },
-  ];
 
   if (isMobile) {
     return (
@@ -623,7 +606,7 @@ const DetailSchool = () => {
           </div>
           {/* card */}
           <div className="grid grid-cols-2 mt-5 gap-5 mx-10">
-            {products.map((product, index) => (
+            {ListSchooklFake.map((product, index) => (
               <div
                 key={index}
                 className="flex flex-row rounded-lg p-1 bg-gray-50 "
@@ -645,7 +628,10 @@ const DetailSchool = () => {
                   <div className="flex flex-row max-w-[130px]  mb-3">
                     <div class="ml-3 flex flex-row mr-6">
                       <div class="basis-1/2">
-                        <div className="text-[#A3A3A3]">8815</div>
+                        <div className="text-[#A3A3A3]">
+                          {" "}
+                          {Math.floor(Math.random() * 10000)}
+                        </div>
                       </div>
                       <div class="basis-1/2">
                         <svg
@@ -682,7 +668,9 @@ const DetailSchool = () => {
 
                     <div class="flex flex-row ">
                       <div class="basis-1/2 mb-4">
-                        <div className="text-[#A3A3A3]">8815</div>
+                        <div className="text-[#A3A3A3]">
+                          {Math.floor(Math.random() * 10000)}
+                        </div>
                       </div>
                       <div class="basis-1/2 mb-4">
                         <svg
