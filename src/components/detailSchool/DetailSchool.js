@@ -28,11 +28,16 @@ import NEW_FPT from "../../assets/DetailShool/new_fpt.png";
 import Ads1 from "../../assets/Ads/Ads1.png";
 import Ads2 from "../../assets/Ads/Ads2.png";
 
+
+
+
 import Comsoon from "../comsoon/comsoon";
 const DetailSchool = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isTablet, setIsTablet] = useState(window.innerWidth <= 1024);
+  const nameLocal = localStorage.getItem("user");
 
+  console.log(nameLocal);
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -56,129 +61,6 @@ const DetailSchool = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  const products = [
-    {
-      name: "ĐẠI HỌC RMIT",
-      image: RMIT,
-      icon1: humanblue,
-      icon2: Startblue,
-    },
-    {
-      name: "ĐẠI HỌC RMIT",
-      image: RMIT,
-      icon1: humanblue,
-      icon2: Startblue,
-    },
-    {
-      name: "ĐẠI HỌC RMIT",
-      image: RMIT,
-      icon1: humanblue,
-      icon2: Startblue,
-    },
-    {
-      name: "ĐẠI HỌC RMIT",
-      image: RMIT,
-      icon1: humanblue,
-      icon2: Startblue,
-    },
-    {
-      name: "ĐẠI HỌC RMIT",
-      image: RMIT,
-      icon1: humanblue,
-      icon2: Startblue,
-    },
-    {
-      name: "ĐẠI HỌC RMIT",
-      image: RMIT,
-      icon1: humanblue,
-      icon2: Startblue,
-    },
-    {
-      name: "ĐẠI HỌC RMIT",
-      image: RMIT,
-      icon1: humanblue,
-      icon2: Startblue,
-    },
-    {
-      name: "ĐẠI HỌC RMIT",
-      image: RMIT,
-      icon1: humanblue,
-      icon2: Startblue,
-    },
-    {
-      name: "ĐẠI HỌC RMIT",
-      image: RMIT,
-      icon1: humanblue,
-      icon2: Startblue,
-    },
-    {
-      name: "ĐẠI HỌC RMIT",
-      image: RMIT,
-      icon1: humanblue,
-      icon2: Startblue,
-    },
-    {
-      name: "ĐẠI HỌC RMIT",
-      image: RMIT,
-      icon1: humanblue,
-      icon2: Startblue,
-    },
-    {
-      name: "ĐẠI HỌC RMIT",
-      image: RMIT,
-      icon1: humanblue,
-      icon2: Startblue,
-    },
-    {
-      name: "ĐẠI HỌC RMIT",
-      image: RMIT,
-      icon1: humanblue,
-      icon2: Startblue,
-    },
-    {
-      name: "ĐẠI HỌC RMIT",
-      image: RMIT,
-      icon1: humanblue,
-      icon2: Startblue,
-    },
-    {
-      name: "ĐẠI HỌC RMIT",
-      image: RMIT,
-      icon1: humanblue,
-      icon2: Startblue,
-    },
-    {
-      name: "ĐẠI HỌC RMIT",
-      image: RMIT,
-      icon1: humanblue,
-      icon2: Startblue,
-    },
-    {
-      name: "ĐẠI HỌC RMIT",
-      image: RMIT,
-      icon1: humanblue,
-      icon2: Startblue,
-    },
-    {
-      name: "ĐẠI HỌC RMIT",
-      image: RMIT,
-      icon1: humanblue,
-      icon2: Startblue,
-    },
-    {
-      name: "ĐẠI HỌC RMIT",
-      image: RMIT,
-      icon1: humanblue,
-      icon2: Startblue,
-    },
-    {
-      name: "ĐẠI HỌC RMIT",
-      image: RMIT,
-      icon1: humanblue,
-      icon2: Startblue,
-    },
-  ];
 
   if (isMobile) {
     return (
@@ -1143,18 +1025,15 @@ const DetailSchool = () => {
           </div>
 
           <div className="popular_post mx-auto max-w-7xl  min-h-[10rem]   p-10 rounded-lg mt-5">
-            <>
+            {nameLocal ? (
               <div>
                 <div className="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50">
                   <div className="px-4 py-2 bg-white rounded-t-lg ">
-                    <label htmlFor="comment" className="sr-only">
-                      Your comment
-                    </label>
                     <textarea
                       id="comment"
                       rows={4}
                       className="w-full px-0 text-sm text-gray-900 bg-white border-0 "
-                      placeholder="Write a comment..."
+                      placeholder="Bạn đang nghĩ gì?"
                       required=""
                       defaultValue={""}
                     />
@@ -1164,7 +1043,7 @@ const DetailSchool = () => {
                       type="submit"
                       className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 "
                     >
-                      Post comment
+                      Đăng
                     </button>
                     <div className="flex ps-0 space-x-1 rtl:space-x-reverse sm:ps-2">
                       <button
@@ -1221,8 +1100,11 @@ const DetailSchool = () => {
                   </div>
                 </div>
               </div>
-            </>
-
+            ) : (
+              <div>
+                <p>Bạn cần đăng nhập để post bài</p>
+              </div>
+            )}
             <div className="mt-5">
               <div className="bg-white p-8 rounded-lg shadow-md mb-6">
                 {/* User Info with Three-Dot Menu */}
@@ -1340,7 +1222,6 @@ const DetailSchool = () => {
                 </div>
               </div>
             </div>
-
             <div className="mt-5">
               <div className="bg-white p-8 rounded-lg shadow-md mb-6">
                 {/* User Info with Three-Dot Menu */}

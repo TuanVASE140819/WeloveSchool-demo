@@ -53,28 +53,7 @@ const Header = () => {
                 </div>
               </a>
             </li>
-            {/* <li>
-              <a
-                href="/"
-                className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 "
-              >
-                <div className="flex items-center">
-                  <img src={human2} className="w-6 h-6 mr-2" alt="home" />
-                  <span>bạn bè</span>
-                </div>
-              </a>
-            </li> */}
-            {/* <li>
-              <a
-                href="/"
-                className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"
-              >
-                <div className="flex items-center">
-                  <img src={human3} className="w-6 h-6 mr-2" alt="home" />
-                  <span>Hội Nhóm</span>
-                </div>
-              </a>
-            </li> */}
+
             <li>
               <a
                 href="/"
@@ -114,7 +93,6 @@ const Header = () => {
                           ></path>
                         </svg>
                       </div>
-                      {/* {nameLocal} */}
                     </button>
                   </div>
                   <div className="dropdown-content">
@@ -181,26 +159,24 @@ const Header = () => {
                 </div>
               )}
             </div>
-            <div className="dropdown">
-              <button className="bell-button">
-                <i className="p-2 bg-gray-100 rounded-full fa-solid fa-bell text-[#3D92D1]"></i>
-              </button>
-              <div className="dropdown-content">
-                {notification.map((note, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center space-x-2 border-b border-gray-200 p-2"
-                  >
-                    <div className="w-12 h-12"></div>
-                    <div className="flex flex-col">
-                      <h3 className="text-sm font-semibold">{note.title}</h3>
-                      <p className="text-xs">{note.content}</p>
-                    </div>
-                  </div>
-                ))}
+            <button
+              type="button"
+              className="text-[#3D92D1] hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 font-bold"
+              id="menu-button"
+              aria-expanded="true"
+              aria-haspopup="true"
+            >
+              <div className="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                <svg
+                  className="absolute w-6 h-6 text-gray-400  top-[8px] left-3"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M12.133 10.632v-1.8A5.406 5.406 0 0 0 7.979 3.57.946.946 0 0 0 8 3.464V1.1a1 1 0 0 0-2 0v2.364a.946.946 0 0 0 .021.106 5.406 5.406 0 0 0-4.154 5.262v1.8C1.867 13.018 0 13.614 0 14.807 0 15.4 0 16 .538 16h12.924C14 16 14 15.4 14 14.807c0-1.193-1.867-1.789-1.867-4.175ZM3.823 17a3.453 3.453 0 0 0 6.354 0H3.823Z" />
+                </svg>
               </div>
-            </div>
-
+            </button>
             {/* nút chuyển đổi ngôn ngữ */}
             <button className="ml-8 text-sm text-[#3D92D1] hidden lg:block">
               VN
@@ -244,9 +220,6 @@ const Header = () => {
           id="mobile-menu-2"
         >
           <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-            {/* <li>
-                        <a href="/" className="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 " aria-current="page">Trường của tôi</a>
-                    </li> */}
             <li>
               <a
                 href="/"
