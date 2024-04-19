@@ -9,8 +9,10 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useHistory } from "react-router-dom";
 
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 import * as Yup from "yup";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
@@ -73,6 +75,8 @@ const Register = () => {
     setSelectedHobbies(selectedOptions);
   };
 
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
     <>
       <section className="bg-white ">
@@ -91,19 +95,20 @@ const Register = () => {
           >
             {({ isSubmitting }) => (
               <Form className="space-y-6">
-                <h2
+                <h1
                   className="text-3xl font-bold text-center text-[#3D92D1]
           font-secondary"
                 >
                   Tạo tài khoản
-                </h2>
+                </h1>
                 {/* Các trường input trong form */}
                 <div className="w-full h-20">
                   <label
+                    required=""
                     htmlFor="name"
                     className="block mb-2 text-sm font-bold text-gray-900"
                   >
-                    Tên:
+                    Tên: <span style={{ color: "red" }}>*</span>
                   </label>
                   <Field
                     type="text"
@@ -121,7 +126,7 @@ const Register = () => {
                     htmlFor="ho"
                     className="block mb-2 text-sm font-bold text-gray-900"
                   >
-                    Họ:
+                    Họ:<span style={{ color: "red" }}>*</span>
                   </label>
                   <Field
                     type="text"
@@ -138,7 +143,7 @@ const Register = () => {
                     htmlFor="email"
                     className="block mb-2 text-sm font-bold text-gray-900"
                   >
-                    Email:
+                    Email:<span style={{ color: "red" }}>*</span>
                   </label>
                   <Field
                     type="email"
@@ -159,7 +164,7 @@ const Register = () => {
                     htmlFor="password"
                     className="block mb-2 text-sm font-bold text-gray-900"
                   >
-                    Password:
+                    Password:<span style={{ color: "red" }}>*</span>
                   </label>
                   <Field
                     type="password"
@@ -168,6 +173,12 @@ const Register = () => {
                     placeholder="Nhập password của bạn"
                     className="bg-white placeholder-gray-500  "
                     required=""
+                  />
+                  <FontAwesomeIcon
+                    icon={showPassword ? faEyeSlash : faEye}
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-0 top-2 mt-3 mr-3
+                          text-gray-500 cursor-pointer"
                   />
                   <ErrorMessage
                     name="password"
@@ -202,7 +213,7 @@ const Register = () => {
                     htmlFor="birthday"
                     className="block mb-2 text-sm font-bold text-gray-900"
                   >
-                    Ngày sinh:
+                    Ngày sinh:<span style={{ color: "red" }}>*</span>
                   </label>
                   <Field
                     type="date"
@@ -222,7 +233,7 @@ const Register = () => {
                     htmlFor="hobbies"
                     className="block mb-2 text-sm font-bold text-gray-900"
                   >
-                    Sở thích:
+                    Sở thích:<span style={{ color: "red" }}>*</span>
                   </label>
                   <Select
                     options={hobbiesOptions}

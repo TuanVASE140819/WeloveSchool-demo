@@ -40,7 +40,6 @@ const handleSubmit = async (values, { setSubmitting }) => {
       window.location.reload();
     }
 
-    const user = userCredential.user;
   } catch (error) {
     const errorCode = error.code;
     const errorMessage = error.message;
@@ -85,6 +84,8 @@ return (
                     <Field
                       type="email"
                       name="email"
+                      placeholder="Nhập email"
+                      className=" placeholder-gray-500 form-input"
                       // className="bg-white placeholder-gray-500 border-gray-700"
                     />
                     <ErrorMessage
@@ -100,22 +101,20 @@ return (
                     >
                       Password:
                     </label>
-                    <Field
-                      name="password"
-                      className="bg-white placeholder-gray-500 border-gray-700"
-                      type={showPassword ? "text" : "password"}
-                    >
-                      {({ field }) => (
-                        <div className="relative">
-                          <input {...field} className="form-input" />
-                          <FontAwesomeIcon
-                            icon={showPassword ? faEyeSlash : faEye}
-                            onClick={() => setShowPassword(!showPassword)}
-                            className="absolute right-0 top-2 mt-3 mr-3"
-                          />
-                        </div>
-                      )}
-                    </Field>
+                    <div className="relative">
+                      <Field
+                        name="password"
+                        placeholder="Nhập mật khẩu"
+                        className=" placeholder-gray-500 form-input"
+                        type={showPassword ? "text" : "password"}
+                      />
+                      <FontAwesomeIcon
+                        icon={showPassword ? faEyeSlash : faEye}
+                        onClick={() => setShowPassword(!showPassword)}
+                        className="absolute right-0 top-2 mt-3 mr-3
+                          text-gray-500 cursor-pointer"
+                      />
+                    </div>
                     <ErrorMessage
                       name="password"
                       component="div"
