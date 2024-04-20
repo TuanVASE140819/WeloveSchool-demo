@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "RMIT",
+    "image": "",
     "name": "Trường Đại Học FPT",
     "level": "Trường Đại Học",
     "province": "Hồ Chí Minh",
@@ -56,7 +56,7 @@
   },
   {
     "id": 2,
-    "image": "RMIT",
+    "image": "",
     "name": "Trường Đại Học Văn Lang",
     "level": "Trường Đại Học",
     "province": "Hồ Chí Minh",
@@ -74,11 +74,13 @@
   },
   {
     "id": 3,
-    "image": "RMIT",
+    "image": "",
     "name": "Trường Đại Học Kinh Tế TP.HCM",
     "level": "Trường Đại Học",
     "province": "Hồ Chí Minh",
     "district": "Quận 9",
+    "user": "",
+    "follow": "",
     "banner": "",
     "logo": "",
     "content": "",
@@ -90,7 +92,7 @@
   },
   {
     "id": 4,
-    "image": "RMIT",
+    "image": "",
     "name": "Trường Đại Học Bách Khoa TP.HCM",
     "level": "Trường Đại Học",
     "province": "Hồ Chí Minh",
@@ -108,7 +110,7 @@
   },
   {
     "id": 5,
-    "image": "RMIT",
+    "image": "",
     "name": "Trường Đại Học Ngoại Thương",
     "level": "Trường Đại Học",
     "province": "Hồ Chí Minh",
@@ -126,7 +128,7 @@
   },
   {
     "id": 6,
-    "image": "RMIT",
+    "image": "",
     "name": "Trường Đại Học Khoa Học Xã Hội và Nhân Văn",
     "level": "Trường Đại Học",
     "province": "Hồ Chí Minh",
@@ -144,7 +146,7 @@
   },
   {
     "id": 7,
-    "image": "RMIT",
+    "image": "",
     "name": "Trường Đại Học Tôn Đức Thắng",
     "level": "Trường Đại Học",
     "province": "Hồ Chí Minh",
@@ -162,7 +164,7 @@
   },
   {
     "id": 8,
-    "image": "RMIT",
+    "image": "",
     "name": "Trường Đại Học Xây Dựng",
     "level": "Trường Đại Học",
     "province": "Hồ Chí Minh",
@@ -180,7 +182,7 @@
   },
   {
     "id": 9,
-    "image": "RMIT",
+    "image": "",
     "name": "Trường Đại Học Hồng Bàng",
     "level": "Trường Đại Học",
     "province": "Hồ Chí Minh",
@@ -198,7 +200,7 @@
   },
   {
     "id": 10,
-    "image": "RMIT",
+    "image": "",
     "name": "Trường Đại Học Giao Thông Vận Tải",
     "level": "Trường Đại Học",
     "province": "Hồ Chí Minh",

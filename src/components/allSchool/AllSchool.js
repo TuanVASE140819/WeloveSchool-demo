@@ -35,6 +35,7 @@ import Comsoon from "../comsoon/comsoon";
 
 import { Link } from "react-router-dom";
 
+import defaultLogo from "../../assets/Default/logo.jpg";
 const DetailSchool = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isTablet, setIsTablet] = useState(window.innerWidth <= 1024);
@@ -619,10 +620,11 @@ const DetailSchool = () => {
               >
                 <div className="basis-2/6 p-1">
                   <div className="">
+                    {/* nếu  product.image = null thì hiển thị ảnh mặc định */}
                     <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-32 h-32 rounded-2xl "
+                      src={product.image ? product.image : defaultLogo}
+                      alt="product"
+                      className="rounded-lg"
                     />
                   </div>
                 </div>
