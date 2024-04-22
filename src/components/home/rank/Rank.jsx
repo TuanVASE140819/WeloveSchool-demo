@@ -105,6 +105,7 @@ const Rank = () => {
                   {Top10.map((item, index) => {
                     return (
                       <li
+                        key={index}
                         className={`w-full py-4 ${
                           index !== Top10.length - 1
                             ? "border-b-2 border-[#D9D9D9]"

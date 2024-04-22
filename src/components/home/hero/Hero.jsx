@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
-import FitterPC from "./FitterPC";
 import axios from "axios";
 import "./hero.css";
-
-// import get, post, put, delete from "./api";
-
-import { fetchData } from "../../../api/apiServices";
-
+import { getListSchool } from "../../../api/apiServices";
+import { useHistory } from "react-router-dom";
 
 const Hero = () => {
   const [provinces, setProvinces] = useState([]);
@@ -15,20 +11,26 @@ const Hero = () => {
   const [selectedProvince, setSelectedProvince] = useState("");
   const [selectedDistrict, setSelectedDistrict] = useState("");
   const [selectedWard, setSelectedWard] = useState("");
+  const [selectedProvinceName, setSelectedProvinceName] = useState("");
+  const [selectedDistrictName, setSelectedDistrictName] = useState("");
+  const [selectedWardName, setSelectedWardName] = useState("");
   const [address, setAddress] = useState({
     province: "",
     district: "",
     ward: "",
   });
-//"https://vapi.vnappmob.com/api/province"
+
+  const history = useHistory();
+
+  const [schools, setSchools] = useState([]);
+
   useEffect(() => {
     const fetchProvinces = async () => {
       const response = await axios.get(
         "https://vapi.vnappmob.com/api/province"
       );
-      setProvinces(response.data.results); // adjust this line based on the API response structure
+      setProvinces(response.data.results);
     };
-
     fetchProvinces();
   }, []);
 
@@ -37,9 +39,8 @@ const Hero = () => {
       const response = await axios.get(
         `https://vapi.vnappmob.com/api/province/district/${selectedProvince}`
       );
-      setDistricts(response.data.results); // adjust this line based on the API response structure
+      setDistricts(response.data.results);
     };
-
     if (selectedProvince) {
       fetchDistricts();
     }
@@ -50,44 +51,97 @@ const Hero = () => {
       const response = await axios.get(
         `https://vapi.vnappmob.com/api/province/ward/${selectedDistrict}`
       );
-      setWards(response.data.results); // adjust this line based on the API response structure
+      setWards(response.data.results);
     };
-
     if (selectedDistrict) {
       fetchWards();
     }
   }, [selectedDistrict]);
 
+  useEffect(() => {
+    const fetchSchools = async () => {
+      try {
+        const response = await getListSchool(
+          selectedProvinceName,
+          selectedDistrictName,
+          selectedWardName,
+          "",
+          "",
+          1,
+          10
+        );
+        setSchools(response.data);
+      } catch (error) {
+        console.error("Failed to fetch schools: ", error);
+      }
+    };
+
+    fetchSchools();
+  }, [selectedProvince, selectedDistrict, selectedWard]);
+
+  console.log("Schools", schools);
+
   const handleAddressChange = (type, value) => {
     let newAddress = { ...address };
-
     if (type === "province") {
       setSelectedProvince(value);
+      setSelectedProvinceName(
+        provinces
+          .find((province) => province.province_id === value)
+          .province_name.replace("Tỉnh  ", "")
+      );
       newAddress.province = provinces.find(
         (province) => province.province_id === value
       ).province_name;
     } else if (type === "district") {
       setSelectedDistrict(value);
+      setSelectedDistrictName(
+        districts
+          .find((district) => district.district_id === value)
+          .district_name.replace("Quận  ", "")
+      );
       newAddress.district = districts.find(
         (district) => district.district_id === value
       ).district_name;
     } else if (type === "ward") {
       setSelectedWard(value);
+      setSelectedWardName(
+        wards
+          .find((ward) => ward.ward_id === value)
+          .ward_name.replace("Phường  ", "")
+      );
       const ward = wards.find((ward) => ward.ward_id === value);
       if (ward) {
         newAddress.ward = ward.ward_name;
       }
     }
-
     setAddress(newAddress);
   };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    history.push({
+      pathname: "/new-page", // thay '/new-page' bằng đường dẫn thực tế của bạn
+      state: {
+        province: selectedProvinceName,
+        district: selectedDistrictName,
+        ward: selectedWardName,
+      },
+    });
+  };
+
+  // in ra thông tin get từ API getListSchool
+
   return (
     <>
       <section className="hero">
         <div className="container">
           {/* <Heading title='Search Your Next Home ' subtitle='Find new & featured property located in your local city.' /> */}
 
-          <form className=" mt-32 d-flex justify-content-center align-items-center">
+          <form
+            onSubmit={handleSubmit}
+            className=" mt-32 d-flex justify-content-center align-items-center"
+          >
             <div className="text-center">
               <h3
                 className="text-xl font-bold  title-font"
@@ -107,10 +161,11 @@ const Hero = () => {
                 <div className="basis-4/6 p-4 flex flex-row">
                   <div className="relative w-full mr-2">
                     <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                      <i class="fa-solid fa-location-dot"></i>
+                      <i className="fa-solid fa-location-dot"></i>
                     </div>
                     <select
                       id="province"
+                      value={selectedProvince}
                       className="bg-[#F4F4F4]
                       rounded-xl
                         border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2  placeholder-gray-500"
@@ -118,12 +173,7 @@ const Hero = () => {
                         handleAddressChange("province", e.target.value)
                       }
                     >
-                      <option
-                        value=""
-                        disabled
-                        selected
-                        className="text-[1rem]"
-                      >
+                      <option value="" disabled className="text-[1rem]">
                         Tỉnh/thành phố
                       </option>
                       {provinces.map((province) => (
@@ -138,11 +188,11 @@ const Hero = () => {
                   </div>
                   <div className="relative w-full mr-2">
                     <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                      <i class="fa-solid fa-location-dot"></i>
+                      <i className="fa-solid fa-location-dot"></i>
                     </div>
                     <select
                       id="district"
-                      defaultValue="Quận/huyện"
+                      value={selectedDistrict}
                       disabled={!selectedProvince}
                       onChange={(e) =>
                         handleAddressChange("district", e.target.value)
@@ -151,7 +201,9 @@ const Hero = () => {
                       rounded-2xl
                         border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2  placeholder-gray-500"
                     >
-                      <option disabled>Quận/huyện</option>
+                      <option value="" disabled className="text-[1rem]">
+                        Quận/huyện
+                      </option>
                       {districts.map((district) => (
                         <option
                           key={district.district_id}
@@ -165,11 +217,11 @@ const Hero = () => {
 
                   <div className="relative w-full mr-2">
                     <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                      <i class="fa-solid fa-location-dot"></i>
+                      <i className="fa-solid fa-location-dot"></i>
                     </div>
                     <select
                       id="ward"
-                      defaultValue="Xã/phường"
+                      value={selectedWard}
                       disabled={!selectedDistrict}
                       onChange={(e) =>
                         handleAddressChange("ward", e.target.value)
@@ -178,7 +230,9 @@ const Hero = () => {
                       rounded-2xl
                         border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2  placeholder-gray-500"
                     >
-                      <option disabled>Xã/phường</option>
+                      <option value="" disabled className="text-[1rem]">
+                        Xã/phường
+                      </option>
                       {wards.map((ward) => (
                         <option key={ward.ward_id} value={ward.ward_id}>
                           {ward.ward_name}
@@ -189,7 +243,7 @@ const Hero = () => {
 
                   <select
                     id="cap"
-                    defaultValue="Cấp"
+                    value={selectedWard}
                     disabled={!selectedWard}
                     onChange={(e) =>
                       handleAddressChange("ward", e.target.value)
@@ -198,7 +252,9 @@ const Hero = () => {
                       rounded-2xl
                         border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2  placeholder-gray-500"
                   >
-                    <option disabled>Chọn Cấp</option>
+                    <option value="" disabled className="text-[1rem]">
+                      Cấp
+                    </option>
                     <option value="1">Chọn Cấp</option>
                     <option value="2">Trung học cơ sở</option>
                     <option value="3">Trung học phổ thông</option>
@@ -214,7 +270,7 @@ const Hero = () => {
                     <div className="flex items-center">
                       <div className="relative w-full">
                         <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                          <i class="fa-solid fa-school-flag"></i>
+                          <i className="fa-solid fa-school-flag"></i>
                         </div>
                         <input
                           type="text"
@@ -228,12 +284,9 @@ const Hero = () => {
                       </div>
                       <button
                         type="submit"
-                        className="bg-[#3D92D1] inline-flex items-center py-2.5  ml-2 text-sm font-medium text-white  rounded-lg hover:bg-blue-8
-                         hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300
-                         w-[10rem] pl-4
-                         "
+                        className="bg-[#3D92D1] inline-flex items-center py-2.5  ml-2 text-sm font-medium text-white  rounded-lg hover:bg-blue-8 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 w-[10rem] pl-4"
                       >
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i className="fa-solid fa-magnifying-glass"></i>
                         <div className="ml-2">Tìm kiếm</div>
                       </button>
                     </div>
@@ -248,4 +301,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default React.memo(Hero);

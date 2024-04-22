@@ -53,23 +53,23 @@ const School = () => {
           <Heading title="KHƠI GỢI KÝ ỨC" />
 
           <Slider {...settings}>
-            <div class="px-4 ">
+            <div className="px-4 ">
               <div
-                class="
+                className="
                rounded overflow-hidden flex flex-col max-w-xl mx-auto"
               >
                 <a href="/">
                   <img
-                    class="w-full"
+                    className="w-full"
                     src={cap1}
                     alt="Sunset in the mountains"
                   />
                 </a>
-                <div class="relative -mt-16 px-10 pt-5 pb-5 bg-white m-10 shadow-lg rounded-lg">
-                  <h3 class="font-bold text-sm text-[#3D92D1] text-center mx-auto">
+                <div className="relative -mt-16 px-10 pt-5 pb-5 bg-white m-10 shadow-lg rounded-lg">
+                  <h3 className="font-bold text-sm text-[#3D92D1] text-center mx-auto">
                     Trường Tiểu Học
                   </h3>
-                  <p class="text-gray-500 text-sm italic text-center mx-auto">
+                  <p className="text-gray-500 text-sm italic text-center mx-auto">
                     Nơi ươm mầm trí thức đầu đời <br />
                     chấp cánh ước mơ
                   </p>
@@ -77,21 +77,21 @@ const School = () => {
               </div>
             </div>
 
-            <div class="px-4">
-              <div class="rounded overflow-hidden flex flex-col max-w-xl mx-auto">
+            <div className="px-4">
+              <div className="rounded overflow-hidden flex flex-col max-w-xl mx-auto">
                 <a href="/">
                   <img
-                    class="w-full"
+                    className="w-full"
                     src={cap2}
                     alt="Sunset in the mountains"
                   />
                 </a>
-                <div class="relative -mt-16 px-10 pt-5 pb-5 bg-white m-10 shadow-lg rounded-lg">
-                  <h3 class="font-bold text-sm text-[#3D92D1] text-center mx-auto">
+                <div className="relative -mt-16 px-10 pt-5 pb-5 bg-white m-10 shadow-lg rounded-lg">
+                  <h3 className="font-bold text-sm text-[#3D92D1] text-center mx-auto">
                     Trường Trung Học Cơ Sở
                   </h3>
 
-                  <p class="text-gray-500 text-sm text-center italic">
+                  <p className="text-gray-500 text-sm text-center italic">
                     Bước đệm vững chắc, <br />
                     khơi nguồn sáng tạo
                   </p>
@@ -99,61 +99,61 @@ const School = () => {
               </div>
             </div>
 
-            {/* <div class="p-4">
-              <div class="rounded overflow-hidden flex flex-col max-w-xl mx-auto">
+            {/* <div className="p-4">
+              <div className="rounded overflow-hidden flex flex-col max-w-xl mx-auto">
                 <a href="/">
                   <img
-                    class="w-full"
+                    className="w-full"
                     src={cap3}
                     alt="Sunset in the mountains"
                   />
                 </a>
-                <div class="relative -mt-16 px-10 pt-5 pb-5 bg-white m-10 shadow-lg rounded-lg">
-                  <h3 class="font-bold text-sm text-[#3D92D1] text-center mx-auto">
+                <div className="relative -mt-16 px-10 pt-5 pb-5 bg-white m-10 shadow-lg rounded-lg">
+                  <h3 className="font-bold text-sm text-[#3D92D1] text-center mx-auto">
                     Trường Trung Học Phổ Thông
                   </h3>
 
-                  <p class="text-gray-500 text-sm italic text-center">
+                  <p className="text-gray-500 text-sm italic text-center">
                     Ngã rẽ tương lai, <br />
                     chinh phục ước mơ
                   </p>
                 </div>
               </div>
             </div> */}
-            <div class="px-4">
-              <div class="rounded overflow-hidden flex flex-col max-w-xl mx-auto">
+            <div className="px-4">
+              <div className="rounded overflow-hidden flex flex-col max-w-xl mx-auto">
                 <a href="/">
                   <img
-                    class="w-full"
+                    className="w-full"
                     src={cap1}
                     alt="Sunset in the mountains"
                   />
                 </a>
-                <div class="relative -mt-16 px-10 pt-5 pb-5 bg-white m-10 shadow-lg rounded-lg">
-                  <h3 class="font-bold text-sm text-[#3D92D1] text-center mx-auto">
+                <div className="relative -mt-16 px-10 pt-5 pb-5 bg-white m-10 shadow-lg rounded-lg">
+                  <h3 className="font-bold text-sm text-[#3D92D1] text-center mx-auto">
                     Trường Tiểu Học
                   </h3>
-                  <p class="text-gray-500 text-sm italic text-center mx-auto">
+                  <p className="text-gray-500 text-sm italic text-center mx-auto">
                     Nơi ươm mầm trí thức đầu đời <br />
                     chấp cánh ước mơ
                   </p>
                 </div>
               </div>
             </div>
-            <div class="px-4">
-              <div class="rounded overflow-hidden flex flex-col max-w-xl mx-auto">
+            <div className="px-4">
+              <div className="rounded overflow-hidden flex flex-col max-w-xl mx-auto">
                 <a href="/">
                   <img
-                    class="w-full"
+                    className="w-full"
                     src={cap1}
                     alt="Sunset in the mountains"
                   />
                 </a>
-                <div class="relative -mt-16 px-10 pt-5 pb-5 bg-white m-10 shadow-lg rounded-lg">
-                  <h3 class="font-bold text-sm text-[#3D92D1] text-center mx-auto">
+                <div className="relative -mt-16 px-10 pt-5 pb-5 bg-white m-10 shadow-lg rounded-lg">
+                  <h3 className="font-bold text-sm text-[#3D92D1] text-center mx-auto">
                     Trường Tiểu Học
                   </h3>
-                  <p class="text-gray-500 text-sm italic text-center mx-auto">
+                  <p className="text-gray-500 text-sm italic text-center mx-auto">
                     Nơi ươm mầm trí thức đầu đời <br />
                     chấp cánh ước mơ
                   </p>
