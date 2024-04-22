@@ -19,11 +19,11 @@ const Header = () => {
   };
 
   const handleSignOut = () => {
-    localStorage.removeItem("user");
+    localStorage.removeItem("dataUser");
     window.location.reload(); // refresh trang
   };
 
-  const nameLocal = localStorage.getItem("user");
+  const dataUser = localStorage.getItem("dataUser");
   return (
     <>
       <header>
@@ -69,7 +69,7 @@ const Header = () => {
           <div className="flex items-center lg:order-2 lg:mr-10 md:mr-1 sm:mr-1">
             <div className="relative inline-block text-left">
               {/* nếu nameLocal khác null thì hiển thị tên người dùng  */}
-              {nameLocal !== null ? (
+              {dataUser !== null ? (
                 <div className="dropdown">
                   <div>
                     <button
@@ -117,42 +117,44 @@ const Header = () => {
                   </div>
                 </div>
               ) : (
-                <div className="dropdown">
-                  <div>
-                    <button
-                      type="button"
-                      className="text-[#3D92D1] hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 font-bold"
-                      id="menu-button"
-                      aria-expanded="true"
-                      aria-haspopup="true"
-                    >
-                      Đăng nhập
-                    </button>
-                  </div>
-                  <div className="dropdown-content">
-                    <div
-                      role="menu"
-                      aria-orientation="vertical"
-                      aria-labelledby="menu-button"
-                      // tabindex="-1"
-                    >
-                      <div className="py-1" role="none">
-                        <a
-                          href="/login"
-                          className="text-gray-700 block px-4 py-2 text-sm"
-                          role="menuitem"
-                          id="menu-item-0"
-                        >
-                          Đăng nhập
-                        </a>
-                        <a
-                          href="/register"
-                          className="text-gray-700 block px-4 py-2 text-sm"
-                          role="menuitem"
-                          id="menu-item-0"
-                        >
-                          Đăng ký
-                        </a>
+                <div>
+                  <div className="dropdown">
+                    <div>
+                      <button
+                        type="button"
+                        className="text-[#3D92D1] hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 font-bold"
+                        id="menu-button"
+                        aria-expanded="true"
+                        aria-haspopup="true"
+                      >
+                        Đăng nhập
+                      </button>
+                    </div>
+                    <div className="dropdown-content">
+                      <div
+                        role="menu"
+                        aria-orientation="vertical"
+                        aria-labelledby="menu-button"
+                        // tabindex="-1"
+                      >
+                        <div className="py-1" role="none">
+                          <a
+                            href="/login"
+                            className="text-gray-700 block px-4 py-2 text-sm"
+                            role="menuitem"
+                            id="menu-item-0"
+                          >
+                            Đăng nhập
+                          </a>
+                          <a
+                            href="/register"
+                            className="text-gray-700 block px-4 py-2 text-sm"
+                            role="menuitem"
+                            id="menu-item-0"
+                          >
+                            Đăng ký
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>

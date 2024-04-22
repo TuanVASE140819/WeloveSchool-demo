@@ -12,6 +12,14 @@ export const registerUser = async (data) => {
     // console.error("Error registering user:", error);
   }
 };
+export const loginUser = async (data) => {
+  try {
+    const response = await API.post("/api/v1/Login/loginweb", data);
+    return response.data;
+  } catch (error) {
+    // console.error("Error logging in user:", error);
+  }
+};
 
 
 export const fetchData = async () => {
