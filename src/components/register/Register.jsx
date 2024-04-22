@@ -14,51 +14,45 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import * as Yup from "yup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import { registerUser } from "../../api/apiServices";
+
 const validationSchema = Yup.object().shape({
+  username: Yup.string().required("Vui lòng nhập tên tài khoản"),
+  name: Yup.string().required("Vui lòng nhập họ và tên"),
   email: Yup.string()
     .email("Email không hợp lệ")
-    .matches(/@gmail.com$/, "Must be a Gmail address")
-    .required("Bạn cần nhập email"),
-  password: Yup.string()
-    .min(6, "Password must be at least 6 characters")
-    .required("Bạn cần nhập password"),
-  confirmPassword: Yup.string()
-    .oneOf([Yup.ref("password"), null], "Mật khẩu không khớp")
-
-    .required("Bạn cần nhập xác nhận password"),
-  name: Yup.string().required("Bạn cần nhập tên"),
-  ho: Yup.string().required("Bạn cần nhập họ"),
-  birthday: Yup.date().required("Bạn cần nhập ngày sinh"),
-  selectedHobbies: Yup.array().required("Bạn cần chọn sở thích"),
+    .required("Vui lòng nhập email"),
+  password: Yup.string().required("Vui lòng nhập mật khẩu"),
+  dob: Yup.string().required("Vui lòng nhập ngày sinh"),
 });
 const Register = () => {
   const history = useHistory();
   const handleSumbit = (values, { setSubmitting }) => {
-    const { email, password } = values;
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user);
+    const data = {
+      username: values.username,
+      password: values.password,
+      name: values.name,
+      role: values.role,
+      dob: values.dob,
+      email: values.email,
+      note: values.note,
+      keylist: selectedHobbies.map((hobby) => hobby.value).join(","),
+      status: values.status,
+      obdata: values.obdata,
+    };
+
+    // neus Status Code = 200 => dang ky thanh cong => chuyen huong ve trang login
+    // neu Status Code = 400 => dang ky that bai => thong bao loi
+
+    registerUser(data)
+      .then((response) => {
+        console.log(response);
         alert("Đăng ký thành công");
-
         history.push("/login");
-
-        setSubmitting(false);
       })
-
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorMessage);
-        // NẾU EMAIL ĐÃ ĐƯỢC SỬ DỤNG
-        if (errorCode === "auth/email-already-in-use") {
-          alert("Email đã được sử dụng");
-        } else if (errorCode === "auth/weak-password") {
-          alert("Mật khẩu phải có ít nhất 6 ký tự");
-        } else {
-          alert(errorMessage);
-        }
-        setSubmitting(false);
+        console.error(error);
+        alert("Đăng ký thất bại " + error.message);
       });
   };
 
@@ -83,12 +77,17 @@ const Register = () => {
         <div className=" bg-gray-50 px-4 mx-auto my-8 max-w-2xl py-8">
           <Formik
             initialValues={{
-              name: "",
-              ho: "",
-              email: "",
+              username: "",
               password: "",
-              birthday: "",
-              selectedHobbies: [],
+              gioitinh: "",
+              name: "",
+              role: "user",
+              dob: "",
+              email: "",
+              note: "",
+              keylist: "",
+              status: "active",
+              obdata: "",
             }}
             validationSchema={validationSchema}
             onSubmit={handleSumbit}
@@ -105,10 +104,28 @@ const Register = () => {
                 <div className="w-full h-20">
                   <label
                     required=""
-                    htmlFor="name"
+                    htmlFor="username"
                     className="block mb-2 text-sm font-bold text-gray-900"
                   >
-                    Tên: <span style={{ color: "red" }}>*</span>
+                    Tài khoản: <span style={{ color: "red" }}>*</span>
+                  </label>
+                  <Field
+                    type="text"
+                    name="username"
+                    id="username"
+                    className="bg-white placeholder-gray-500 "
+                    placeholder="Nhập tên của bạn"
+                    required=""
+                  />
+                  <ErrorMessage name="name" component="div" className="error" />
+                </div>
+                <div className="w-full h-20">
+                  <label
+                    required=""
+                    htmlFor="username"
+                    className="block mb-2 text-sm font-bold text-gray-900"
+                  >
+                    Họ và Tên: <span style={{ color: "red" }}>*</span>
                   </label>
                   <Field
                     type="text"
@@ -121,23 +138,6 @@ const Register = () => {
                   <ErrorMessage name="name" component="div" className="error" />
                 </div>
                 {/* Các trường khác tương tự */}
-                <div className="w-full h-20">
-                  <label
-                    htmlFor="ho"
-                    className="block mb-2 text-sm font-bold text-gray-900"
-                  >
-                    Họ:<span style={{ color: "red" }}>*</span>
-                  </label>
-                  <Field
-                    type="text"
-                    name="ho"
-                    id="ho"
-                    className="bg-white placeholder-gray-500  "
-                    placeholder="Nhập họ của bạn"
-                    required=""
-                  />
-                  <ErrorMessage name="ho" component="div" className="error" />
-                </div>
                 <div className="w-full h-20">
                   <label
                     htmlFor="email"
@@ -195,42 +195,38 @@ const Register = () => {
                     Xác nhận password:
                   </label>
                   <Field
-                    type="password"
                     name="confirmPassword"
+                    type="password"
                     id="confirmPassword"
                     placeholder="Nhập lại password của bạn"
-                    className="bg-white placeholder-gray-500  "
-                    required=""
+                    className="bg-white placeholder-gray-500"
+                    autoComplete="new-password"
                   />
                   <ErrorMessage
-                    name="confirmPassword"
+                    name="password"
                     component="div"
                     className="error"
                   />
                 </div>
                 <div className="w-full h-20">
                   <label
-                    htmlFor="birthday"
+                    htmlFor="dob"
                     className="block mb-2 text-sm font-bold text-gray-900"
                   >
                     Ngày sinh:<span style={{ color: "red" }}>*</span>
                   </label>
                   <Field
                     type="date"
-                    name="birthday"
-                    id="birthday"
+                    name="dob"
+                    id="dob"
                     className="bg-white placeholder-gray-500  "
                     required=""
                   />
-                  <ErrorMessage
-                    name="birthday"
-                    component="div"
-                    className="error"
-                  />
+                  <ErrorMessage name="dob" component="div" className="error" />
                 </div>
                 <div className="w-full h-20">
                   <label
-                    htmlFor="hobbies"
+                    htmlFor="keylist"
                     className="block mb-2 text-sm font-bold text-gray-900"
                   >
                     Sở thích:<span style={{ color: "red" }}>*</span>

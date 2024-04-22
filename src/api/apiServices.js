@@ -1,6 +1,19 @@
 // src/api/apiServices.js
 import API from "./index";
 
+
+
+//  Register 
+export const registerUser = async (data) => {
+  try {
+    const response = await API.post("/api/v1/Account/register", data);
+    return response.data;
+  } catch (error) {
+    // console.error("Error registering user:", error);
+  }
+};
+
+
 export const fetchData = async () => {
   try {
     const response = await API.get("/path-to-resource");
