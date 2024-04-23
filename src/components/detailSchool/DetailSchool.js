@@ -234,20 +234,6 @@ const DetailSchool = () => {
                   className="mt-4 mb-2
                   inline-flex items-center py-2 px-[5rem]  text-sm font-medium text-white bg-[#0487D9] rounded-lg border border-[#0487D9] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 "
                 >
-                  {/* <svg
-                  className="mr-2 -ml-1 w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg> */}
                   Tìm
                 </button>
               </div>
@@ -262,10 +248,8 @@ const DetailSchool = () => {
             </div>
 
             <select
-              // disabled
               id="underline_select"
               className="mt-5 bg-[#F8F8F8] border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full p-1 px-4"
-              // className="mt-5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5"
             >
               <option selected>Tháng 1</option>
               <option>Tháng 2</option>
@@ -731,186 +715,90 @@ const DetailSchool = () => {
                       </select>
                     </div>
                     <div className="basis-1/2">
-                      {/*  nút tìm kiếm */}
                       <button className="ml-5  bg-[#4ABC96] text-white rounded-full text-xs p-1 px-4">
                         Tìm kiếm
                       </button>
                     </div>
                   </div>
                 </div>
-                {/* {school?.data.map((item) => (
-                  <div>
-                    <div className="max-w-sm bg-white rounded-lg shadow">
-                      <a href="/">
-                        <img className="rounded-t-lg" src={NEW_FPT} alt="" />
-                      </a>
-                      <div className="p-3 border-b-[1px] border-[#D1D1D1]">
-                        <a href="/">
-                          <h5 className="mb-2 text-sm font-bold tracking-tight text-[#6B6B6B] ">
-                            {item.name}
-                          </h5>
-                        </a>
-                      </div>
-
-                      <div className="flex ">
-                        <div className="flex-none w-16 h-10">
-                          <img
-                            src={FPT}
-                            alt="FPT"
-                            className="w-10 h-10 rounded-full"
-                          />
-                        </div>
-                        <div className="">
-                          <h3 className="text-xs font-bold text-[#6B6B6B]">
-                            {school.name}
-                          </h3>
-                          <h3 className="text-sm">{item.content}</h3>
-                        </div>
-                        <div className="ml-2">
-                          <svg
-                            fill="#000000"
-                            width="40px"
-                            height="40px"
-                            viewBox="0 0 24 24"
-                            id="right-circle-2"
-                            data-name="Flat Line"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="icon flat-line"
-                          >
-                            <g id="SVGRepo_bgCarrier" stroke-width="0" />
-
-                            <g
-                              id="SVGRepo_tracerCarrier"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            />
-
-                            <g id="SVGRepo_iconCarrier">
-                              <circle
-                                id="secondary"
-                                cx="12"
-                                cy="12"
-                                r="9"
-                                // style="fill: #f0f0f0; stroke-width: 2;"
-                                style={{ fill: "#f0f0f0", strokeWidth: 2 }}
-                              />
-
-                              <polyline
-                                id="primary"
-                                points="13.5 9.5 16 12 13.5 14.5"
-                                // style="fill: none; stroke: #5cbc6c; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"
-                                style={{
-                                  fill: "none",
-                                  stroke: "#5cbc6c",
-                                  strokeLinecap: "round",
-                                  strokeLinejoin: "round",
-                                }}
-                              />
-
-                              <path
-                                id="primary-2"
-                                data-name="primary"
-                                d="M8,12h8m5,0a9,9,0,1,0-9,9A9,9,0,0,0,21,12Z"
-                                // style="fill: none; stroke: #5cbc6c; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"
-                                style={{
-                                  fill: "none",
-                                  stroke: "#5cbc6c",
-                                  strokeLinecap: "round",
-                                  strokeLinejoin: "round",
-                                  strokeWidth: 2,
-                                }}
-                              />
-                            </g>
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))} */}
               </div>
             </div>
           </div>
           <div className=" mx-auto max-w-7xl  min-h-[10rem] rounded-lg mt-5">
-            {nameLocal ? (
-              <div>
-                <div className="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50">
-                  <div className="px-4 py-2 bg-white rounded-t-lg ">
-                    <textarea
-                      id="comment"
-                      rows={4}
-                      className="w-full px-0 text-sm text-gray-900 bg-white border-0 "
-                      placeholder="Bạn đang nghĩ gì?"
-                      required=""
-                      defaultValue={""}
-                    />
-                  </div>
-                  <div className="flex items-center justify-between px-3 py-2 border-t ">
+            <div>
+              <div className="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50">
+                <div className="px-4 py-2 bg-white rounded-t-lg ">
+                  <textarea
+                    id="comment"
+                    rows={4}
+                    className="w-full px-0 text-sm text-gray-900 bg-white border-0 "
+                    placeholder="Bạn đang nghĩ gì?"
+                    required=""
+                    defaultValue={""}
+                  />
+                </div>
+                <div className="flex items-center justify-between px-3 py-2 border-t ">
+                  <button
+                    type="submit"
+                    className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 "
+                  >
+                    Đăng
+                  </button>
+                  <div className="flex ps-0 space-x-1 rtl:space-x-reverse sm:ps-2">
                     <button
-                      type="submit"
-                      className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 "
+                      type="button"
+                      className="inline-flex justify-center items-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 "
                     >
-                      Đăng
+                      <svg
+                        className="w-4 h-4"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 12 20"
+                      >
+                        <path
+                          stroke="currentColor"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M1 6v8a5 5 0 1 0 10 0V4.5a3.5 3.5 0 1 0-7 0V13a2 2 0 0 0 4 0V6"
+                        />
+                      </svg>
+                      <span className="sr-only">Attach file</span>
                     </button>
-                    <div className="flex ps-0 space-x-1 rtl:space-x-reverse sm:ps-2">
-                      <button
-                        type="button"
-                        className="inline-flex justify-center items-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 "
+                    <button
+                      type="button"
+                      className="inline-flex justify-center items-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 "
+                    >
+                      <svg
+                        className="w-4 h-4"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 16 20"
                       >
-                        <svg
-                          className="w-4 h-4"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 12 20"
-                        >
-                          <path
-                            stroke="currentColor"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M1 6v8a5 5 0 1 0 10 0V4.5a3.5 3.5 0 1 0-7 0V13a2 2 0 0 0 4 0V6"
-                          />
-                        </svg>
-                        <span className="sr-only">Attach file</span>
-                      </button>
-                      <button
-                        type="button"
-                        className="inline-flex justify-center items-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 "
+                        <path d="M8 0a7.992 7.992 0 0 0-6.583 12.535 1 1 0 0 0 .12.183l.12.146c.112.145.227.285.326.4l5.245 6.374a1 1 0 0 0 1.545-.003l5.092-6.205c.206-.222.4-.455.578-.7l.127-.155a.934.934 0 0 0 .122-.192A8.001 8.001 0 0 0 8 0Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
+                      </svg>
+                      <span className="sr-only">Set location</span>
+                    </button>
+                    <button
+                      type="button"
+                      className="inline-flex justify-center items-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 "
+                    >
+                      <svg
+                        className="w-4 h-4"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 20 18"
                       >
-                        <svg
-                          className="w-4 h-4"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 16 20"
-                        >
-                          <path d="M8 0a7.992 7.992 0 0 0-6.583 12.535 1 1 0 0 0 .12.183l.12.146c.112.145.227.285.326.4l5.245 6.374a1 1 0 0 0 1.545-.003l5.092-6.205c.206-.222.4-.455.578-.7l.127-.155a.934.934 0 0 0 .122-.192A8.001 8.001 0 0 0 8 0Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
-                        </svg>
-                        <span className="sr-only">Set location</span>
-                      </button>
-                      <button
-                        type="button"
-                        className="inline-flex justify-center items-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 "
-                      >
-                        <svg
-                          className="w-4 h-4"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 20 18"
-                        >
-                          <path d="M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z" />
-                        </svg>
-                        <span className="sr-only">Upload image</span>
-                      </button>
-                    </div>
+                        <path d="M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z" />
+                      </svg>
+                      <span className="sr-only">Upload image</span>
+                    </button>
                   </div>
                 </div>
               </div>
-            ) : (
-              <div>
-                <p>Bạn cần đăng nhập để post bài</p>
-              </div>
-            )}
+            </div>
           </div>
 
           <div
