@@ -14,10 +14,12 @@ const Hero = () => {
   const [selectedProvinceName, setSelectedProvinceName] = useState("");
   const [selectedDistrictName, setSelectedDistrictName] = useState("");
   const [selectedWardName, setSelectedWardName] = useState("");
+  const [selectLevel, setSelectLevel] = useState("");
   const [address, setAddress] = useState({
     province: "",
     district: "",
     ward: "",
+    level: "",
   });
 
   const history = useHistory();
@@ -65,7 +67,7 @@ const Hero = () => {
           selectedProvinceName,
           selectedDistrictName,
           selectedWardName,
-          "",
+          selectLevel,
           "",
           1,
           10
@@ -79,18 +81,18 @@ const Hero = () => {
     fetchSchools();
   }, [selectedProvince, selectedDistrict, selectedWard]);
 
-  console.log("Schools", schools);
+  console.log("selectLevel", selectLevel);
 
   const handleAddressChange = (type, value) => {
     let newAddress = { ...address };
     if (type === "province") {
-    setSelectedProvince(value);
-    setSelectedProvinceName(
-      provinces
-        .find((province) => province.province_id === value)
-        .province_name.replace("Tỉnh ", "")
-        .replace("Thành phố ", "")
-    );
+      setSelectedProvince(value);
+      setSelectedProvinceName(
+        provinces
+          .find((province) => province.province_id === value)
+          .province_name.replace("Tỉnh ", "")
+          .replace("Thành phố ", "")
+      );
       newAddress.province = provinces.find(
         (province) => province.province_id === value
       ).province_name;
@@ -100,7 +102,7 @@ const Hero = () => {
         districts
           .find((district) => district.district_id === value)
           .district_name.replace("Quận ", "")
-        .replace("Huyện ", "")
+          .replace("Huyện ", "")
       );
       newAddress.district = districts.find(
         (district) => district.district_id === value
@@ -110,12 +112,14 @@ const Hero = () => {
       setSelectedWardName(
         wards
           .find((ward) => ward.ward_id === value)
-          .ward_name.replace("Phường  ", "")
+          .ward_name.replace("Phường ", "")
       );
       const ward = wards.find((ward) => ward.ward_id === value);
       if (ward) {
         newAddress.ward = ward.ward_name;
       }
+    } else if (type === "level") {
+      setSelectLevel(value);
     }
     setAddress(newAddress);
   };
@@ -128,6 +132,8 @@ const Hero = () => {
         province: selectedProvinceName,
         district: selectedDistrictName,
         ward: selectedWardName,
+        level: selectLevel,
+        name: document.getElementById("name_school").value,
       },
     });
   };
@@ -244,11 +250,11 @@ const Hero = () => {
                   </div>
 
                   <select
-                    id="cap"
-                    value={selectedWard}
-                    disabled={!selectedWard}
+                    id="level"
+                    value={selectLevel}
+                    // disabled={!selectedWard}
                     onChange={(e) =>
-                      handleAddressChange("ward", e.target.value)
+                      handleAddressChange("level", e.target.value)
                     }
                     className="bg-[#F4F4F4]
                       rounded-2xl
@@ -257,13 +263,14 @@ const Hero = () => {
                     <option value="" disabled className="text-[1rem]">
                       Cấp
                     </option>
-                    <option value="1">Chọn Cấp</option>
-                    <option value="2">Trung học cơ sở</option>
-                    <option value="3">Trung học phổ thông</option>
-                    <option value="4">Trung cấp</option>
-                    <option value="5">Cao đẳng</option>
-                    <option value="6">Đại học</option>
-                    <option value="7">Sau đại học</option>
+                    <option value="Tiểu học">Tiểu học</option>
+                    <option value="Trung học cơ sở">Trung học cơ sở</option>
+                    <option value="Trung học phổ thông">
+                      Trung học phổ thông
+                    </option>
+                    <option value="Trung cấp">Trung cấp</option>
+                    <option value="Cao đẳng">Cao đẳng</option>
+                    <option value="Đại học">Đại học</option>
                   </select>
                 </div>
 
@@ -276,7 +283,7 @@ const Hero = () => {
                         </div>
                         <input
                           type="text"
-                          id="voice-search"
+                          id="name_school"
                           className="bg-[#F4F4F4]
                           rounded-s-lg
                            border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2  placeholder-gray-500"
