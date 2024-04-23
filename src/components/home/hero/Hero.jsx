@@ -148,7 +148,7 @@ const Hero = () => {
 
           <form
             onSubmit={handleSubmit}
-            className=" mt-32 d-flex justify-content-center align-items-center"
+            className="bg-white mt-32 d-flex justify-content-center align-items-center"
           >
             <div className="text-center">
               <h3
@@ -274,7 +274,7 @@ const Hero = () => {
                   </select>
                 </div>
 
-                <div className="basis-2/6 py-3">
+                <div className="basis-2/6 py-3 px-3">
                   <div>
                     <div className="flex items-center">
                       <div className="relative w-full">
@@ -293,7 +293,7 @@ const Hero = () => {
                       </div>
                       <button
                         type="submit"
-                        className="bg-[#3D92D1] inline-flex items-center py-2.5  ml-2 text-sm font-medium text-white  rounded-lg hover:bg-blue-8 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 w-[10rem] pl-4"
+                        className="bg-[#3D92D1] inline-flex items-center py-2.5  ml-2 text-sm font-medium text-white  rounded-lg hover:bg-blue-8 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 w-[10rem] pl-4 pr-3"
                       >
                         <i className="fa-solid fa-magnifying-glass"></i>
                         <div className="ml-2">Tìm kiếm</div>

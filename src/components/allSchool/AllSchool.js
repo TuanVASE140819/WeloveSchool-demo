@@ -85,15 +85,10 @@ const DetailSchool = () => {
     const level = document.getElementById("level").value;
     const searchQuery = document.getElementById("voice-search").value;
 
-    console.log("searchQuery", searchQuery);
     // Call the API
     const response = await getListSchool(searchQuery, "", "", "", level, 1, 20);
     setData(response.data);
   };
-
-  console.log("data", data);
-
-  console.log("selectLevel", selectLevel);
 
   if (isMobile) {
     return (
@@ -118,90 +113,38 @@ const DetailSchool = () => {
           {/* left */}
           <div className="basis-1/5 border-r border-gray-300 bg-gray-50">
             <div className="border-b-[1px] border-gray-300">
-              <div className="flex flex-row">
-                <div className="basis-1/6">
-                  <div className="flex flex-col">
-                    <div className="pt-6 pl-10">
-                      <svg
-                        stroke="#6B7280"
-                        height="30px"
-                        width="30px"
-                        version="1.1"
-                        id="Capa_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 297 297"
-                      >
-                        <g>
-                          <path
-                            d="M148.5,0C87.43,0,37.747,49.703,37.747,110.797c0,91.026,99.729,179.905,103.976,183.645
-		c1.936,1.705,4.356,2.559,6.777,2.559c2.421,0,4.841-0.853,6.778-2.559c4.245-3.739,103.975-92.618,103.975-183.645
-		C259.253,49.703,209.57,0,148.5,0z M148.5,272.689c-22.049-21.366-90.243-93.029-90.243-161.892
-		c0-49.784,40.483-90.287,90.243-90.287s90.243,40.503,90.243,90.287C238.743,179.659,170.549,251.322,148.5,272.689z"
-                          />
-                          <path
-                            d="M148.5,59.183c-28.273,0-51.274,23.154-51.274,51.614c0,28.461,23.001,51.614,51.274,51.614
-		c28.273,0,51.274-23.153,51.274-51.614C199.774,82.337,176.773,59.183,148.5,59.183z M148.5,141.901
-		c-16.964,0-30.765-13.953-30.765-31.104c0-17.15,13.801-31.104,30.765-31.104c16.964,0,30.765,13.953,30.765,31.104
-		C179.265,127.948,165.464,141.901,148.5,141.901z"
-                          />
-                        </g>
-                      </svg>
-                    </div>
-                    <div className="pt-24 pl-10">
-                      <svg
-                        width="30px"
-                        height="30px"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M6 15.5002H7M6 18.5002H7M17 18.5002H18M17 15.5002H18M10 22.0002V18.0002C10 16.8956 10.8954 16.0002 12 16.0002C13.1046 16.0002 14 16.8956 14 18.0002V22.0002M12 5H16.84C16.896 5 16.924 5 16.9454 4.9891C16.9642 4.97951 16.9795 4.96422 16.9891 4.9454C17 4.92401 17 4.89601 17 4.84V2.16C17 2.10399 17 2.07599 16.9891 2.0546C16.9795 2.03578 16.9642 2.02049 16.9454 2.0109C16.924 2 16.896 2 16.84 2H12.16C12.104 2 12.076 2 12.0546 2.0109C12.0358 2.02049 12.0205 2.03578 12.0109 2.0546C12 2.07599 12 2.10399 12 2.16V5ZM12 5V7.69092M12.03 12.25H12.0375M12 7.69092C12.1947 7.69092 12.3895 7.71935 12.5779 7.77623C13.0057 7.90536 13.3841 8.24585 14.1407 8.92681L17 11.5002L18.5761 11.8942C19.4428 12.1109 19.8761 12.2192 20.1988 12.4608C20.4834 12.674 20.7061 12.9592 20.8439 13.2871C21 13.6587 21 14.1053 21 14.9987V18.8002C21 19.9203 21 20.4804 20.782 20.9082C20.5903 21.2845 20.2843 21.5905 19.908 21.7822C19.4802 22.0002 18.9201 22.0002 17.8 22.0002H6.2C5.0799 22.0002 4.51984 22.0002 4.09202 21.7822C3.71569 21.5905 3.40973 21.2845 3.21799 20.9082C3 20.4804 3 19.9203 3 18.8002V14.9987C3 14.1053 3 13.6587 3.15613 13.2871C3.29388 12.9592 3.51657 12.674 3.80124 12.4608C4.12389 12.2192 4.55722 12.1109 5.42388 11.8942L7 11.5002L9.85931 8.92681C10.6159 8.24584 10.9943 7.90536 11.4221 7.77623C11.6105 7.71935 11.8053 7.69092 12 7.69092ZM12.03 13C11.6158 13 11.28 12.6642 11.28 12.25C11.28 11.8358 11.6158 11.5 12.03 11.5C12.4442 11.5 12.78 11.8358 12.78 12.25C12.78 12.6642 12.4442 13 12.03 13Z"
-                          stroke="#6B7280"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div className="basis-5/6">
-                  <div className="max-w-sm mx-auto mb-2 pt-5 px-5 border-b-1 border-gray-300">
-                    <select
-                      id="underline_select"
-                      className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-[1px] border-gray-200    "
-                    >
-                      <option selected>Chọn tỉnh</option>
-                    </select>
-                    <select
-                      id="underline_select"
-                      className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-[1px] border-gray-200    "
-                    >
-                      <option selected>Chọn quận huyện</option>
-                    </select>
-                    <select
-                      id="underline_select"
-                      className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-[1px] border-gray-200    "
-                    >
-                      <option selected>Chọn phường xã</option>
-                    </select>
-                    <select
-                      id="underline_select"
-                      className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-[1px] border-gray-200    "
-                    >
-                      <option selected>Chọn trường</option>
-                    </select>
-                  </div>
+              <form class="max-w-sm mx-auto p-5">
+                <label for="underline_select" class="sr-only">
+                  Underline select
+                </label>
+                <select
+                  id="province"
+                  class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200"
+                >
+                  <option selected>Chọn tỉnh </option>
+                </select>
+                <select
+                  id="district"
+                  class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200"
+                >
+                  <option selected>Chọn quận huyện</option>
+                </select>
+                <select
+                  id="ward"
+                  class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200"
+                >
+                  <option selected>Chọn phường xã</option>
+                </select>
+                {/* nút tìm */}
+                <div class="flex justify-center items-center">
                   <button
                     type="submit"
-                    className="mt-4 mb-2
-                  inline-flex items-center py-2 px-[5rem]  text-sm font-medium text-white bg-[#0487D9] rounded-lg border border-[#0487D9] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 "
+                    class="my-2 px-20 p-2 bg-[#0487D9] text-white rounded-lg border border-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
                   >
                     Tìm
                   </button>
                 </div>
-              </div>
+              </form>
             </div>
             <div className="px-5 py-5 border-b border-gray-300 ">
               <div className="text-sm font-bold text-[#6B7280]">
@@ -235,7 +178,7 @@ const DetailSchool = () => {
                 {[...Array(5)].map((_, i) => (
                   <div key={i} className="border-b border-gray-300 mt-5 pb-3">
                     <div className="grid grid-cols-10 gap-5 mt-5">
-                      <div className="col-span-2 flex items-center justify-center text-center">
+                      <div className="col-span-2 flex items-center justify-center text-center px-2">
                         <img src={top1} alt="top1" className="w-10 h-10" />
                       </div>
                       <div className="flex flex-col col-span-6 align-items-left">
@@ -243,7 +186,7 @@ const DetailSchool = () => {
                           Đại học RMIT
                         </h3>
                         <div className="grid grid-cols-2 gap-1">
-                          <div class="flex flex-row">
+                          <div class="flex flex-row px-2">
                             <div class="basis-1/2">
                               <div className="text-[#0487D9]">8815</div>
                             </div>
@@ -542,7 +485,7 @@ const DetailSchool = () => {
           {/* center */}
           <div className="basis-3/5 mx-auto px-5 pt-5 max-w-7xl">
             <form onSubmit={handleSubmit}>
-              <div className="grid grid-cols-7 px-10">
+              <div className="grid grid-cols-7 ">
                 <div className="col-span-1 mr-2 ">
                   <select
                     id="level"
@@ -551,7 +494,7 @@ const DetailSchool = () => {
                     onChange={(e) =>
                       handleAddressChange("level", e.target.value)
                     }
-                    className="bg-gray-50 border border-orange-300 text-orange-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mr-4"
+                    className="bg-gray-50 border border-orange-300 text-orange-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-[0.69rem] mr-4"
                   >
                     <option value="" disabled className="text-[1rem]">
                       Cấp
@@ -623,11 +566,11 @@ const DetailSchool = () => {
               </div>
             </form>
             {/* card */}
-            <div className="grid grid-cols-2 mt-5 gap-5 mx-10">
+            <div className="grid grid-cols-2 mt-5 gap-5 ">
               {data.map((product, index) => (
                 <div
                   key={index}
-                  className="flex flex-row rounded-lg p-1 bg-gray-50 "
+                  className="flex flex-row rounded-lg p-1 bg-gray-50  border  border-gray-300"
                 >
                   <div className="basis-2/6 p-1">
                     <div className="">
@@ -641,7 +584,7 @@ const DetailSchool = () => {
                   </div>
 
                   <div className="basis-4/6">
-                    <h1 className="text-sm font-bold text-gray-700 mb-2">
+                    <h1 className="text-xl font-bold text-[#0487D9] mb-2 mt-2">
                       {product.name}
                     </h1>
                     <div className="flex flex-row max-w-[130px]  mb-3">
@@ -724,7 +667,7 @@ const DetailSchool = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="flex flex-row">
+                    <div class="flex justify-between ">
                       <Link to={`/detailSchool/${product.id}`}>
                         <div
                           // href="/detailSchool"
@@ -736,7 +679,7 @@ const DetailSchool = () => {
                           }}
                         >
                           <button
-                            className="bg-[#7DD2F5] text-white rounded-lg p-2 px-[3.5rem]
+                            className="bg-[#4ABC96] text-white rounded-lg p-2 mx-[6rem] px-[5.5rem]
                     hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 mr-2 ml-2"
                           >
                             Xem trường
@@ -744,7 +687,7 @@ const DetailSchool = () => {
                         </div>
                       </Link>
 
-                      <button className="bg-gray-200 text-black rounded-lg p-2.5">
+                      <button className="bg-gray-200 text-black rounded-lg p-1 px-1.5">
                         {/*  icon 3 chấm */}
                         <i className="fas fa-ellipsis-h"></i>
                       </button>
