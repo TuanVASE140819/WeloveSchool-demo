@@ -84,12 +84,13 @@ const Hero = () => {
   const handleAddressChange = (type, value) => {
     let newAddress = { ...address };
     if (type === "province") {
-      setSelectedProvince(value);
-      setSelectedProvinceName(
-        provinces
-          .find((province) => province.province_id === value)
-          .province_name.replace("Tỉnh  ", "")
-      );
+    setSelectedProvince(value);
+    setSelectedProvinceName(
+      provinces
+        .find((province) => province.province_id === value)
+        .province_name.replace("Tỉnh ", "")
+        .replace("Thành phố ", "")
+    );
       newAddress.province = provinces.find(
         (province) => province.province_id === value
       ).province_name;
@@ -98,7 +99,8 @@ const Hero = () => {
       setSelectedDistrictName(
         districts
           .find((district) => district.district_id === value)
-          .district_name.replace("Quận  ", "")
+          .district_name.replace("Quận ", "")
+        .replace("Huyện ", "")
       );
       newAddress.district = districts.find(
         (district) => district.district_id === value

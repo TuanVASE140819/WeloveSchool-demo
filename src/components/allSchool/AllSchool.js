@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
-import RMIT from "../../assets/School/RMIT.jpg";
-import Startblue from "../../assets/Icon/Startblue.jpg";
-import humanblue from "../../assets/Icon/humanblue.jpg";
 
 import top1 from "../../assets/Home/Top1.png";
-import top2 from "../../assets/Home/Top2.png";
-import top3 from "../../assets/Home/Top3.png";
+
 
 import nui from "../../assets/More/nui2.png";
 import nui2 from "../../assets/More/nui.png";
@@ -13,26 +9,11 @@ import song from "../../assets/More/song.png";
 import xilo from "../../assets/More/xilo.png";
 import FPT from "../../assets/DetailShool/FPT.png";
 
-import dmx from "../../assets/School/dmx.jpg";
-import tuyensinh from "../../assets/School/tuyensinh.jpg";
-
-import Rmit from "../../assets/Logo/rmit.jpg";
 
 import iconchat from "../../assets/Icon/iconchat.png";
-import Ads1 from "../../assets/Ads/Ads1.png";
 import Ads2 from "../../assets/Ads/Ads2.png";
-
-
-// list school
-
-import { ListSchooklFake } from "../../Data/top10"; 
-
-// import data
 import data from "../../Data/school.json";
-
 import Comsoon from "../comsoon/comsoon";
-
-
 import { Link } from "react-router-dom";
 
 import defaultLogo from "../../assets/Default/logo.jpg";
@@ -538,10 +519,7 @@ const DetailSchool = () => {
             </div>
           </div>
           {/* center */}
-          <div
-            className="basis-3/5 mx-auto px-5 pt-5
-        mx-auto max-w-7xl"
-          >
+          <div className="basis-3/5 mx-auto px-5 pt-5 max-w-7xl">
             <div className="grid grid-cols-7 px-10">
               <div className="col-span-1 mr-2 ">
                 <select
@@ -757,15 +735,7 @@ const DetailSchool = () => {
             </div>
           </div>
           {/* right */}
-          <div
-            className="basis-1/5 border-l border-gray-300 bg-gray-50"
-            // style={{
-            //   overflowY: "auto",
-            //   maxHeight: "calc(100vh - 4rem)",
-            //   //KHI SCROLL XUỐNG HẾT THÌ CỐ ĐỊNH
-            //   position: "sticky",
-            // }}
-          >
+          <div className="basis-1/5 border-l border-gray-300 bg-gray-50">
             <div className="Ads border-b border-gray-300 p-5">
               <img
                 src="https://daihoc.fpt.edu.vn/wp-content/uploads/2021/03/tien_phong_tuyen_sinh_jzut-373x206.jpg"

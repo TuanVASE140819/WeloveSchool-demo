@@ -25,15 +25,24 @@ export const loginUser = async (data) => {
 // Get data trường 
 //https://apiweloveschool20240421134825.azurewebsites.net/api/v1/School/getSchool?tinh=r&quan=r&xa=r&captruong=r&name=r&pageNumber=1&pageSize=10
 
-export const getListSchool = async (tinh, quan, xa, captruong, name) => { 
+export const getListSchool = async (
+  tinh,
+  quan,
+  xa,
+  captruong,
+  name,
+  pageNumber,
+  pageSize
+) => {
   try {
-    const response = await API.get(`/api/v1/School/getSchool?tinh=${tinh}&quan=${quan}&xa=${xa}&captruong=${captruong}&name=${name}&pageNumber=1&pageSize=10`); 
+    const response = await API.get(
+      `/api/v1/School/getSchool?tinh=${tinh}&quan=${quan}&xa=${xa}&captruong=${captruong}&name=${name}&pageNumber=${pageNumber}&pageSize=${pageSize}`
+    );
     return response.data;
-  }
-  catch (error) {
+  } catch (error) {
     console.error("Error fetching data:", error);
   }
-}
+};
 
 export const fetchData = async () => {
   try {
