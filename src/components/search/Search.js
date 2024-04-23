@@ -20,6 +20,8 @@ import Ads2 from "../../assets/Ads/Ads2.png";
 import data from "../../Data/school.json";
 import Comsoon from "../comsoon/comsoon";
 
+
+
 const NewPage = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const productsPerPage = 20; // Số lượng sản phẩm trên mỗi trang
@@ -179,20 +181,6 @@ const NewPage = () => {
                 className="mt-4 mb-2
                   inline-flex items-center py-2 px-[5rem]  text-sm font-medium text-white bg-[#0487D9] rounded-lg border border-[#0487D9] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 "
               >
-                {/* <svg
-                  className="mr-2 -ml-1 w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg> */}
                 Tìm
               </button>
             </div>

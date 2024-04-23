@@ -8,19 +8,23 @@ import nui2 from "../../assets/More/nui.png";
 import song from "../../assets/More/song.png";
 import xilo from "../../assets/More/xilo.png";
 import FPT from "../../assets/DetailShool/FPT.png";
-
+import { getListSchool } from "../../api/apiServices";
 
 import iconchat from "../../assets/Icon/iconchat.png";
 import Ads2 from "../../assets/Ads/Ads2.png";
-import data from "../../Data/school.json";
+
 import Comsoon from "../comsoon/comsoon";
 import { Link } from "react-router-dom";
 
 import defaultLogo from "../../assets/Default/logo.jpg";
+
 const DetailSchool = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isTablet, setIsTablet] = useState(window.innerWidth <= 1024);
+  const [data, setData] = useState([]);
 
+  const [selectLevel, setSelectLevel] = useState("");
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -44,6 +48,52 @@ const DetailSchool = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  // get list school : getListSchool
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        const response = await getListSchool(
+          "",
+          "",
+          "",
+          "",
+          selectLevel,
+          1,
+          20
+        );
+        setData(response.data);
+        setIsLoading(false);
+        console.log("response", response);
+      } catch (error) {
+        console.log("Failed to fetch product list: ", error);
+        setIsLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const handleAddressChange = (type, value) => {
+    setSelectLevel(value);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    // Get the search parameters
+    const level = document.getElementById("level").value;
+    const searchQuery = document.getElementById("voice-search").value;
+
+    console.log("searchQuery", searchQuery);
+    // Call the API
+    const response = await getListSchool(searchQuery, "", "", "", level, 1, 20);
+    setData(response.data);
+  };
+
+  console.log("data", data);
+
+  console.log("selectLevel", selectLevel);
 
   if (isMobile) {
     return (
@@ -142,41 +192,12 @@ const DetailSchool = () => {
                     >
                       <option selected>Chọn trường</option>
                     </select>
-                    {/* grid grid-cols-2 */}
-                    {/* <div className="grid grid-cols-2 gap-5">
-                    <select
-                      id="underline_select"
-                      className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-[1px] border-gray-200    "
-                    >
-                      <option selected>Chọn lớp</option>
-                    </select>
-                    <select
-                      id="underline_select"
-                      className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-[1px] border-gray-200    "
-                    >
-                      <option selected>Chọn khóa học</option>
-                    </select>
-                  </div> */}
                   </div>
                   <button
                     type="submit"
                     className="mt-4 mb-2
                   inline-flex items-center py-2 px-[5rem]  text-sm font-medium text-white bg-[#0487D9] rounded-lg border border-[#0487D9] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 "
                   >
-                    {/* <svg
-                  className="mr-2 -ml-1 w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg> */}
                     Tìm
                   </button>
                 </div>
@@ -520,76 +541,87 @@ const DetailSchool = () => {
           </div>
           {/* center */}
           <div className="basis-3/5 mx-auto px-5 pt-5 max-w-7xl">
-            <div className="grid grid-cols-7 px-10">
-              <div className="col-span-1 mr-2 ">
-                <select
-                  id="ward"
-                  defaultValue="Chọn Cấp"
-                  className="bg-gray-50 border border-orange-300 text-orange-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mr-4"
-                >
-                  <option disabled>Chọn Cấp</option>
-                  <option value="1">Cấp 1</option>
-                  <option value="2">Cấp 2</option>
-                  <option value="3">Cấp 3</option>
-                  <option value="4">Cấp 4</option>
-                  <option value="5">Cấp 5</option>
-                </select>
-              </div>
-              <div className="col-span-5">
-                <div className="flex items-center">
-                  <label htmlFor="voice-search" className="sr-only">
-                    Search
-                  </label>
-                  <div className="relative w-full border border-gray-300 rounded-lg">
-                    <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                      {/* svg location */}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="12"
-                        height="15"
-                        viewBox="0 0 12 15"
-                      >
-                        <path
-                          fill="#000000"
-                          fill-rule="evenodd"
-                          d="M574,120 C575.324428,120 580,114.054994 580,110.833333 C580,107.611672 577.313708,105 574,105 C570.686292,105 568,107.611672 568,110.833333 C568,114.054994 572.675572,120 574,120 Z M574,113.333333 C575.420161,113.333333 576.571429,112.214045 576.571429,110.833333 C576.571429,109.452621 575.420161,108.333333 574,108.333333 C572.579839,108.333333 571.428571,109.452621 571.428571,110.833333 C571.428571,112.214045 572.579839,113.333333 574,113.333333 Z"
-                          transform="translate(-568 -105)"
-                        />
-                      </svg>
+            <form onSubmit={handleSubmit}>
+              <div className="grid grid-cols-7 px-10">
+                <div className="col-span-1 mr-2 ">
+                  <select
+                    id="level"
+                    value={selectLevel}
+                    // disabled={!selectedWard}
+                    onChange={(e) =>
+                      handleAddressChange("level", e.target.value)
+                    }
+                    className="bg-gray-50 border border-orange-300 text-orange-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mr-4"
+                  >
+                    <option value="" disabled className="text-[1rem]">
+                      Cấp
+                    </option>
+                    <option value="Tiểu học">Tiểu học</option>
+                    <option value="Trung học cơ sở">Trung học cơ sở</option>
+                    <option value="Trung học phổ thông">
+                      Trung học phổ thông
+                    </option>
+                    <option value="Trung cấp">Trung cấp</option>
+                    <option value="Cao đẳng">Cao đẳng</option>
+                    <option value="Đại học">Đại học</option>
+                  </select>
+                </div>
+                <div className="col-span-5">
+                  <div className="flex items-center">
+                    <label htmlFor="voice-search" className="sr-only">
+                      Search
+                    </label>
+                    <div className="relative w-full rounded-lg">
+                      <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                        {/* svg location */}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="15"
+                          viewBox="0 0 12 15"
+                        >
+                          <path
+                            fill="#000000"
+                            fill-rule="evenodd"
+                            d="M574,120 C575.324428,120 580,114.054994 580,110.833333 C580,107.611672 577.313708,105 574,105 C570.686292,105 568,107.611672 568,110.833333 C568,114.054994 572.675572,120 574,120 Z M574,113.333333 C575.420161,113.333333 576.571429,112.214045 576.571429,110.833333 C576.571429,109.452621 575.420161,108.333333 574,108.333333 C572.579839,108.333333 571.428571,109.452621 571.428571,110.833333 C571.428571,112.214045 572.579839,113.333333 574,113.333333 Z"
+                            transform="translate(-568 -105)"
+                          />
+                        </svg>
+                      </div>
+                      <input
+                        type="text"
+                        id="voice-search"
+                        className="bg-gray-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 placeholder-gray-500 italic"
+                        placeholder="Tỉnh bạn muốn tìm kiếm..."
+                        required=""
+                      />
                     </div>
-                    <input
-                      type="text"
-                      // id="voice-search"
-                      className="bg-gray-50 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 placeholder-gray-500 italic"
-                      placeholder="Tỉnh bạn muốn tìm kiếm..."
-                      required=""
-                    />
                   </div>
                 </div>
-              </div>
-              <div className="col-span-1">
-                <button
-                  type="submit"
-                  className="inline-flex items-center py-2.5 px-[3rem] ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 :bg-blue-600 "
-                >
-                  <svg
-                    className="mr-2 -ml-1 w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
+                <div className="col-span-1">
+                  <button
+                    type="submit"
+                    className="inline-flex items-center py-2.5 px-[3rem] ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 :bg-blue-600 "
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    />
-                  </svg>
-                  {/* Tìm kiếm */}
-                </button>
+                    <svg
+                      className="mr-2 -ml-1 w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      />
+                    </svg>
+                    {/* Tìm kiếm */}
+                  </button>
+                </div>
               </div>
-            </div>
+            </form>
             {/* card */}
             <div className="grid grid-cols-2 mt-5 gap-5 mx-10">
               {data.map((product, index) => (

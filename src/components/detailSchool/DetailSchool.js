@@ -33,7 +33,11 @@ import Ads2 from "../../assets/Ads/Ads2.png";
 import data from "../../Data/school.json";
 import { useParams } from "react-router-dom";
 
+import { getSchoolDetail } from "../../api/apiServices";
+
 import Comsoon from "../comsoon/comsoon";
+
+import LoadingSpinner from "../Loading/Loading";
 const DetailSchool = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isTablet, setIsTablet] = useState(window.innerWidth <= 1024);
@@ -52,6 +56,8 @@ const DetailSchool = () => {
     };
   }, []);
 
+  // call api detailSchool
+
   useEffect(() => {
     const handleResize = () => {
       setIsTablet(window.innerWidth <= 1024);
@@ -68,11 +74,47 @@ const DetailSchool = () => {
   const { id } = useParams(); // giả sử bạn đang sử dụng react-router
 
   useEffect(() => {
+    const fetchSchool = async () => {
+      const response = await getSchoolDetail(id);
+      setSchool(response);
+    };
+
+    fetchSchool();
+  }, [id]);
+
+  //   {
+  //   "statusCode": 200,
+  //   "message": "Get dữ liệu thành công!",
+  //   "data": {
+  //     "id": "00fc7509-bdfa-4e91-b158-f049da347bbf",
+  //     "name": "Trường Cao đẳng nghề Việt Nam - Hàn Quốc Cà Mau",
+  //     "rank": "",
+  //     "vote": "",
+  //     "schoolyear": "",
+  //     "avatar": "",
+  //     "content": "",
+  //     "address": "",
+  //     "level": "Cao đẳng",
+  //     "phone": "",
+  //     "banner": "",
+  //     "email": "",
+  //     "status": "Active",
+  //     "obdata": "Data",
+  //     "tinh": "Cà Mau",
+  //     "quan": "TP. Cà Mau",
+  //     "xa": "P9",
+  //     "captruong": "Cao đẳng",
+  //     "countryid": "vietnam"
+  //   }
+  // }
+
+  console.log("school", school?.data);
+  useEffect(() => {
     const foundSchool = data.find((school) => school.id === Number(id));
     setSchool(foundSchool);
   }, [id]);
 
-  if (!school) return <div>Loading...</div>;
+  if (!school) return <LoadingSpinner />;
 
   if (isMobile) {
     return (
@@ -554,15 +596,21 @@ const DetailSchool = () => {
             <div className=" bg-[#FCFCFC]  rounded-lg overflow-hidden">
               <div className="relative">
                 <img
-                  src={school.banner === "" ? DefaultBanner : school.banner}
-                  alt="FPT"
+                  src={
+                    school?.data?.banner === "" ? DefaultBanner : school.banner
+                  }
+                  alt={school.banner === "" ? "FPT" : school.banner}
                   className="w-full h-full"
                 />
 
                 <div className="w-full absolute bottom-0 left-0 z-10 transform translate-y-3/4 lg:w-auto lg:translate-x-1/2 flex justify-center">
                   <div className="bg-white p-2  w-32 h-32  rounded-full object-cover">
                     <img
-                      src={school.banner === "" ? DefaultLogo : school.banner}
+                      src={
+                        school?.data?.avatar === ""
+                          ? DefaultLogo
+                          : school.banner
+                      }
                       alt="FPT"
                       className="w-30 h-30  rounded-full object-cover"
                     />
@@ -575,7 +623,7 @@ const DetailSchool = () => {
                 <div className="p-4 text-center lg:text-left">
                   <div className="flex flex-row">
                     <h1 className="basis-4/6 text-xl font-bold text-[#0487D9]">
-                      {school.name}
+                      {school?.data?.name}
                     </h1>
                     <div className="basis-2/6">
                       <div className="pl-[1rem] text-[#5b3131] font-bold">
@@ -690,7 +738,7 @@ const DetailSchool = () => {
                     </div>
                   </div>
                 </div>
-                {school.group.map((item, index) => (
+                {/* {school?.data.map((item) => (
                   <div>
                     <div className="max-w-sm bg-white rounded-lg shadow">
                       <a href="/">
@@ -778,7 +826,7 @@ const DetailSchool = () => {
                       </div>
                     </div>
                   </div>
-                ))}
+                ))} */}
               </div>
             </div>
           </div>
@@ -863,118 +911,6 @@ const DetailSchool = () => {
                 <p>Bạn cần đăng nhập để post bài</p>
               </div>
             )}
-
-            {school.news.map((item, index) => (
-              <div className="mt-5">
-                <div className="bg-white p-8 rounded-lg shadow-md mb-6">
-                  {/* User Info with Three-Dot Menu */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-2">
-                      <img
-                        src="https://i.pravatar.cc/300"
-                        alt="User Avatar"
-                        className="w-8 h-8 rounded-full"
-                      />
-                      <div>
-                        <p className="text-gray-800 font-semibold">
-                          {item.user}
-                        </p>
-                        <p className="text-gray-500 text-sm">
-                          Posted 2 hours ago
-                        </p>
-                      </div>
-                    </div>
-                    <div className="text-gray-500 cursor-pointer">
-                      {/* Three-dot menu icon */}
-                      <button className="hover:bg-gray-50 rounded-full p-1">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width={24}
-                          height={24}
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <circle cx={12} cy={7} r={1} />
-                          <circle cx={12} cy={12} r={1} />
-                          <circle cx={12} cy={17} r={1} />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                  {/* Message */}
-                  <div className="mb-4">
-                    <p className="text-gray-800 text-lg font-semibold">
-                      {item.content}
-                    </p>
-                  </div>
-
-                  <div className="flex items-center justify-between text-gray-500">
-                    <div className="flex items-center space-x-2">
-                      <button className="flex justify-center items-center gap-2 px-2 hover:bg-gray-50 rounded-full p-1">
-                        <svg
-                          className="w-5 h-5 fill-current"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M12 21.35l-1.45-1.32C6.11 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-4.11 6.86-8.55 11.54L12 21.35z" />
-                        </svg>
-                        <span>{item.like}</span>
-                      </button>
-                      <button className="flex justify-center items-center gap-2 px-2 hover:bg-gray-50 rounded-full p-1">
-                        {/* share */}
-                        <svg
-                          width="22px"
-                          height="22px"
-                          viewBox="0 0 24 24"
-                          className="w-5 h-5 fill-current"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <g id="SVGRepo_bgCarrier" strokeWidth={0} />
-                          <g
-                            id="SVGRepo_tracerCarrier"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                          <g id="SVGRepo_iconCarrier">
-                            <path d="M12 22C 17.5228 22 22 17.5228 22 12C 22 6.47715 17.5228 2 12 2C 6.47715 2 2 6.47715 2 12C 2 13.5997 2.37562 15.1116 3.04346 16.4525C 3.22094 16.8088 3.28001 17.2161 3.17712 17.6006L 2.58151 19.8267C 2.32295 20.793 3.20701 21.677 4.17335 21.4185L 6.39939 20.8229C 6.78393 20.72 7.19121 20.7791 7.54753 20.9565C 8.88837 21.6244 10.4003 22 12 22ZM 8 13.25C 7.58579 13.25 7.25 13.5858 7.25 14C 7.25 14.4142 7.58579 14.75 8 14.75H 13.5C 13.9142 14.75 14.25 14.4142 14.25 14C 14.25 13.5858 13.9142 13.25 13.5 13.25H 8ZM 7.25 10.5C 7.25 10.0858 7.58579 9.75 8 9.75H 16C 16.4142 9.75 16.75 10.0858 16.75 10.5C 16.75 10.9142 16.4142 11.25 16 11.25H 8C 7.58579 11.25 7.25 10.9142 7.25 10.5Z" />
-                          </g>
-                        </svg>
-
-                        <span>{item.comment}</span>
-                      </button>
-                    </div>
-                    <button className="flex justify-center items-center gap-2 px-2 hover:bg-gray-50 rounded-full p-1">
-                      <svg
-                        width="22px"
-                        height="22px"
-                        viewBox="0 0 24 24"
-                        className="w-5 h-5 fill-current"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g id="SVGRepo_bgCarrier" strokeWidth={0} />
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <g id="SVGRepo_iconCarrier">
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 13.5997 2.37562 15.1116 3.04346 16.4525C3.22094 16.8088 3.28001 17.2161 3.17712 17.6006L2.58151 19.8267C2.32295 20.793 3.20701 21.677 4.17335 21.4185L6.39939 20.8229C6.78393 20.72 7.19121 20.7791 7.54753 20.9565C8.88837 21.6244 10.4003 22 12 22ZM8 13.25C7.58579 13.25 7.25 13.5858 7.25 14C7.25 14.4142 7.58579 14.75 8 14.75H13.5C13.9142 14.75 14.25 14.4142 14.25 14C14.25 13.5858 13.9142 13.25 13.5 13.25H8ZM7.25 10.5C7.25 10.0858 7.58579 9.75 8 9.75H16C16.4142 9.75 16.75 10.0858 16.75 10.5C16.75 10.9142 16.4142 11.25 16 11.25H8C7.58579 11.25 7.25 10.9142 7.25 10.5Z"
-                          />
-                        </g>
-                      </svg>
-                      <span>{item.share} Chia sẻ</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
 
           <div

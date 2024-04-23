@@ -22,6 +22,7 @@ const Header = () => {
 
   const handleSignOut = () => {
     localStorage.removeItem("dataUser");
+    localStorage.removeItem("token");
     window.location.reload(); // refresh trang
   };
 
