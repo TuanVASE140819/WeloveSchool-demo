@@ -9,7 +9,7 @@ const Price = () => {
       <section className="mt-6 mb-6">
         <Heading title="TÌM TRƯỜNG TẠI TỈNH CỦA BẠN" />
         <div className="container">
-          <div class="grid grid-cols-6 gap-4 mt-6">
+          <div className="grid grid-cols-6 gap-4 mt-6">
             <div>Hồ Chí Minh(100)</div>
             <div>Hà Nội (100)</div>
             <div>Đà Nẵng (100)</div>

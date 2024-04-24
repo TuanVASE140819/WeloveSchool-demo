@@ -9,14 +9,24 @@ import home from "../../../assets/Icon/home.png";
 import search from "../../../assets/Icon/search.png";
 
 import Logo from "../../../assets/Logo/Logo.png";
-const Header = () => {
 
+import { notification } from "../../../Data/top10";
+
+
+const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleMenuToggle = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const handleSignOut = () => {
+    localStorage.removeItem("dataUser");
+    localStorage.removeItem("token");
+    window.location.reload(); // refresh trang
+  };
+
+  const dataUser = localStorage.getItem("dataUser");
   return (
     <>
       <header>
@@ -31,9 +41,6 @@ const Header = () => {
             </a>
           </div>
           <ul className="hidden lg:flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-            {/* <li>
-                        <a href="/" className="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 " aria-current="page">Trường của tôi</a>
-                    </li> */}
             <li>
               <a
                 href="/allSchool"
@@ -41,32 +48,12 @@ const Header = () => {
               >
                 <div className="flex items-center">
                   <img src={home} className="w-6 h-6 mr-1" alt="home" />
+                  {/* <i className="fa-solid fa-school-flag w-6 h-6 mr-2"></i> */}
                   <span>Trường của tôi</span>
                 </div>
               </a>
             </li>
-            {/* <li>
-              <a
-                href="/"
-                className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 "
-              >
-                <div className="flex items-center">
-                  <img src={human2} className="w-6 h-6 mr-2" alt="home" />
-                  <span>bạn bè</span>
-                </div>
-              </a>
-            </li> */}
-            {/* <li>
-              <a
-                href="/"
-                className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"
-              >
-                <div className="flex items-center">
-                  <img src={human3} className="w-6 h-6 mr-2" alt="home" />
-                  <span>Hội Nhóm</span>
-                </div>
-              </a>
-            </li> */}
+
             <li>
               <a
                 href="/"
@@ -81,49 +68,117 @@ const Header = () => {
           </ul>
           <div className="flex items-center lg:order-2 lg:mr-10 md:mr-1 sm:mr-1">
             <div className="relative inline-block text-left">
-              <div className="dropdown">
-                <div>
-                  <button
-                    type="button"
-                    className="text-[#3D92D1] hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 font-bold"
-                    id="menu-button"
-                    aria-expanded="true"
-                    aria-haspopup="true"
-                  >
-                    Đăng nhập
-                  </button>
-                </div>
-                <div className="dropdown-content">
-                  <div
-                    role="menu"
-                    aria-orientation="vertical"
-                    aria-labelledby="menu-button"
-                    // tabindex="-1"
-                  >
-                    <div className="py-1" role="none">
-                      <a
-                        href="/login"
-                        className="text-gray-700 block px-4 py-2 text-sm"
-                        role="menuitem"
-                        id="menu-item-0"
-                      >
-                        Đăng nhập
-                      </a>
-                      <a
-                        href="/register"
-                        className="text-gray-700 block px-4 py-2 text-sm"
-                        role="menuitem"
-                        id="menu-item-0"
-                      >
-                        Đăng ký
-                      </a>
+              {/* nếu nameLocal khác null thì hiển thị tên người dùng  */}
+              {dataUser !== null ? (
+                <div className="dropdown">
+                  <div>
+                    <button
+                      type="button"
+                      className="text-[#3D92D1] hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 font-bold"
+                      id="menu-button"
+                      aria-expanded="true"
+                      aria-haspopup="true"
+                    >
+                      <div className="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full ">
+                        <svg
+                          className="absolute w-10 h-10 text-gray-400 -left-1"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                            clipRule="evenodd"
+                          ></path>
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                  <div className="dropdown-content">
+                    <div
+                      role="menu"
+                      aria-orientation="vertical"
+                      aria-labelledby="menu-button"
+                      // tabindex="-1"
+                    >
+                      <div className="py-1" role="none">
+                        <button
+                          // href="/login"
+                          className="text-gray-700 block px-4 py-2 text-sm"
+                          role="menuitem"
+                          id="menu-item-0"
+                          onClick={handleSignOut}
+                        >
+                          Đăng xuất
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <div>
+                  <div className="dropdown">
+                    <div>
+                      <button
+                        type="button"
+                        className="text-[#3D92D1] hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 font-bold"
+                        id="menu-button"
+                        aria-expanded="true"
+                        aria-haspopup="true"
+                      >
+                        Đăng nhập
+                      </button>
+                    </div>
+                    <div className="dropdown-content">
+                      <div
+                        role="menu"
+                        aria-orientation="vertical"
+                        aria-labelledby="menu-button"
+                        // tabindex="-1"
+                      >
+                        <div className="py-1" role="none">
+                          <a
+                            href="/login"
+                            className="text-gray-700 block px-4 py-2 text-sm"
+                            role="menuitem"
+                            id="menu-item-0"
+                          >
+                            Đăng nhập
+                          </a>
+                          <a
+                            href="/register"
+                            className="text-gray-700 block px-4 py-2 text-sm"
+                            role="menuitem"
+                            id="menu-item-0"
+                          >
+                            Đăng ký
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
-
-            <i className="p-2 bg-gray-100 rounded-full fa-solid fa-bell text-[#3D92D1]"></i>
+            <button
+              type="button"
+              className="text-[#3D92D1] hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 font-bold"
+              id="menu-button"
+              aria-expanded="true"
+              aria-haspopup="true"
+            >
+              <div className="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full ">
+                <svg
+                  className="absolute w-6 h-6 text-gray-400  top-[5px] left-2"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M12.133 10.632v-1.8A5.406 5.406 0 0 0 7.979 3.57.946.946 0 0 0 8 3.464V1.1a1 1 0 0 0-2 0v2.364a.946.946 0 0 0 .021.106 5.406 5.406 0 0 0-4.154 5.262v1.8C1.867 13.018 0 13.614 0 14.807 0 15.4 0 16 .538 16h12.924C14 16 14 15.4 14 14.807c0-1.193-1.867-1.789-1.867-4.175ZM3.823 17a3.453 3.453 0 0 0 6.354 0H3.823Z" />
+                </svg>
+              </div>
+            </button>
             {/* nút chuyển đổi ngôn ngữ */}
             <button className="ml-8 text-sm text-[#3D92D1] hidden lg:block">
               VN
@@ -167,9 +222,6 @@ const Header = () => {
           id="mobile-menu-2"
         >
           <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-            {/* <li>
-                        <a href="/" className="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 " aria-current="page">Trường của tôi</a>
-                    </li> */}
             <li>
               <a
                 href="/"
