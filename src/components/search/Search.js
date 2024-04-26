@@ -72,7 +72,7 @@ const NewPage = () => {
           <div className="">
             {/* nếu  product.image = null thì hiển thị ảnh mặc định */}
             <img
-              src={product.image ? product.image : defaultLogo}
+              src={product.avatar ? product.avatar : defaultLogo}
               alt="product"
               className="rounded-lg"
             />
