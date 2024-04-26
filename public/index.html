@@ -1,21 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi"> <!-- Thay đổi ngôn ngữ thành tiếng Việt -->
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
-     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Web site created using create-react-app" />
+    <meta name="description" content="Weloveschool là một mạng xã hội giáo dục dành cho các nhà giáo, học sinh và phụ huynh để chia sẻ thông tin, kinh nghiệm và tạo cơ hội học hỏi mới. Tham gia ngay!" /> <!-- Cập nhật mô tả trang web -->
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Weloveschool - Mạng xã hội giáo dục">
     <meta name="twitter:description" content="Weloveschool là một mạng xã hội giáo dục dành cho các nhà giáo, học sinh và phụ huynh để chia sẻ thông tin, kinh nghiệm và tạo cơ hội học hỏi mới. Tham gia ngay!">
     <meta name="twitter:image" content="https://www.weloveschool.com/images/logo.png">
     <meta name="twitter:url" content="https://www.weloveschool.com/">
     <title>
-      Weloveschool -Kết nối bạn cũ
+      Weloveschool - Mạng xã hội giáo dục <!-- Cập nhật tiêu đề của trang web -->
     </title>
+    <!-- Cập nhật các thẻ meta khác tương ứng với chủ đề của trang web -->
+    <meta name="keywords" content="mạng xã hội, giáo dục, nhà giáo, học sinh, phụ huynh, chia sẻ thông tin, kinh nghiệm, học hỏi">
+    <meta name="author" content="Weloveschool">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="VN">
+    <meta name="geo.placename" content="Hà Nội">
+    <meta name="geo.position" content="21.0285;105.8542">
+    <meta name="ICBM" content="21.0285;105.8542">
+    <!-- Cập nhật các thẻ Open Graph cho chia sẻ trên các mạng xã hội -->
+    <meta property="og:title" content="Weloveschool - Mạng xã hội giáo dục">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.weloveschool.com/">
+    <meta property="og:description" content="Weloveschool là một mạng xã hội giáo dục dành cho các nhà giáo, học sinh và phụ huynh để chia sẻ thông tin, kinh nghiệm và tạo cơ hội học hỏi mới. Tham gia ngay!">
+    <meta property="og:image" content="data:image/png;base64,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">
+    <meta property="og:image:width" content="200">
+    <meta property="og:image:height" content="200">
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
