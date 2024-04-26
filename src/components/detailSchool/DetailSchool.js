@@ -581,7 +581,9 @@ const DetailSchool = () => {
               <div className="relative">
                 <img
                   src={
-                    school?.data?.banner === "" ? DefaultBanner : school.banner
+                    school?.data?.banner === ""
+                      ? DefaultBanner
+                      : school.data.banner
                   }
                   alt={school.banner === "" ? "FPT" : school.banner}
                   className="w-full h-full"
@@ -593,7 +595,7 @@ const DetailSchool = () => {
                       src={
                         school?.data?.avatar === ""
                           ? DefaultLogo
-                          : school.banner
+                          : school?.data?.avatar
                       }
                       alt="FPT"
                       className="w-30 h-30  rounded-full object-cover"
